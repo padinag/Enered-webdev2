@@ -1,12 +1,32 @@
-p{width:200px;
-  hight:30px ;  
-  border: 1px solid red;
-  }
-.myp{width:50px;
-     hight:30px ;  
-     border: 1px solid blue;
-    }
-#myid{width:30px;
-      hight:30px ;  
-      border: 1px solid green;
-      }
+.parent2{
+    display: flex;
+    flex-direction: row;
+}
+.parent3{
+    display: flex;
+    flex-direction: row;
+}
+
+.smallbox{
+  flex: 1;
+  width: 3em;
+  border: 1px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
+.largebox{
+  flex: 3;
+  width: 3em;
+  border: 1px solid green;
+  padding: 50px;
+  margin: 20px;
+    
+}
+#horizontal{
+    height: 100px;
+}
+#vertical{
+    flex: 1;
+    height: 600px;
+}
