@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Colored Cards</title>
+  </head>
+  <style>
+    .container {
+      width: 600px;
+      height: 200px;
+      border: grey 1px solid;
+    }
+    .titleBox {
+      display: inline-block;
+      width: 500px;
+      float: left;
+      padding-top: 20px;
+      padding-left: 20px;
+    }
+    .thumbnails {
+      display: inline-block;
+      float: right;
+      width: 80px;
+      padding-top: 20px;
+      text-align: right;
+    }
+    .headBox {
+      background: red;
+      height: 100px;
+    }
+
+    .informationBox {
+      padding: 20px 20px 20px 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="headBox">
+        <div class="titleBox">
+          <span><b>Red - Title</b></span
+          ><br /><br />
+          <span>Description text here....</span>
+        </div>
+        <div class="thumbnails">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="informationBox">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+        ultricies nec, pellentesque eu, pretium quis, sem.
+      </div>
+    </div>
+  </body>
+</html>
