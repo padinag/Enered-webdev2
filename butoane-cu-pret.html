@@ -1,83 +1,190 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>
-        butoane buy cu pret
+      butoane buy cu pret
     </title>
-</head>
-<style>
-    .header {
-        height: 50px;
-        border-radius: 40%;
-        border: 1px solid black;
-        width: 200px;
+  </head>
+  <style>
+    .headButton {
+      margin-left: auto;
+      margin-right: auto;
+      height: 50px;
+      border: 1px solid black;
+      width: 300px;
+      font-size: 0;
+    }
+    .regularButton {
+      display: inline-block;
+      height: 50px;
+      width: 150px;
+    }
+    .selectedButton {
+      display: inline-block;
+      height: 50px;
+      width: 150px;
+      background: rgb(229, 195, 236);
     }
 
     .container {
-        height: 600px;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      position: absolute;
+      left: 50%;
+      margin-left: -300px;
     }
 
-    .firstbox {
-        display: inline-block;
-        height: 600px;
-        width: 150px;
+    .bigbox {
+      display: inline-block;
+      height: 300px;
+      width: 150px;
+      border-style: hidden;
+      box-shadow: 0 4px 2px -2px gray;
+      border-radius: 10%;
     }
 
     span.title {
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
     }
     span.description {
-        font-size: 14px;
-        font-weight: bold;
-        text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
     }
 
     .upperbox {
-        display: inline-block;
-        margin-top:10px;
-        height: 100px;
-        background: orange;
-        color: white;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
-        text-align: center;
+      display: inline-block;
+      margin-top: 10px;
+      height: 100px;
+      color: white;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      text-align: center;
+      padding-top: 1em;
+    }
+    #upperBox1,
+    #button1 {
+      background: orange;
+    }
+    #upperBox2,
+    #button2 {
+      background: rgb(127, 246, 255);
+    }
+    #upperBox3,
+    #button3 {
+      background: rgb(119, 119, 226);
+    }
+    #upperBox4,
+    #button4 {
+      background: red;
     }
     .middlebox {
-        width: 150px;
-        display: inline-block;
-        height: 85px;
-        background: yellow;
+      width: 150px;
+      display: inline-block;
+      height: 85px;
+      background: white;
     }
-    .bottombox{
-        display: inline-block;
-        height: 100px;
-        background: green;
-        color: white;
+    p {
+      text-align: center;
     }
-</style>
+    .bigDigit {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .smallDigit {
+      font-size: 12px;
+    }
+    .button {
+      color: white;
+      margin-left: 45px;
+      width: 60px;
+      border-radius: 5px;
+      height: 4em;
+    }
+  </style>
 
-<body>
-    <div class="header"></div>
-    <div class="container">
-        <div class="firstbox">
-            <div class="upperbox">
-                <span class="title">Beginner</span><br><br>
-                <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-            </div>
-            <div class="middlebox">
-                <p>
-                    <span class="smallDigit">$</span>
-                    <span class="bigDigit">1</span>
-                    <span class="smallDigit">.99/mo</span>
-                </p><br><Br>
-                <p>1 HTML</p>
-            </div>
-            <div class="bottombox"></div>
-        </div>
+  <body>
+    <div class="headButton">
+      <button class="regularButton">Usuall Price</button>
+      <button class="selectedButton">Today Only Offer!</button>
     </div>
-</body>
+    <div class="container">
+      <div class="bigbox">
+        <div class="upperbox" id="upperBox1">
+          <span class="title">Beginner</span><br /><br />
+          <span class="description"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+        </div>
+        <div class="middlebox">
+          <p>
+            <span class="smallDigit">$</span>
+            <span class="bigDigit">1</span>
+            <span class="smallDigit">.99/mo</span>
+          </p>
+          <p class="smallDigit">1 HTML</p>
+          <button class="button" id="button1">Buy</button>
+        </div>
+      </div>
 
+      <!--2ndbox-->
+      <div class="bigbox">
+        <div class="upperbox" id="upperBox2">
+          <span class="title">Beginner</span><br /><br />
+          <span class="description"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+        </div>
+        <div class="middlebox">
+          <p>
+            <span class="smallDigit">$</span>
+            <span class="bigDigit">1</span>
+            <span class="smallDigit">.99/mo</span>
+          </p>
+          <p class="smallDigit">1 HTML</p>
+          <button class="button" id="button2">Buy</button>
+        </div>
+      </div>
+      <!--3rdbox-->
+      <div class="bigbox">
+        <div class="upperbox" id="upperBox3">
+          <span class="title">Beginner</span><br /><br />
+          <span class="description"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+        </div>
+        <div class="middlebox">
+          <p>
+            <span class="smallDigit">$</span>
+            <span class="bigDigit">1</span>
+            <span class="smallDigit">.99/mo</span>
+          </p>
+          <p class="smallDigit">1 HTML</p>
+          <button class="button" id="button3">Buy</button>
+        </div>
+      </div>
+
+      <!--4thbox-->
+      <div class="bigbox">
+        <div class="upperbox" id="upperBox4">
+          <span class="title">Beginner</span><br /><br />
+          <span class="description"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+        </div>
+        <div class="middlebox">
+          <p>
+            <span class="smallDigit">$</span>
+            <span class="bigDigit">1</span>
+            <span class="smallDigit">.99/mo</span>
+          </p>
+          <p class="smallDigit">1 HTML</p>
+          <button class="button" id="button4">Buy</button>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
