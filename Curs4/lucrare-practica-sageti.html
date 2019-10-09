@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sageti in cerc</title>
+</head>
+<style>
+    .circle {
+        border-radius: 50%;
+        background: red;
+        width: 70px;
+        height: 70px;
+        cursor: pointer;
+        position: relative;
+
+}
+    .circle:after {
+        display: inline-block;
+        content: "jj";
+        height: 0;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        position: absolute;
+        border-top: 20px green solid;
+        border-right: 20px transparent solid;
+        border-bottom: 20px transparent solid;
+        border-left: 20px transparent solid;
+        left: 50%;
+        opacity:1;
+        transform: translateX(-50%, 50%);
+        transition: width .5s, height .5s, opacity .5s;
+    }
+
+    .circle:before {
+        display: inline-block;
+        content: "";
+        top: 0;
+        position: absolute;
+        border-top: 20px transparent solid;
+        border-right: 20px transparent solid;
+        border-bottom: 20px green solid;
+        border-left: 20px transparent solid;
+        left: 50%;
+        opacity:1;
+        transform: translateX(-50%);
+        transition: width .5s, height .5s, opacity .5s;
+    }
+
+    .circle:hover:after {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+    }
+</style>
+
+<body>
+    <div class="circle"></div>
+</body>
+
+</html>
