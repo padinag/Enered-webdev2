@@ -1,62 +1,63 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Sageti in cerc</title>
-</head>
-<style>
+  </head>
+  <style>
     .circle {
-        border-radius: 50%;
-        background: red;
-        width: 70px;
-        height: 70px;
-        cursor: pointer;
-        position: relative;
-
-}
+      border-radius: 50%;
+      background: red;
+      width: 70px;
+      height: 70px;
+      cursor: pointer;
+      position: relative;
+    }
     .circle:after {
-        display: inline-block;
-        content: "jj";
-        height: 0;
-        width: 0;
-        position: absolute;
-        bottom: 0;
-        position: absolute;
-        border-top: 20px green solid;
-        border-right: 20px transparent solid;
-        border-bottom: 20px transparent solid;
-        border-left: 20px transparent solid;
-        left: 50%;
-        opacity:1;
-        transform: translateX(-50%, 50%);
-        transition: width .5s, height .5s, opacity .5s;
+      display: inline-block;
+      content: "";
+      position: absolute;
+      border-top: 20px green solid;
+      border-right: 20px transparent solid;
+      border-bottom: 20px transparent solid;
+      border-left: 20px transparent solid;
+      left: 50%;
+      opacity: 1;
+      transform: translate(-50%, 100%);
+      transition: width 0.5s, height 0.5s, opacity 0.5s;
     }
 
     .circle:before {
-        display: inline-block;
-        content: "";
-        top: 0;
-        position: absolute;
-        border-top: 20px transparent solid;
-        border-right: 20px transparent solid;
-        border-bottom: 20px green solid;
-        border-left: 20px transparent solid;
-        left: 50%;
-        opacity:1;
-        transform: translateX(-50%);
-        transition: width .5s, height .5s, opacity .5s;
+      display: inline-block;
+      content: "";
+      position: absolute;
+      border-top: 20px transparent solid;
+      border-right: 20px transparent solid;
+      border-bottom: 20px green solid;
+      border-left: 20px transparent solid;
+      left: 50%;
+      opacity: 1;
+      transform: translate(-50%, -25%);
+      transition: width 0.5s, height 0.5s, opacity 0.5s;
     }
 
     .circle:hover:after {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        opacity: 1;
+      display: inline-block;
+      border-top: 10px green solid;
+      border-right: 10px transparent solid;
+      border-bottom: 10px transparent solid;
+      border-left: 10px transparent solid;
+      margin-top: 50%;
     }
-</style>
+    .circle:hover:before {
+      display: inline-block;
+      border-top: 10px transparent solid;
+      border-right: 10px transparent solid;
+      border-bottom: 10px green solid;
+      border-left: 10px transparent solid;
+    }
+  </style>
 
-<body>
+  <body>
     <div class="circle"></div>
-</body>
-
+  </body>
 </html>
