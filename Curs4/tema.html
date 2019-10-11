@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tooltip</title>
+</head>
+<style>
+    .Card{
+        display:block;
+        position: relative;
+        background: yellow;
+        width: 200px;
+        height: 200px;
+        margin: 5%;
+    }
+    .Card:hover:after{
+        position: absolute;
+        content:"more info";
+        background: orange;
+        max-width: 150px;
+        min-width: 50px;
+        border-radius: 5px;
+        left: 100%;
+        text-align: center;
+    }
+    .Card:hover:before{
+        position: absolute;
+        content: "";
+        border-top: 8px transparent solid;
+        border-right:8px orange solid;
+        border-bottom: 8px transparent solid;
+        border-left: 8px transparent solid;
+        left: 100%;
+        top:10px;
+        transform: translateX(-100%);
+    }
+    #Tooltip1:hover:after{
+        position: absolute;
+        content:"more info";
+        background: orange;
+        max-width: 50px;
+        min-width: 50px;
+        border-radius: 5px;
+        top:50%;
+        left: 0;
+        transform: translate(-100%, -50%);
+        text-align: center;
+        padding:5px;
+    }
+    #Tooltip1:hover:before{
+        position: absolute;
+        content: "";
+        border-top: 8px transparent solid;
+        border-right: 8px transparent solid;
+        border-bottom: 8px transparent solid;
+        border-left: 8px orange solid;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+    }
+    #Tooltip2:hover:after{
+        position: absolute;
+        content:"more info";
+        background: orange;
+        max-width: 50px;
+        min-width: 50px;
+        border-radius: 5px;
+        left: 50%;
+        top:0;
+        transform: translate(-50%, -100%);
+        text-align: center;
+        padding:5px;
+    }
+    #Tooltip2:hover:before{
+        position: absolute;
+        content: "";
+        border-top: 8px orange solid;
+        border-right: 8px transparent solid;
+        border-bottom: 8px transparent solid;
+        border-left: 8px transparent solid;
+        left: 50%;
+        top:0;
+        transform: translate(-50%, 0);
+    }
+</style>
+<body>
+    <div class="Card">Tooltip</div>
+    <div class="Card" id="Tooltip1">Tooltip1</div>
+    <div class="Card" id="Tooltip2">Tooltip2</div>
+</body>
+
+</html>
