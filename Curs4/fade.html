@@ -1,72 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Fade effect</title>
-  </head>
-  <style>
-    .container {
-      display: flex;
-      /* position: relative; */
-      width: 500px;
-      height: 700px;
-      background: rgb(240, 235, 235);
-      flex-direction: column;
-    }
-    .text1 {
-      flex-grow: 0.75;
-      width: 450px;
-      align-self: center;
-    }
-    .text2 {
-      flex-grow: 1;
-      width: 450px;
-      align-self: center;
-    }
-    .buton {
-      display: inline-flex;
-      background-color: green;
-      color: white;
-      padding: 2px;
-    }
-    .image {
-      flex-grow: 2;
-      padding-bottom: 30px;
-      align-self: center;
-    }
-    .over {
-      opacity: 0;
-      transition: 0.5s;
-      background: blue;
-    }
-    .image:hover .over {
-      opacity: 1;
-    }
 
-    .mesaj {
-      flex-grow: 2;
-      padding-bottom: 30px;
-      align-self: center;
-      color: white;
-    }
-  </style>
-  <body>
-    <div class="container">
-      <div class="text1">
-        <h3>Example</h3>
-        <br />Fade in text:
-      </div>
-      <div class="container2">
-        <img
-          class="image"
-          src="images/img_avatar3.png"
-          height="450px"
-          width="450px"
-        />
-        <div class="over"><div class="mesaj">Hello World!</div></div>
-      </div>
-      <div class="text2">
-        <div class="buton">Try it Yourself</div>
-      </div>
-    </div>
-  </body>
+<head>
+  <title>Fade effect</title>
+</head>
+<style>
+  .container {
+    position: relative;
+    width: 50%;
+  }
+
+  .image {
+    display:block;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+
+  .bluebackground{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s;
+    background: blue;
+  }
+  .container:hover .bluebackground{
+    opacity: 1;
+  }
+  .mesaj{
+    position: absolute;
+    color:white;
+    font-size: 14px;;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+</style>
+
+<body>
+  <h3>Example</h3>
+  <p>Example here:</p>
+  <div class="container">
+    <img src="images/img_avatar3.png" class="image">
+    <div class="bluebackground"><div class="mesaj"><b>Hello World!</b></div></div>
+  </div>
+</body>
+
 </html>
