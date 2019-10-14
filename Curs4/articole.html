@@ -1,39 +1,98 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Articole</title>
-  </head>
-  <style>
-    .container {
-      background: white;
-      width: 80%;
-      height: 80%;
-    }
-    .bigBox {
-      display: flex;
-      justify-content: center;
-      flex-direction: row;
-    }
-    .bigBox > div {
-      flex: 1;
-      background: lightgray;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
-  </style>
 
-  <body>
-    <div class="container">
-      <h3>LATEST ARICLES</h3>
-      <h5>YOU CAN FIND THE FULL LIST OF ARTICLES <a href="">HERE...</a></h5>
-      <div class="bigBox">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+<head>
+  <title>Articole</title>
+</head>
+<style>
+  .container {
+    background: white;
+  }
+
+  .bigBox {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 90%;
+    flex-direction: row;
+  }
+
+  .columnItems {
+    margin-left:0.5%;
+    margin-right: 0.5%;
+    flex: 0.8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .text {
+    width:80%;
+    text-align: left;
+    padding-left: 10%;
+    padding-right: 10;
+    background: rgb(213, 214, 216);
+  }
+
+  img {
+    height: 30%;
+    width:100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin:0;
+
+  }
+  .image{
+    margin:0;
+    border-radius: 40%;
+    background: white;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h3>LATEST ARICLES</h3>
+    <h5>YOU CAN FIND THE FULL LIST OF ARTICLES <a href="">HERE...</a></h5>
+    <div class="bigBox">
+      <div class="columnItems">
+        <img src="/images/img_avatar3.png">
+        <div class="text">
+          <h4>WHY WE USE WORDPRESS TO BUILD WEBSITES</h4>
+          <h6>BY ESTEL BOCK| FEB.7.2017| CONTENT MANAGEMENT SYSTEMS WEBSITE</h6>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s,</p>
+        </div>
+      </div>
+      <div class="columnItems">
+        <img src="/images/img_avatar3.png">
+        <div class="text">
+          <h4>WHY WE USE WORDPRESS TO BUILD WEBSITES</h4>
+          <h6>BY ESTEL BOCK| FEB.7.2017| CONTENT MANAGEMENT SYSTEMS WEBSITE</h6>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's </p>
+        </div>
+      </div>
+      <div class="columnItems">
+        <img src="/images/img_avatar3.png" class="image">
+        <div class="text">
+          <h4>WHY WE USE WORDPRESS TO BUILD WEBSITES</h4>
+          <h6>BY ESTEL BOCK| FEB.7.2017| CONTENT MANAGEMENT SYSTEMS WEBSITE</h6>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s,</p>
+        </div>
+      </div>
+      <div class="columnItems">
+        <img src="/images/img_avatar3.png">
+        <div class="text">
+          <h4>WHY WE USE WORDPRESS TO BUILD WEBSITES</h4>
+          <h6>BY ESTEL BOCK| FEB.7.2017| CONTENT MANAGEMENT SYSTEMS WEBSITE</h6>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s,</p>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
