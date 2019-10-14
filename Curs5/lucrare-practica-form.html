@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formular-singuri</title>
+</head>
+<style>
+    .container {
+        box-sizing: border-box;
+        background: lightblue;
+        position: relative;
+        width: 1000px;
+        height: 1000px;
+        margin: auto;
+        bottom: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .left {
+        display: inline-block;
+        background: black;
+        padding-bottom: 0;
+        width: 45%;
+        height: 100%;
+        border: none;
+    }
+    .right {
+        padding-left: 20px;
+        margin-left: 20px;
+        display: inline-block;
+        background: black;
+       vertical-align: top;
+        width: 45%;
+        height: 60%;
+        border: none;
+    }
+    .fieldset1 {
+        height: 100%;
+        border:none;
+    }
+
+    ::placeholder {
+        color: lightseagreen;
+    }
+
+    #leftGroup{
+        background: black;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid lightseagreen;
+        line-height: 5em;
+
+    }
+    #rightGroup{
+        background: black;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid lightseagreen;
+        line-height: 5em;
+
+    }
+
+    .moreText {
+        background: black;
+        color: lightseagreen;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid lightseagreen;
+        line-height: 5.2em;
+    }
+.moreText2{
+    background: black;
+    border:none;
+    line-height: 6em;
+    border-bottom:1px solid lightseagreen;
+}
+    .bigButton {
+        width: 100%;
+        background: lightseagreen;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        height:3em;
+    }
+    .smallForm-left, .smallForm-right{
+        display: inline-block;
+        width:30%;
+    }
+    .smallForm-right{
+        padding-left:20px;
+    }
+.smallButton{
+    width:100%;
+    background: lightseagreen;
+    color:white;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <form>
+                <fieldset class="fieldset1">
+                    <input type="text" placeholder="Name" id="leftGroup">
+                    <input type="text" placeholder="Email Address" id="leftGroup">
+                    <input type="text" placeholder="Phone" id="leftGroup">
+                    <input type="text" placeholder="Subject" id="leftGroup">
+                    <textarea placeholder="Message" class="moreText"></textarea>
+                    <button class=bigButton>SEND</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="right">
+            <form>
+                <div class="smallForm-left">             
+                    <input type="text" placeholder="Name" id="rightGroup">
+                    <input type="text" placeholder="Email Address" id="rightGroup">
+                    <input type="text" placeholder="Phone" id="rightGroup">
+                    <input type="text" placeholder="Subject" id="rightGroup">
+                </div> 
+                <div class="smallForm-right">             
+                        <textarea placeholder="Message" class="moreText2"></textarea>
+                        <button class="smallButton">SEND</button>
+                    </div> 
+                </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
