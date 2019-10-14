@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Efect pe buton</title>
-</head>
-<style>
-    button{
-        background: rgb(250, 0, 0);
-        width: 200px;
-        height:100px;
-        color: white;
-        font-size: 20px;
-        border-top: 4px transparent solid;
-        border-bottom: 4px transparent solid;
-
-    
+  <head>
+    <title>Efect pe buton</title>
+  </head>
+  <style>
+    body {
+      background: rgb(250, 0, 0);
     }
-    button:hover{
-        background: rgb(88, 34, 34);
-        text-transform: uppercase;
-        transition-property: all;
-        border-top: 4px yellow solid;
-        border-bottom: 4px yellow solid;
-        transition: .6s;
-        transition-timing-function: ease;
+    button {
+      background: rgb(250, 0, 0);
+      width: 200px;
+      height: 100px;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
     }
-</style>
-<body>
-<button>Buton</button>
-</body>
-
+    button:hover {
+      background: rgb(250, 0, 0);
+      content: "";
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.6s ease-in-out;
+      transition-timing-function: ease;
+      border-top: 3px solid green;
+      border-bottom: 3px solid green;
+    }
+  </style>
+  <body>
+    <button>Buton</button>
+  </body>
 </html>
