@@ -1,134 +1,157 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Formular-singuri</title>
-</head>
-<style>
+  </head>
+  <style>
     .container {
-        box-sizing: border-box;
-        background: lightblue;
-        position: relative;
-        width: 1000px;
-        height: 1000px;
-        margin: auto;
-        bottom: 0;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
+      position: relative;
+      box-sizing: border-box;
+      background: lightblue;
+      position: relative;
+      width: 1000px;
+      height: 500px;
+      margin: auto;
+      bottom: 0;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
     .left {
-        display: inline-block;
-        background: black;
-        padding-bottom: 0;
-        width: 45%;
-        height: 100%;
-        border: none;
+      display: inline-block;
+      background: black;
+      padding-bottom: 0;
+      width: 45%;
+      height: 100%;
+      border: none;
+      border-radius: 5px;
     }
     .right {
-        padding-left: 20px;
-        margin-left: 20px;
-        display: inline-block;
-        background: black;
-       vertical-align: top;
-        width: 45%;
-        height: 60%;
-        border: none;
+      padding-left: 20px;
+      margin-left: 20px;
+      display: inline-block;
+      background: black;
+      vertical-align: top;
+      width: 47%;
+      height: 60%;
+      border: none;
+      border-radius: 5px;
     }
     .fieldset1 {
-        height: 100%;
-        border:none;
+      height: 100%;
+      border: none;
     }
 
     ::placeholder {
-        color: lightseagreen;
+      color: lightseagreen;
     }
 
-    #leftGroup{
-        background: black;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid lightseagreen;
-        line-height: 5em;
-
+    #leftGroup {
+      background: black;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid lightseagreen;
+      line-height: 5em;
     }
-    #rightGroup{
-        background: black;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid lightseagreen;
-        line-height: 5em;
-
+    #rightGroup {
+      background: black;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid lightseagreen;
+      line-height: 3.9em;
     }
 
     .moreText {
-        background: black;
-        color: lightseagreen;
-        width: 100%;
-        border: none;
-        border-bottom: 1px solid lightseagreen;
-        line-height: 5.2em;
+      background: black;
+      color: lightseagreen;
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid lightseagreen;
+      line-height: 5.2em;
     }
-.moreText2{
-    background: black;
-    border:none;
-    line-height: 6em;
-    border-bottom:1px solid lightseagreen;
-}
-    .bigButton {
-        width: 100%;
-        background: lightseagreen;
-        color: white;
-        border-radius: 5px;
-        border: none;
-        height:3em;
+    .moreText2 {
+      background: black;
+      border: none;
+      height: 15.6em;
+      width: 98%;
+      border-bottom: 1px solid lightseagreen;
+      padding-top: 10px;
     }
-    .smallForm-left, .smallForm-right{
-        display: inline-block;
-        width:30%;
+    .bigButton,
+    .smallButton {
+      width: 100%;
+      background: lightseagreen;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      height: 4em;
     }
-    .smallForm-right{
-        padding-left:20px;
+    .smallForm-right {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 48%;
+      padding-left: 20px;
+      vertical-align: top;
+      text-align: start;
     }
-.smallButton{
-    width:100%;
-    background: lightseagreen;
-    color:white;
-}
-</style>
+    .smallForm-left {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 48%;
+      vertical-align: top;
+    }
+    .contact-us {
+      position: relative;
+      transform: translate(100%, -100%);
+      display: inline-block;
+      background: black;
+      vertical-align: bottom;
+      width: 48%;
+      height: 25%;
+      border: none;
+      box-sizing: border-box;
+      color: lightseagreen;
+      font-size: 30px;
+      padding: 20px;
+      text-align: center;
+      letter-spacing: 2px;
+      border-radius: 5px;
+    }
+  </style>
 
-<body>
+  <body>
     <div class="container">
-        <div class="left">
-            <form>
-                <fieldset class="fieldset1">
-                    <input type="text" placeholder="Name" id="leftGroup">
-                    <input type="text" placeholder="Email Address" id="leftGroup">
-                    <input type="text" placeholder="Phone" id="leftGroup">
-                    <input type="text" placeholder="Subject" id="leftGroup">
-                    <textarea placeholder="Message" class="moreText"></textarea>
-                    <button class=bigButton>SEND</button>
-                </fieldset>
-            </form>
-        </div>
-        <div class="right">
-            <form>
-                <div class="smallForm-left">             
-                    <input type="text" placeholder="Name" id="rightGroup">
-                    <input type="text" placeholder="Email Address" id="rightGroup">
-                    <input type="text" placeholder="Phone" id="rightGroup">
-                    <input type="text" placeholder="Subject" id="rightGroup">
-                </div> 
-                <div class="smallForm-right">             
-                        <textarea placeholder="Message" class="moreText2"></textarea>
-                        <button class="smallButton">SEND</button>
-                    </div> 
-                </form>
-        </div>
+      <div class="left">
+        <form>
+          <fieldset class="fieldset1">
+            <input type="text" placeholder="Name" id="leftGroup" />
+            <input type="text" placeholder="Email Address" id="leftGroup" />
+            <input type="text" placeholder="Phone" id="leftGroup" />
+            <input type="text" placeholder="Subject" id="leftGroup" />
+            <textarea placeholder="Message" class="moreText"></textarea>
+            <button class="bigButton">SEND</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="right">
+        <form>
+          <div class="smallForm-left">
+            <input type="text" placeholder="Name" id="rightGroup" />
+            <input type="text" placeholder="Email Address" id="rightGroup" />
+            <input type="text" placeholder="Phone" id="rightGroup" />
+            <input type="text" placeholder="Subject" id="rightGroup" />
+          </div>
+          <div class="smallForm-right">
+            <textarea placeholder="Message" class="moreText2"></textarea>
+            <button class="smallButton">SEND</button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-us">
+        <b>CONTACT US <br />FORM</b>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
