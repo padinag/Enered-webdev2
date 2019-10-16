@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Contact Form</title>
+</head>
+<style>
+  body {
+    display: flex;
+    background-image: linear-gradient(to top left, rgb(235, 118, 196), rgb(199, 17, 138));
+    width: 100%;
+    height: 900px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .container {
+    background: white;
+    width: 90%;
+    height: 90%;
+  }
+
+  label {
+    display: block;
+    color: grey;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-weight: bold;
+    line-height: 2em;
+    padding-left: 8%;
+  }
+
+  legend {
+    text-align: center;
+  }
+
+  .line {
+    width: 90%;
+    height: 6em;
+    margin-bottom: 4em;
+    margin-left: 8%;
+
+  }
+
+  ::placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    padding-left: 15px;
+  }
+
+  #nameFirst,
+  #nameLast {
+    width: 43%;
+  }
+
+  #nameLast {
+    margin-left: 3%;
+  }
+
+  textarea {
+    margin-left: 8%;
+    height: 8em;
+    width: 90%;
+    border-color: rgb(238, 228, 228);
+  }
+
+  .buttonSubmit {
+    text-align: center;
+  }
+
+  input[type="button"] {
+    margin-top: 2%;
+    text-align: center;
+    background: black;
+    color: white;
+    height: 5em;
+    width: 20%;
+    border-radius: 20px;
+    font-size: 1em;
+    letter-spacing: 2px;
+    ;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <form>
+      <legend>
+        <h2>Contact us!</h2>
+      </legend>
+      <div>
+        <label for="input">YOUR NAME*</label>
+        <input class="line" id="nameFirst" type="text" placeholder="placeholder text" />
+        <input class="line" id="nameLast" type="text" placeholder="placeholder text" />
+      </div>
+      <label for="input">EMAIL ADDRESS*</label>
+      <input class="line" id="email" type="email" placeholder="Eg. example@email.com" />
+      <div>
+        <label for="input">PHONE NUMBER*</label>
+        <input class="line" id="phone" type="text" placeholder="Eg. +155556666667" />
+      </div>
+      <div>
+        <label for="input">Message*</label>
+        <textarea placeholder="Please enter your comments"></textarea>
+      </div>
+    </form>
+    <div class="buttonSubmit">
+      <input type="button" value="Submit" />
+    </div>
+  </div>
+</body>
+
+</html>
