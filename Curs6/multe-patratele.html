@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>multe divs</title>
+    <script>
+    var a =5;
+    console.log(a);
+    </script>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+    }
+
+    .container {
+        background: black;
+    }
+
+    .top {
+        height: 100%;
+        background: red;
+
+    }
+
+    .top_left {
+        display: inline-block;
+        height: 150px;
+        width: 23%;
+        background: yellow;
+        margin-right: 2.66%;
+    }
+
+    .top_middle {
+        display: inline-block;
+        width: 23%;
+        height: 150px;
+        background: yellow;
+        margin-right: 2.66%;
+    }
+
+    .top_right {
+        display: inline-block;
+        width: 23%;
+        height: 150px;
+        background: yellow;
+        margin-right: 2.66%
+    }
+
+    .top_right2 {
+        display: inline-block;
+        width: 23%;
+        height: 150px;
+        background: yellow;
+    }
+    
+
+    .middle {
+        height: 100px;
+    }
+
+    .bottom {
+        display: flex;
+        height: 100px;
+        background: violet;
+    }
+
+    .bottom_left {
+        flex: 1;
+        height: inherit;
+        margin-right: 5px;
+        background: blue;
+    }
+
+    .bottom_right {
+        flex: 1;
+        height: inherit;
+        background: orange;
+    }
+
+    .bottom2 {
+        height: 100px;
+        background: violet;
+    }
+
+    .bottom2_left {
+        display: inline-block;
+        width: calc(50% - 2.5px);
+        height: inherit;
+        margin-right: 5px;
+        background: orange;
+    }
+
+    .bottom2_right {
+        display: inline-block;
+        width: calc(50% - 2.5px);
+        height: inherit;
+        background: orange;
+    }
+
+    @media only screen and (max-width: 1000px) {
+
+        .top_left {
+            background: green;
+            width: 45%;
+            margin-right: 10%;
+            margin-bottom: 10%;
+        }
+
+        .top_middle {
+            background: green;
+            width: 45%;
+            margin: 0;
+            margin-bottom: 10%;
+        }
+
+        .top_right {
+            background: green;
+            width: 45%;
+            margin-right: 10%;
+
+        }
+
+        .top_right2 {
+            background: green;
+            width: 45%;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .top_left {
+                background: green;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10%;
+            }
+
+            .top_middle {
+                background: green;
+                width: 100%;
+                margin: 0;
+                margin-bottom: 10%;
+            }
+
+            .top_right {
+                background: green;
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 10%;
+
+            }
+
+            .top_right2 {
+                background: green;
+                width: 100%;
+            }
+
+            .bottom {
+                flex-direction: column;
+            }
+
+            .bottom_left {
+                margin-right: 0;
+            }
+</style>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="top_left"></div>
+            <div class="top_middle"></div>
+            <div class="top_right"></div>
+            <div class="top_right2"></div>
+        </div>
+        <div class="middle">
+            <div></div>
+        </div>
+        <div class="bottom">
+            <div class="bottom_left"></div>
+            <div class="bottom_right"></div>
+        </div>
+        <div class="bottom2">
+            <div class="bottom2_left"></div>
+            <div class="bottom2_right"></div>
+        </div>
+    </div>
+</body>
+
+</html>
