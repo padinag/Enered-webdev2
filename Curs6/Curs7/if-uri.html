@@ -66,20 +66,54 @@
     //         console.log("numerele sunt egale");
     //     }
     // }
-    console.warn("---------------------");
-    var m1 = 10;
-    var m2 = 15;
-    var m3 = 15;
-    var maxim;
-    maxim = m1;
-    if (maxim < m2) {
-        maxim = m2;
-    }
-    if (maxim < m3){
-        maxim = m3;
-    }
-    console.log("maximul este", maxim)
+    // console.warn("---------------------");
+    // var m1 = 10;
+    // var m2 = 15;
+    // var m3 = 12;
+    // var maxim;
+    // maxim = m1;
+    // if (maxim < m2) {
+    //     maxim = m2;
+    // }
+    // if (maxim < m3){
+    //     maxim = m3;
+    // }
+    // console.log("maximul este", maxim);
+console.warn("-----------------")
+//sortare
+// var a1, a2, aux;
+// a1 = 10;
+// a2 = 15;
+// if(a1 > a2){
+//     aux = a1;
+//     a1 = a2;
+//     a2 = aux;
+// }
+// console.log("numerele in ordine crescatoare sunt", a1, a2);
 
+
+var a1 = Math.round(Math.random() * 1000);
+var a2 = Math.round(Math.random() * 1000);
+var a3 = Math.round(Math.random() * 1000);
+var aux;
+
+if (a1 > a2){
+    aux = a1;
+    a1 = a2;
+    a2 = aux;
+}
+if (a1 > a3){
+    aux = a1;
+    a1 = a3;
+    a3 = aux;
+}
+if (a2 > a3){
+    aux = a2;
+    a2 = a3;
+    a3 = aux;
+}
+
+console.log("numerele in ordine cresc", a1, a2, a3);
 
 </script>
 
