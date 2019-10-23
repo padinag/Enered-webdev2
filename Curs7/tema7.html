@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Tema7</title>
-</head>
-<script>
+  </head>
+  <script>
     //se genereze un numar aleator cu valori intre [100 si 1000)
-    var a = (Math.round(Math.random() * (1000 - 100 - 1) + 100));
+    var a = Math.round(Math.random() * (1000 - 100 - 1) + 100);
     console.log(a);
 
     //daca e divizibil cu 3 si 5 atunci e divizibil cu 15
-    var a = 31;
+    var a = 35;
     if (a % 3 == 0) {
-        if (a % 5 == 0) {
-            console.log(a, " divizibil cu 15");
-        }
+      if (a % 5 == 0) {
+        console.log(a, " divizibil cu 15");
+      }
     } else {
-        console.log(a, " nu e divizibil cu 15 ");
-    };
+      console.log(a, " nu e divizibil cu 15 ");
+    }
 
+    //numar cu 3 cifre in ordine crescatoare sau nu
+    var n, a, b, c;
+    n = 756;
+    c = n % 10;
+    console.log(c);
+    b = Math.floor(n / 10) % 10;
+    console.log(b);
+    a = Math.floor(n / 100) % 10;
+    console.log(a);
+    if (a < b) {
+      if (b < c) {
+        console.log("cifrele sunt in ordine crescatoare");
+      } else {
+        console.log("cifrele nu sunt in ordine");
+      }
+    } else {
+      if (b > c) {
+        console.log("cifrele sunt in ordine descrescatoare");
+      } else {
+        console.log("cifrele nu sunt in ordine");
+      }
+    }
+  </script>
 
-</script>
-
-<body>
+  <body>
     The content of the document......
-</body>
-
+  </body>
 </html>
