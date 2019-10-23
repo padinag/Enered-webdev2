@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bouncing ball</title>
+</head>
+<style>
+    .bila {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: red;
+        display: inline-block;
+        position: absolute;
+        transform:translate(-50%, -50%);
+    }
+</style>
+
+
+<script>
+    // var pozX = 0;
+    // var leftLimit = 0;
+    // var rightLimit = 450;
+    // var div;
+    // var pas = 5;
+    // document.addEventListener("DOMContentLoaded", start); //*
+
+    // function start() {//*
+    //     div = document.getElementsByClassName("bila")[0];
+    //     div.style.left = pozX + "px";
+    // }
+    // setInterval(miscaBila, 10);
+    // function miscaBila() {
+    //     pozX+= pas;
+    //     if (pozX > rightLimit || pozX < leftLimit) {
+    //         console.log(pozX);
+    //         pas *= -1; //= rightLimit;
+    //     }
+        
+    //     div.style.left = pozX + "px";
+    // }
+
+    var pozX = 10;
+    var leftLimit = 10;
+    var rightLimit = 50;
+    var div;
+    var pas = 1;
+    document.addEventListener("DOMContentLoaded", start); //*asa selectez elemente
+
+    function start() {//*asa modific proprietati din stil
+        div = document.getElementsByClassName("bila")[0];
+        div.style.left = 50 + "px";
+    }
+    setInterval(miscaBila, 10);
+    function miscaBila() {
+        pozX+= pas;
+        if (pozX > rightLimit || pozX < leftLimit) {
+            console.log(pozX);
+            pas *= -1; //= rightLimit;
+        }
+        
+        div.style.width = pozX + "px";
+        div.style.height = pozX + "px";
+    }
+
+</script>
+
+<body>
+    <div class="bila"></div>
+
+</body>
+
+</html>

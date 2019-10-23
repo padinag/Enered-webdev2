@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Probleme</title>
+</head>
+<script>
+    var n = 1234;
+    var sumaCifrelor = 0;
+    var cifra;
+
+    while(n > 0){
+        cifra = n % 10;
+        sumaCifrelor *=10;
+        sumaCifrelor += cifra;
+        n = parseInt(n/10);
+    }console.log(sumaCifrelor);
+    
+
+</script>
+
+<body>
+    The content of the document......
+</body>
+
+</html>
