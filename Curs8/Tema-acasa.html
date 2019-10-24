@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Probleme</title>
+  </head>
+  <script>
+    //problema 1 - palindrom
+    var n = 1345654321;
+    var nNou = 0;
+    var cifra;
+    while (n > 0) {
+      cifra = n % 10;
+      nNou *= 10;
+      nNou += cifra;
+      n = parseInt(n / 10);
+    }
+    if (n === nNou) {
+      console.log("numerele sunt egale");
+    } else {
+      console.log(n, nNou);
+    }
+
+    //problema 2
+    
+  </script>
+  <body>
+    The content of the document......
+  </body>
+</html>
