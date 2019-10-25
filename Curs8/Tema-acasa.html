@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Probleme</title>
-  </head>
-  <script>
+
+<head>
+  <title>Probleme</title>
+</head>
+<script>
     //   //problema 1 - palindrom
     //   var n = 1345654321;
     //   var nNou = 0;
@@ -103,18 +104,45 @@
     // }
 
     //problema 7- maximul si minimul dintr-o secventa
-    var numar, nrNumere;
-    nrNumere = 0;
-    numarIntermediar = 0;
-    while (nrNumere <= 99) {
-      nrNumere++;
-      numarNou = Math.floor(Math.random() * 10000);
-      console.log(numarNou);
-    }
-    // problema 8- impartirea unui numar cu un nr par de cifre
-  </script>
+    // var numar, nrNumere;
+    // nrNumere = 0;
+    // nMax = 0;
+    // nMin = 9999;
+    // while (nrNumere <= 99) {
+    //   nrNumere++;
+    //   numar = Math.floor(Math.random() * 10000);
+    //   console.log(numar);
+    //   if (numar < nMin){
+    //     nMin = numar;
+    //   }else {
+    //     if (numar > nMax){
+    //       nMax = numar;
+    //     }
+    //   }
+    // }
+    // console.log(nMin, nMax);
 
-  <body>
-    The content of the document......
-  </body>
+    // problema 8- impartirea unui numar cu un nr par de cifre
+    var nr, nrCifre, n1, n2, putere, putereAleatoare;
+    nrCifre = 0;
+    nr = Math.floor(Math.random() * (Math.pow(10, 12) - 1 ));
+    nrInit = nr;
+    while(nr > 0){
+      nrCifre++;
+      nr = parseInt(nr / 10);
+    }
+    if (nrCifre % 2 == 0){
+      putere = nrCifre / 2;
+      n1 = parseInt(nrInit / Math.pow(10, putere));
+      n2 = nrInit - n1 * Math.pow(10, putere);
+      console.log(nrInit, nrCifre, n1, n2);
+    } else {
+      console.log(nrInit, nrCifre, "numar de cifre impar");
+    }
+</script>
+
+<body>
+  The content of the document......
+</body>
+
 </html>
