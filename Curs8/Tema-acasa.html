@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Probleme</title>
+  </head>
+  <script>
+    //   //problema 1 - palindrom
+    //   var n = 1345654321;
+    //   var nNou = 0;
+    //   var cifra;
+    //   while (n > 0) {
+    //     cifra = n % 10;
+    //     nNou *= 10;
+    //     nNou += cifra;
+    //     n = parseInt(n / 10);
+    //   }
+    //   if (n === nNou) {
+    //     console.log("numerele sunt egale");
+    //   } else {
+    //     console.log("numerele nu sunt egale", n, nNou);
+    //   }
 
-<head>
-  <title>Probleme</title>
-</head>
-<script>
-//   //problema 1 - palindrom
-//   var n = 1345654321;
-//   var nNou = 0;
-//   var cifra;
-//   while (n > 0) {
-//     cifra = n % 10;
-//     nNou *= 10;
-//     nNou += cifra;
-//     n = parseInt(n / 10);
-//   }
-//   if (n === nNou) {
-//     console.log("numerele sunt egale");
-//   } else {
-//     console.log("numerele nu sunt egale", n, nNou);
-//   }
+    //   //problema 2
+    //   var n, m, numarCifre, cifra;
+    //   n = 1235;
+    //   mInit = 6789;
+    //   mFinal = 6789;
+    //   numarCifra = 0;
+    //   while (mFinal > 0) {
+    //     cifra = mFinal % 10;
+    //     numarCifra++;
+    //     mFinal = parseInt(mFinal / 10);
+    //   }
+    //   console.log(n * Math.pow(10, numarCifra) + mInit);
 
-//   //problema 2
-//   var n, m, numarCifre, cifra;
-//   n = 1235;
-//   mInit = 6789;
-//   mFinal = 6789;
-//   numarCifra = 0;
-//   while (mFinal > 0) {
-//     cifra = mFinal % 10;
-//     numarCifra++;
-//     mFinal = parseInt(mFinal / 10);
-//   } 
-//   console.log(n * Math.pow(10, numarCifra) + mInit);
+    //   //problema 3- while
+    //   var n = 2;
+    //   var m = 8;
+    //   var putere = 1;
+    //   var i = 1;
+    //   while (i <= m) {
+    //     i++;
+    //     putere *= n;
+    //   }
+    //   console.log(putere);
 
-//   //problema 3- while
-//   var n = 2;
-//   var m = 8;
-//   var putere = 1;
-//   var i = 1;
-//   while (i <= m) {
-//     i++;
-//     putere *= n;
-//   } 
-//   console.log(putere);
+    //   //problema 3 - for
+    //   var a = 2;
+    //   var b = 8;
+    //   var putere = 1;
+    //   for (var i = 1; i <= b; i++) {
+    //     putere *= a;
+    //   }
+    //   console.log(putere);
 
-//   //problema 3 - for
-//   var a = 2;
-//   var b = 8;
-//   var putere = 1;
-//   for (var i = 1; i <= b; i++) {
-//     putere *= a;
-//   }
-//   console.log(putere);
+    //problema 4 - generat 100 numere printat pare
+    // var numar, nrNumere;
+    // nrNumere = 0;
+    // numar = 0;
+    // while (nrNumere <= 99) {
+    //   nrNumere++;
+    //   numar = Math.floor(Math.random() * 10000);
+    //   if (numar % 2 == 0) {
+    //     console.log(numar, nrNumere);
+    //   } else {
+    // console.log("not even");
+    // }
 
-//   //problema 4 - generat 100 numere printat pare
-// var numar, nrNumere;
-// nrNumere = 0;
-// numar = 0;
-// while(nrNumere <= 100){
-//   nrNumere++;
-//   numar = Math.floor(Math.random() * 10000);
-//  if (numar % 2 == 0){
-//    console.log(numar, nrNumere);
-// }else ("not even");
-// }
+    //problema 5 - patrate perfecte
 
-//problema 5 - patrate perfecte
+    // var n, nr, radacina;
+    // nr = 0;
+    // n = 100;
+    // while(nr <= n){
+    // nr++;
+    // radacina = Math.sqrt(nr);
+    // if (radacina == parseInt(radacina)){
+    //   console.log(nr ,"este patrat perfect");
+    // } else {
+    //   console.log(nr);
+    // }
+    // }
 
-// var n, nr, r;
-// nr = 0;
-// n = 100;
-// while(nr <= n){
-// nr++;
-// r = Math.sqrt(nr);
-// if (r == parseInt(r)){
-//   console.log(nr ,"este patrat perfect");
-// } else {
-//   console.log(nr);
-// }
-// }
+    //problema 6 - nr. prim
+    // var nr, nrDiv, impartitor, rest;
+    // nr = 741;
+    // nrDiv = 0;
+    // impartitor = 1;
+    // rest;
+    // while (impartitor <= nr) {
+    //   rest = nr % impartitor;
+    //   impartitor++;
+    //   if (rest == 0) {
+    //     nrDiv++;
+    //   } else {
+    //     nrDiv += 0;
+    //   }
+    // }
+    // if (nrDiv == 2) {
+    //   console.log("este prim", nr);
+    // } else {
+    //   console.log("nu este prim", nr, nrDiv);
+    // }
 
-//problema 6 - nr. prim
-</script>
+    //problema 7- maximul si minimul dintr-o secventa
+    var numar, nrNumere;
+    nrNumere = 0;
+    numarIntermediar = 0;
+    while (nrNumere <= 99) {
+      nrNumere++;
+      numarNou = Math.floor(Math.random() * 10000);
+      console.log(numarNou);
+    }
+    // problema 8- impartirea unui numar cu un nr par de cifre
+  </script>
 
-<body>
-  The content of the document......
-</body>
-
+  <body>
+    The content of the document......
+  </body>
 </html>
