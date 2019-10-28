@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Patrate perfecte</title>
+    <script>
+        var n = 2;
+        var nrDivizori = 0;
+        if(n > 2 && n % 2 == 0){
+            console.log("numarul nu este prim");
+        }else if (n == 2){
+            console.log("numarul este prim");
+        } else {
+        for (var i = 3; i <= n/2; i+=2){
+            if (n % i == 0){
+                nrDivizori++;
+            }
+        }
+        if (nrDivizori == 0){
+            console.log("numarul este prim");
+        }else {
+            console.log("numarul nu este prim");
+        }
+        }
+    </script>
+</head>
+
+<body>
+    The content of the document......
+</body>
+
+</html>

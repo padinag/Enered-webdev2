@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nr. prima</title>
+    <script>
+        var estePrim = isPrime(131);
+        console.log(estePrim);
+        function isPrime(n) {
+            var nrDivizori = 0;
+            if (n > 2 && n % 2 == 0) {
+                return false;
+            } else if (n == 2) {
+                return true;
+            } else {
+                for (var i = 3; i <= n / 2; i += 2) {
+                    if (n % i == 0) {
+                        nrDivizori++;
+                    }
+                }
+                if (nrDivizori == 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    The content of the document......
+</body>
+
+</html>

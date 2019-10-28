@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nr. inversat</title>
+    <script>
+        var n = 123;
+
+        var x = inversare(n);
+        function inversare(n) {
+            var ultimaCifra;
+            var nInvers = 0;
+            while (n > 0) {
+                ultimaCifra = n % 10;
+                nInvers *= 10;
+                nInvers += ultimaCifra;
+                n = parseInt(n / 10);
+            }
+            return nInvers;
+        }
+        console.log(x);
+
+        function palindrom(m) {
+            var inv = inversare(m);
+            if (inv == m) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        var z = palindrom(12321);
+        console.log(z);
+
+
+
+
+    </script>
+</head>
+
+<body>
+    The content of the document......
+</body>
+
+</html>

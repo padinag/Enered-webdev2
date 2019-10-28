@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Palindrom</title>
+<script>
+var n = 123454321;
+var m = n;
+var nInvers =0;
+var ultimaCifra;
+
+while(n > 0){
+    ultimaCifra = n %10;
+    nInvers *=10;
+    nInvers += ultimaCifra;
+    n = parseInt( n  / 10); 
+}
+console.log(n, m);
+
+
+</script>
+</head>
+
+<body>
+The content of the document......
+</body>
+
+</html>

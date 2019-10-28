@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lipire numere</title>
+<script>
+    //sol1
+// var n = 1234;
+// var m = 6789;
+// var m2 = m;
+// var numarCifre =0;
+// while(m > 0){
+// numarCifre++;
+// m = Math.floor(m / 10) ;
+// }
+// n *= 10 ** numarCifre;
+// n += m2;
+// console.log(n);
+
+//sol2
+//  var n1 =1234;
+//  var m1 = 6789;
+//  var unit = "" + n1 + m1;
+//  var numarUnit = parseInt(unit);
+//  console.log(numarUnit);
+
+//sol3
+var n3 = 1234;
+var m3 = 6789;
+var m3Copie = m3;
+var m3Inversat = 0;
+var uc;
+while(m3>0){
+    uc = m3 % 10;
+    m3Inversat *=10;
+    m3Inversat += uc;
+    m3 = parseInt(m3 / 10);
+}
+
+while (m3Inversat > 0){
+    uc = m3Inversat % 10;
+    n3 *= 10;
+    n3 += uc;
+    m3Inversat = parseInt(m3Inversat /10);
+}
+console.log(n3);
+
+</script>
+</head>
+
+<body>
+The content of the document......
+</body>
+
+</html>
