@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .cerc {
+            display: inline-block;
+            background: red;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            var n = 10;
+            var pas = 360 / n;
+            pas = (pas * Math.PI) / 180;
+            var alpha = 0;
+            var div;
+            var cx = 300;
+            var cy = 300;
+            var x;
+            var y;
+            var r = 100;
+            for (var i = 0; i < n; i++) {
+                div = document.createElement("div");
+                div.className = "cerc";
+                x = cx + Math.cos(alpha) * r;
+                y = cy + Math.sin(alpha) * r;
+                div.style.left = x + "px";
+                div.style.top = y + "px";
+                document.body.appendChild(div);
+                alpha += pas;
+
+            }
+
+
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

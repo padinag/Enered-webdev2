@@ -1,31 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>triunghi</title>
-    <script>
-      function makeLine(length) {
-        var line = "";
-        for (var j = 1; j <= length; j++) {
-          line += "* ";
-          console.log(line);
-        }
-        return line + "\n";
+
+<head>
+  <title>triunghi</title>
+  <script>
+    // function makeLine(length) {
+    //   var line = "";
+    //   for (var j = 1; j <= length; j++) {
+    //     line += "* ";
+    //     console.log(line);
+    //   }
+    //   return line + "\n";
+    // }
+    // makeLine(8);
+    // // function buildTriangle(height) {
+    // //   var rows = "";
+    // //   for (var i = 1; i <= height; i++) {
+    // //     var rows = makeLine(height);
+    // //   }
+    // //   return rows;
+    // // }
+    // // console.log(buildTriangle());
+
+    // // buildTriangle(8);
+
+    var s;
+    for (var i = 0; i < 10; i++){
+      s = triunghi(i);
+      console.log(s);
+    }
+
+    // var line = makeLine(10);
+    // console.log(line);
+
+      function triunghi(n) {
+      var s = "";
+      var linie  = "";
+      for (var i = 1; i <= n; i++){
+   
+        s += makeLine(i);
+        s +="\n";
       }
-      makeLine(8);
-      // function buildTriangle(height) {
-      //   var rows = "";
-      //   for (var i = 1; i <= height; i++) {
-      //     var rows = makeLine(height);
-      //   }
-      //   return rows;
-      // }
-      // console.log(buildTriangle());
 
-      // buildTriangle(8);
-    </script>
-  </head>
+      return s;
+    }
 
-  <body>
-    The content of the document......
-  </body>
+
+
+    function makeLine(n){
+      linie  = "";
+        for (var j = 0; j < n; j++){
+          linie +="* ";
+        }
+        return linie;
+    }
+
+  </script>
+</head>
+
+<body>
+  The content of the document......
+</body>
+
 </html>
