@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scope chain</title>
+    <script>
+
+        var a = 4;
+        function foo() {
+            var a = 5;
+            function foo2() {
+                var a = 6;
+                function foo3() {
+                    console.log(a);
+                    /* a va avea valoarea 6
+                    voi cauta in sus in fiecare functie pana dau de o variabila cu numele a care are valoare*/
+                }
+                foo3();
+            }
+            foo2();
+        }
+        foo();
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

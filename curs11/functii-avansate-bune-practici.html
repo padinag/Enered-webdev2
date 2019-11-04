@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Functii avansate</title>
+    <script>
+        //context global
+        var a = 7;
+        function foo() {
+            //context local
+            var a = 5;
+            //se va afisa variablila din contextul local
+            console.log(a);
+            //daca nu declar variabila in contextul local se va folosi cea din contextul global;
+        }
+        foo();
+
+        //exemplul de poluare a spatiului global
+        function foo2() {
+            B = 10; //va fi adaugat automat in window
+            console.log(B);
+        }
+        foo2();
+
+
+        function foo3() {
+            "use strict"
+            //pun "use strict" la inceputul functiei pentru a nu polua spatiul global
+            C = 10;
+            console.log(C);
+        }
+        foo3();
+<!------->
+        var a = 10;
+        function foo4(a) {
+            //parametrul va avea prioritate peste variabila din contextul global
+            console.log(a);
+        }
+        //pentru apelul acestei functii se va lua valoarea variabilei a definite la inceputul programului in contextul global
+        foo4(a);
+
+        
+
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

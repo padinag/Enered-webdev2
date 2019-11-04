@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Utilizatori</title>
+    <script>
+        var utilizatori = "Ana,Mihai,George,Ionel,Gigel";
+        var numeUtilizatori = utilizatori.split(",");
+        console.log(numeUtilizatori);
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start(){
+            var ul = document.createElement("ul");
+            var li;
+            for (var i = 0; i < numeUtilizatori.length; i++){
+                li = document.createElement("li");
+                li.innerHTML = numeUtilizatori[i];
+                ul.appendChild(li);
+            }
+            document.body.appendChild(ul);
+        }
+
+
+
+
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
