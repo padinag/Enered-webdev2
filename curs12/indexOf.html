@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IndexOf</title>
+    <script>
+       function indexOf(a, element, fromIndex = 0){
+           for (var i = fromIndex; i < a.length; i++){
+               if (element == a[i]){
+                   return i;
+               }
+           }
+           return -1;
+       }
+
+
+       var beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(indexOf(beasts, 'bison'));
+// expected output: 1
+
+// start from index 2
+console.log(indexOf(beasts, 'bison', 2));
+// expected output: 4
+
+console.log(indexOf(beasts, 'giraffe'));
+// expected output: -1
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

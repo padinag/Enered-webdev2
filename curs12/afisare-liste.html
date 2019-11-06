@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IndexOf</title>
+    <style>
+    ol{
+        display: inline-block;
+    }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            var ol;
+            var li;
+            for (var i = 1; i <= 10; i++) {
+                ol = document.createElement("ol");
+                document.body.appendChild(ol);
+
+                for (var j = 1; j <= 10; j++) {
+                    li = document.createElement("li");
+                    ol.appendChild(li);
+                }
+            }
+        }
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
