@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            butoane cu linkuri
+        </title>
+        <link href="styles.css" rel="stylesheet" />
+    </head>
+    <style>
+        ul{
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+        }
+       body ul li{
+           display: inline-block;
+            list-style-type: none;
+            background-color: orange;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+           font-size: 14px;
+
+        }
+        body ul li:hover{
+            background: black;
+            color: white;
+        }
+    
+        span{
+            display: inline-block;
+            width: 100px;
+            background: red;
+        }
+        p{
+            width: 100px;
+            background: red;
+        }
+        .selected{
+            background: black;
+            color: white;
+        }
+        .selected:hover{
+            color:red;
+        }
+         li a {
+        display:block;
+        }
+    </style>
+    <body>
+        <ul>
+            <li><a href="index.html">pagina 1</a></li>
+            <li><a href="pagina2.html">pagina 2</a></li>
+            <li class="selected"><a href="pagina3.html">pagina 3</a></li>
+        </ul>
+        <ol>
+            <li>pagina 1</li>
+            <li>pagina 2</li>
+            <li>pagina 3</li>
+        </ol>
+        <!---display block-->
+        <p>paragraf 1</p>
+        <p>paragraf 2</p>
+        <p>paragraf 3</p>
+        <span>paragraf cu span1</span>
+        <span>paragraf cu span2</span>
+        <span>paragraf cu span3</span>
+    </body>
+   
+</html>
