@@ -1,32 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Title of the document</title>
-    <script>
-      var v = [];
-      var nr;
-      var max = 0;
-      var min = 1;
-      for (var i = 0; i < 1000; i++) {
-        nr = Math.random();
-        v.push(nr);
-      }
-      console.log(v);
 
-      function findMaxMin() {
-        for (var i = 0; i < v.length - 1; i++) {
-          if (v[i] > max) {
-            max = v[i];
-          } else {
-            if (v[i] < min) {
-              min = v[i];
-            }
-          }
-          console.log(max, min);
+<head>
+  <title>Title of the document</title>
+  <style>
+    ul{
+      display: inline-block;
+    }
+    .patratele {
+      height: 5px;
+      width: 5px;
+      display: block;
+      margin: 5px;
+      border: solid 1px black;
+    }
+    .buton{
+      margin-top : 30px;
+      margin-left: 20px;
+      display: inline-block;
+    }
+  </style>
+  <script>
+    // var v = [];
+    // var nr;
+    // for (var i = 0; i < 1000; i++) {
+    //   nr = Math.random();
+    //   v.push(nr);
+    // }
+    // console.log(v);
+    console.log("------Max si Min---------")
+    // function findMaxMin(v) {
+    //   var max = null;
+    //   var min = null;
+    //   for (var i = 0; i < v.length - 1; i++) {
+    //     if (max == null || v[i] > max) {
+    //       max = v[i];
+    //     }
+    //     if (min == null || v[i] < min) {
+    //       min = v[i];
+    //     }
+    //   }
+    //   return [min, max];
+    // }
+    //console.log(findMaxMin(v));
+
+
+    console.log("------cele mai mari 10 numere---------")
+
+    // function compareNumbers(a, b) {
+    //   return a - b;
+    // }
+    // var arraySorted = v.sort(compareNumbers);
+    // console.log(arraySorted);
+    // console.log(arraySorted.slice(990));
+
+    console.log("------patrate + buton---------")
+
+    document.addEventListener("DOMContentLoaded", start);
+    function start() {
+      var ul;
+      var div;
+      var buton;
+      for (var i = 1; i <= 5; i++) {
+        ul = document.createElement("ul");
+        document.body.appendChild(ul)
+        for (var j = 0; j < 5; j++) {
+          div = document.createElement("div");
+          div.classList = "patratele";
+          ul.appendChild(div);
         }
       }
-    </script>
-  </head>
+      buton = document.createElement("BUTTON");
+      document.body.appendChild(buton);
+      buton.classList = "buton";
+    }
 
-  <body></body>
+
+
+  </script>
+</head>
+
+<body></body>
+
 </html>
