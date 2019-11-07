@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title of the document</title>
+    <script>
+      var v = [];
+      var nr;
+      var max = 0;
+      var min = 1;
+      for (var i = 0; i < 1000; i++) {
+        nr = Math.random();
+        v.push(nr);
+      }
+      console.log(v);
+
+      function findMaxMin() {
+        for (var i = 0; i < v.length - 1; i++) {
+          if (v[i] > max) {
+            max = v[i];
+          } else {
+            if (v[i] < min) {
+              min = v[i];
+            }
+          }
+          console.log(max, min);
+        }
+      }
+    </script>
+  </head>
+
+  <body></body>
+</html>
