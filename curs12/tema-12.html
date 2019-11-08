@@ -1,85 +1,101 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Title of the document</title>
-  <style>
-    ul{
-      display: inline-block;
-    }
-    .patratele {
-      height: 5px;
-      width: 5px;
-      display: block;
-      margin: 5px;
-      border: solid 1px black;
-    }
-    .buton{
-      margin-top : 30px;
-      margin-left: 20px;
-      display: inline-block;
-    }
-  </style>
-  <script>
-    // var v = [];
-    // var nr;
-    // for (var i = 0; i < 1000; i++) {
-    //   nr = Math.random();
-    //   v.push(nr);
-    // }
-    // console.log(v);
-    console.log("------Max si Min---------")
-    // function findMaxMin(v) {
-    //   var max = null;
-    //   var min = null;
-    //   for (var i = 0; i < v.length - 1; i++) {
-    //     if (max == null || v[i] > max) {
-    //       max = v[i];
-    //     }
-    //     if (min == null || v[i] < min) {
-    //       min = v[i];
-    //     }
-    //   }
-    //   return [min, max];
-    // }
-    //console.log(findMaxMin(v));
-
-
-    console.log("------cele mai mari 10 numere---------")
-
-    // function compareNumbers(a, b) {
-    //   return a - b;
-    // }
-    // var arraySorted = v.sort(compareNumbers);
-    // console.log(arraySorted);
-    // console.log(arraySorted.slice(990));
-
-    console.log("------patrate + buton---------")
-
-    document.addEventListener("DOMContentLoaded", start);
-    function start() {
-      var ul;
-      var div;
-      var buton;
-      for (var i = 1; i <= 5; i++) {
-        ul = document.createElement("ul");
-        document.body.appendChild(ul)
-        for (var j = 0; j < 5; j++) {
-          div = document.createElement("div");
-          div.classList = "patratele";
-          ul.appendChild(div);
-        }
+  <head>
+    <title>Title of the document</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
       }
-      buton = document.createElement("BUTTON");
-      document.body.appendChild(buton);
-      buton.classList = "buton";
-    }
+      ul {
+        display: inline-block;
+      }
+      .patratele {
+        height: 5px;
+        width: 5px;
+        display: block;
+        margin-left: 5px;
+        margin-top: 15px;
+        border: solid 1px black;
+        background: white;
+      }
+      .buton {
+        margin-top: 0;
+        margin-left: 20px;
+      }
 
+      .bigDiv {
+        width: 300px;
+      }
+    </style>
+    <script>
+      // var v = [];
+      // var nr;
+      // for (var i = 0; i < 1000; i++) {
+      //   nr = Math.random();
+      //   v.push(nr);
+      // }
+      // console.log(v);
+      console.log("------Max si Min---------");
+      // function findMaxMin(v) {
+      //   var max = null;
+      //   var min = null;
+      //   for (var i = 0; i < v.length - 1; i++) {
+      //     if (max == null || v[i] > max) {
+      //       max = v[i];
+      //     }
+      //     if (min == null || v[i] < min) {
+      //       min = v[i];
+      //     }
+      //   }
+      //   return [min, max];
+      // }
+      //console.log(findMaxMin(v));
 
+      console.log("------cele mai mari 10 numere---------");
 
-  </script>
-</head>
+      // function compareNumbers(a, b) {
+      //   return a - b;
+      // }
+      // var arraySorted = v.sort(compareNumbers);
+      // console.log(arraySorted);
+      // console.log(arraySorted.slice(990));
 
-<body></body>
+      console.log("------patrate + buton---------");
 
+      document.addEventListener("DOMContentLoaded", start);
+      function start() {
+        var ul;
+        var div;
+        var container = document.createElement("div");
+        document.body.appendChild(container);
+        container.classList = "container";
+
+        var bigDiv = document.createElement("div");
+        container.appendChild(bigDiv);
+        bigDiv.classList = "bigDiv";
+
+        var buttonContainer = document.createElement("div");
+        container.appendChild(buttonContainer);
+        buttonContainer.classList = "buttonContainer";
+
+        var buton;
+        for (var i = 1; i <= 5; i++) {
+          ul = document.createElement("ul");
+          bigDiv.appendChild(ul);
+          for (var j = 0; j < 5; j++) {
+            div = document.createElement("div");
+            div.classList = "patratele";
+            ul.appendChild(div);
+          }
+        }
+        buton = document.createElement("BUTTON");
+        buton.innerHTML = "Click me";
+        buttonContainer.appendChild(buton);
+        buton.classList = "buton";
+      }
+    </script>
+  </head>
+
+  <body></body>
 </html>
