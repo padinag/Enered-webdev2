@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mutat-patratel</title>
+    <style>
+        .divLeft {
+            border: 1px solid black;
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .divRight {
+            border: 1px solid black;
+            width: 15px;
+            height: 15px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 10%;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            var div;
+            for (var i = 0; i < 5; i++) {
+                div = document.createElement("div");
+                document.body.appendChild(div);
+                div.classList = "divLeft";
+                div.innerHTML = i;
+            }
+            var divs = document.querySelectorAll(".divLeft");
+            console.log(divs);
+            for (var j = 0; j < divs.length; j++) {
+                divs[j].addEventListener("click", myClickFunction);
+            }
+                function myClickFunction() {
+                    if (this.classList == "divLeft") {
+                        this.classList = "divRight";
+                    } else {
+                        this.classList = "divLeft";
+                    }
+                }
+            
+        }
+
+    </script>
+</head>
+
+<body></body>
+
+</html>
