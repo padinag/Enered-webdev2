@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Min Max in vector</title>
+    <style>
+        .basicDiv {
+            position: absolute;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border: 1px solid black;
+        }
+
+        .parentDiv {
+            display: inline-block;
+            width: 100px;
+        }
+    </style>
+    <script>
+        var parentDiv;
+        var divs = [];
+        var button;
+        var selectedDiv;
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            var parentDiv = document.createElement("div");
+            parentDiv.className = "parentDiv";
+            document.body.appendChild(parentDiv);
+
+            button = document.createElement("button");
+            document.body.appendChild(button);
+            button.innerHTML = "coloreaza";
+            button.addEventListener("click", buttonClick);
+            var div;
+            var nX = 0;
+            var nY = 0;
+            for (var i = 0; i < 25; i++) {
+                div = document.createElement("div");
+                divs.push(div);
+                div.style.top = nY + "px";
+                div.style.left = nX + "px";
+                div.classList = "basicDiv"
+                nX += 15;
+                if ((i + 1) % 5 == 0) {
+                    nY += 15;
+                    nX = 0;
+                }
+                parentDiv.appendChild(div);
+            }
+        }
+        setInterval(buttonClick, 150);
+        
+        function buttonClick(){
+            if (selectedDiv != undefined){
+                divs[selectedDiv].style.background = "";
+            }
+               var n = Math.floor(Math.random() * 25);
+               selectedDiv = n;
+            var div = divs[n];
+            div.style.background = "green";
+             
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

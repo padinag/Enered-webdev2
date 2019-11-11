@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patratel deplasabil</title>
+    <style>
+        .patrat {
+            width: 50px;
+            height: 50px;
+            background: red;
+            margin-left: 0;
+            cursor: pointer;
+            transition: margin-left 1s;
+        }
+    </style>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            for (var i = 0; i < 5; i++) {
+                div = document.createElement("div");
+                document.body.appendChild(div);
+                div.className = "patrat";
+                div.addEventListener("click", divClick);
+            }
+        }
+        function divClick() {
+              if (this.style.marginLeft == "500px") {
+                this.style.marginLeft = "0";
+            } else {
+                this.style.marginLeft = "500px";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

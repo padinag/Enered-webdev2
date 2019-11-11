@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Siruri</title>
+    <style>
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            var button = document.getElementsByTagName("button")[0];
+            button.addEventListener("click", buttonClick);
+        }
+        function buttonClick() {
+            var inputCeCaut;
+            var inputUndeCaut;
+            var inputs = document.getElementsByTagName("input");
+            inputCeCaut = inputs[0];
+            inputUndeCaut = inputs[1];
+            var s1 = inputCeCaut.value;
+            var s2 = inputUndeCaut.value;
+
+            var indexes = [];
+            var index = s2.indexOf(s1);
+            if (index != -1){
+                indexes.push(index);
+            }
+            indexes.push(index);
+
+            while (index != -1) {
+                index = s2.indexOf(s1, index + s1.length);
+                if (index != -1) {
+                    indexes.push(index);
+                }
+            }
+            console.log(s2.indexOf(s1));
+        }
+    </script>
+</head>
+
+<body>
+    <label for="ceCaut"> ce caut</label>
+    <input type="text" name="ceCaut" )>
+    <label for="undeCaut"> unde caut</label>
+    <input type="text" name="undeCaut" )>
+    <button>verifica</button>
+</body>
+
+</html>
