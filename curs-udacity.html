@@ -1,65 +1,107 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>triunghi</title>
+    <script>
+      // function makeLine(length) {
+      //   var line = "";
+      //   for (var j = 1; j <= length; j++) {
+      //     line += "* ";
+      //     console.log(line);
+      //   }
+      //   return line + "\n";
+      // }
+      // makeLine(8);
+      // // function buildTriangle(height) {
+      // //   var rows = "";
+      // //   for (var i = 1; i <= height; i++) {
+      // //     var rows = makeLine(height);
+      // //   }
+      // //   return rows;
+      // // }
+      // // console.log(buildTriangle());
 
-<head>
-  <title>triunghi</title>
-  <script>
-    // function makeLine(length) {
-    //   var line = "";
-    //   for (var j = 1; j <= length; j++) {
-    //     line += "* ";
-    //     console.log(line);
-    //   }
-    //   return line + "\n";
-    // }
-    // makeLine(8);
-    // // function buildTriangle(height) {
-    // //   var rows = "";
-    // //   for (var i = 1; i <= height; i++) {
-    // //     var rows = makeLine(height);
-    // //   }
-    // //   return rows;
-    // // }
-    // // console.log(buildTriangle());
+      // // buildTriangle(8);
 
-    // // buildTriangle(8);
+      // var s;
+      // for (var i = 0; i < 10; i++){
+      //   s = triunghi(i);
+      //   console.log(s);
+      // }
 
-    var s;
-    for (var i = 0; i < 10; i++){
-      s = triunghi(i);
-      console.log(s);
-    }
+      // var line = makeLine(10);
+      // console.log(line);
 
-    // var line = makeLine(10);
-    // console.log(line);
+      //   function triunghi(n) {
+      //   var s = "";
+      //   var linie  = "";
+      //   for (var i = 1; i <= n; i++){
 
-      function triunghi(n) {
-      var s = "";
-      var linie  = "";
-      for (var i = 1; i <= n; i++){
-   
-        s += makeLine(i);
-        s +="\n";
-      }
+      //     s += makeLine(i);
+      //     s +="\n";
+      //   }
 
-      return s;
-    }
+      //   return s;
+      // }
 
+      // function makeLine(n){
+      //   linie  = "";
+      //     for (var j = 0; j < n; j++){
+      //       linie +="* ";
+      //     }
+      //     return linie;
+      // }
 
-
-    function makeLine(n){
-      linie  = "";
-        for (var j = 0; j < n; j++){
-          linie +="* ";
+      var test = [
+        12,
+        929,
+        11,
+        3,
+        199,
+        1000,
+        7,
+        1,
+        24,
+        37,
+        4,
+        19,
+        300,
+        3775,
+        299,
+        36,
+        209,
+        148,
+        169,
+        299,
+        6,
+        109,
+        20,
+        58,
+        139,
+        59,
+        3,
+        1,
+        139
+      ];
+      var newArray = [];
+      function add(test) {
+        for (var i = 0; i < test.length; i++) {
+          if (test[i] % 3 == 0) {
+            test[i] += 100;
+            newArray.push(test[i]);
+          }
         }
-        return linie;
-    }
+        return newArray;
+      }
+      console.log(add(test));
+      // if (test[i] % 3 === 0) {
+      //   test[i] += 100;
+      //   newArray.push(test[i]);
+      //  newArray.push(test[i]);
+    </script>
+  </head>
 
-  </script>
-</head>
-
-<body>
-  The content of the document......
-</body>
-
+  <body>
+    The content of the document......
+  </body>
 </html>
