@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dictionare</title>
+</head>
+<style>
+    .patrat {
+        position: absolute;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        background: rgb(236, 223, 223);
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    .container {
+        position: relative;
+        display: inline-block;
+        width: 440px;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+    var lineLength = 4;
+    var squareColors = {};
+    var square1;
+    var square2;
+    var container;
+    var noOfGroups = 0;
+    var maxTries = 30;
+    var noOfTries = 0;
+
+    function start() {
+        container = document.createElement("div");
+        container.className = "container";
+        document.body.appendChild(container);
+        createSquares();
+
+    }
+
+    function createSquares() {
+        var colors = ["BlueViolet", "BlueViolet",
+            "Blue", "Blue",
+            "DarkOrchid", "DarkOrchid",
+            "DarkOrange", "DarkOrange",
+            "DodgerBlue", "DodgerBlue",
+            "DarkSlateBlue", "DarkSlateBlue",
+            "Gold", "Gold",
+            "HotPink", "HotPink"
+        ];
+        var patrat;
+        var id;
+        var index;
+        var nX = 0;
+        var nY = 0;
+        for (var i = 0; i < lineLength; i++) {
+            for (var j = 0; j < lineLength; j++) {
+                patrat = document.createElement("div");
+                patrat.className = "patrat";
+                patrat.style.left = nX + "px";
+                patrat.style.top = nY + "px";
+                id = "p-" + i + "-" + j;
+                patrat.id = id;
+                index = Math.floor(Math.random() * colors.length);
+                patrat.style.background = colors[index];
+                squareColors[id] = colors[index];
+                colors.splice(index, 1)
+                patrat.addEventListener("click", patratClick);
+                container.appendChild(patrat);
+                nX += 110;
+            }
+            nY += 110;
+            nX = 0;
+        }
+    }
+    function patratClick() {
+        var id = this.id;
+        if (square1 == undefined) {
+            square1 = id;
+            this.style.background = squareColors[id];
+        } else {
+            // console.log("sunt in else");
+            if (square1 == id) {
+                return;
+            }
+            square2 = id;
+            this.style.background = squareColors[id];
+
+            if (squareColors[square1] == squareColors[square2]) {
+                //trebuie sa scot patratelele
+                container.style.pointerEvents = "none";
+                setTimeout(removeSquares, 500);
+            } else {
+                container.style.pointerEvents = "none";
+                setTimeout(resetSquare, 500);
+                //trebuie sa resetam patratelele
+            }
+        }
+    }
+    // console.log(colors);
+    // console.log(squareColors);
+
+    function removeSquares() {
+        var p1 = document.getElementById(square1);
+        var p2 = document.getElementById(square2);
+        p1.remove();
+        p2.remove();
+        // p1.style.visibility = "hidden";
+        // p2.style.visibility = "hidden";
+        square1 = undefined;
+        square2 = undefined;
+        container.style.pointerEvents = "all";
+        noOfGroups++;
+        if (noOfGroups == 8) {
+            noOfGroups = 0;
+            noOfTries = 0;
+            window.alert("ai gastigat");
+            createSquares();
+        }
+    }
+
+    function resetSquare() {
+        var p1 = document.getElementById(square1);
+        var p2 = document.getElementById(square2);
+        p1.style.background = "";
+        p2.style.background = "";
+        square1 = undefined;
+        square2 = undefined;
+        container.style.pointerEvents = "all";
+        noOfTries++;
+        if (noOfTries =- maxTries){
+            noOfTries = 0;
+            noOfGroups = 0;
+            window.alert("ai pierdut");
+            container.innerHTML = "";
+            createSquares();
+        }
+    }
+
+</script>
+
+<body>
+
+
+
+</body>
+
+</html>

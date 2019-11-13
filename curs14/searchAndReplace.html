@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search and Replace</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+    var replace;
+    var toReplace;
+    var text;
+    function start() {
+        replace = document.getElementsByClassName("replace")[0];
+        toReplace = document.getElementsByClassName("toReplace")[0];
+        text = document.getElementsByClassName("text")[0];
+        button = document.getElementsByClassName("button")[0];
+        text.value = "ana are mere\nana are mere\nana are mere\nana are mere\n"
+        button.addEventListener("click", buttonClick);
+
+        function buttonClick() {
+
+            var replaceValue = replace.value;
+            var toReplaceValue = toReplace.value;
+            var textValue = text.value;
+            var newText = textValue.replace(replaceValue, toReplaceValue);
+
+
+            // while (textValue.indexOf(replaceValue) != -1) {
+            //     textValue = textValue.replace(replaceValue, toReplaceValue);
+            // }
+            textValue = textValue.replace(new RegExp(replaceValue, "g"), toReplaceValue);
+            console.log(textValue.replace(replaceValue, toReplaceValue));
+            text.value = textValue;
+        }
+    }
+
+
+
+</script>
+
+<body>
+    <label for="replace"> replace</label>
+    <input class="replace" type="text" name="replace" )>
+    </input>
+    <label for="toRreplace"> toReplace </label>
+    <input class="toReplace" type="text" name="toReplace" )>
+    </input>
+    <label for="text"> text </label>
+    <textarea class="text" type="text" name="text" rows=4 height="400px" )>
+    </textarea>
+    <button class="button">search and replace</button>
+</body>
+
+</html>
