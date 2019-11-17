@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 290px;
+            width: 240px;
+            border: 1px solid black;
+            background: pink;
+            position: relative;
+        }
+
+        .patrate {
+            display: inline-block;
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            margin-top: 10px;
+            margin-left: 10px;
+            opacity: 1;
+        }
+
+        #div1 {
+            background: yellow;
+        }
+
+        #div2 {
+            background: green;
+        }
+
+        #div3 {
+            background: blue
+        }
+
+        #div4 {
+            background: red;
+        }
+
+        .button {
+            display: inline-block;
+            vertical-align: bottom;
+            position: absolute;
+            margin-top: 250px;
+            margin-left: 80px;
+            width: 80px;
+            height: 30px;
+            background: black;
+            color: white;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var patrate = [];
+        var div;
+        var id;
+        var button;
+        var container;
+
+        function start() {
+            container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
+            button = document.createElement("button");
+            button.className = "button";
+            container.appendChild(button);
+            button.textContent = "Play";
+            button.addEventListener("click", buttonClick);
+            for (var i = 1; i <= 4; i++) {
+                var div = document.createElement("div");
+                div.classList = "patrate";
+                div.id = "div" + i;
+                container.appendChild(div);
+                patrate.push(div);
+            }
+            console.log(patrate);
+
+        }
+
+
+        function buttonClick(e) {
+            var counter = 0;
+            var pattern = [];
+            for (var i = 0; i < Math.floor(Math.random()*7 + 1); i++){
+            var luminoase = patrate[Math.floor(Math.random() * patrate.length)];
+            luminoase.style.opacity = 0.5;
+            setTimeout(() => {
+                luminoase.style.opacity = 1;
+            }, 200);
+            pattern.push(luminoase[id]);
+            }
+console.log(pattern);
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
