@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>addEventListener</title>
+    <style>
+        .container {
+            width: 330px;
+            height: 600px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .patrat {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 10px;
+            background: white;
+        }
+        .patratOver{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+            margin-left: 10px;
+            margin-top: 10px;
+            background: red;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+        function start() {
+            var container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
+            for (var i = 0; i < 10; i++) {
+                var patrat = document.createElement("div");
+                patrat.classList = "patrat"
+                container.appendChild(patrat);
+                patrat.addEventListener("mouseout", divMouseOut);
+                patrat.addEventListener("mouseover", divMouseOver);
+            }
+
+        }
+
+        function divMouseOver(e){
+            this.className = "patratOver";
+            //this.classList.add("patratOver");
+        }
+
+        function divMouseOut(e){
+            this.className = "patrat";
+            //this.classList.remove("patratOver");
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

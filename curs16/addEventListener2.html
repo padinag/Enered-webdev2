@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>addEventListener2</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            display: flex;
+            border: 1px solid black;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .innerContainer {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+        function start() {
+            var container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
+
+            container.addEventListener("mouseenter", div1MouseOver);
+            container.addEventListener("mouseleave", div1MouseOut);
+
+
+            var innerContainer = document.createElement("div");
+            innerContainer.className = "innerContainer";
+            container.appendChild(innerContainer);
+            innerContainer.addEventListener("mouseenter", div2MouseOver);
+            innerContainer.addEventListener("mouseleave", div2MouseOut);
+        
+        container.addEventListener("click", containerClick);
+        innerContainer.addEventListener("click", innerContainerClick);
+
+
+        }
+
+
+
+        function div1MouseOver(e) {
+            this.style.background = "red"
+            //this.classList.add("patratOver");
+        }
+
+        function div1MouseOut(e) {
+            this.style.background = "";
+            //this.classList.remove("patratOver");
+        }
+
+        function div2MouseOver(e) {
+            this.style.background = "blue"
+            //this.classList.add("patratOver");
+        }
+
+        function div2MouseOut(e) {
+            this.style.background = "";
+            //this.classList.remove("patratOver");
+        }
+
+        function containerClick(e){
+            console.log("click", this);
+        }
+
+        function innerContainerClick(e){
+            console.log("click", this);
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
