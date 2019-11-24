@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            align-items: center;
+            flex-direction: row;
+            background: white;
+            display: flex;
+            width: 300px;
+        }
+
+        .smallContainer {
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-right: 1px dashed black;
+            border-left: 1px dashed black;
+            background: white;
+            width: 80px;
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+            align-items: center;
+        }
+
+        .box {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            border-right: 1px dashed black;
+            border-left: 1px dashed black;
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .leftArrow {
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .rightArrow {
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var boxIds = [];
+        var smallContainerIds = [];
+          function start() {
+
+            var container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
+
+
+            for (var i = 0; i <= 3; i++) {
+                var smallContainer = document.createElement("div");
+                smallContainer.className = "smallContainer";
+                container.appendChild(smallContainer);
+                id = `c-${i}`;
+                smallContainer.id = id;
+                smallContainerIds.push(id);
+                for (var j = 0; j < 3; j++) {
+                    var box = document.createElement("div");
+                    box.className = "box";
+                    smallContainer.appendChild(box);
+                    id = `p-${i}-${j}`;
+                    box.id = id;
+                    boxIds.push(id);
+                    var leftArrow = document.createElement("div");
+                    leftArrow.innerText = "<";
+                    leftArrow.className = "leftArrow"
+                    var rightArrow = document.createElement("div");
+                    rightArrow.innerText = ">";
+                    rightArrow.className = "rightArrow"
+                    box.appendChild(leftArrow);
+                    box.appendChild(rightArrow);
+                    box.addEventListener("click", arrowClick);
+                }
+            }
+        }
+        console.log(smallContainerIds);
+        console.log(boxIds);
+
+        function arrowClick(e) {
+            var newBox = boxIds.slice(e.currentIndex, 1);
+            var index = smallContainerIds.indexOf(e.currentIndex);
+           if (e.target.className == "box"){
+              return;
+          }else if(e.target.className == "leftArrow"){
+              console.log(newBox);
+              smallContainerIds[index-1].push(newBox);
+          } else {
+            smallContainerIds[index+1].push(newBox);
+          }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

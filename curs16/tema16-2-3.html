@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            align-items: center;
+            flex-direction: row;
+            background: white;
+            display: flex;
+            justify-content: first baseline;
+        }
+
+        .smallContainer {
+            border-bottom: 1px solid black;
+            border-top: none;
+            border-right: 1px dashed black;
+            border-left: 1px dashed black;
+            background: white;
+            width: 80px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            border-bottom: 1px solid black;
+            border-top: 1px solid black;
+            border-right: 1px dashed black;
+            border-left: 1px dashed black;
+            height: 60px;
+            width: 60px;
+            margin: 5px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .leftArrow {
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .rightArrow {
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+
+            var container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
+
+
+            for (let i = 0; i < 4; i++) {
+                var smallContainer = document.createElement("ul");
+                smallContainer.className = "smallContainer";
+                smallContainer.id = `ul-${i}`;
+                container.appendChild(smallContainer)
+                for (let j = 0; j < 3; j++) {
+                    var box = document.createElement("li");
+                    box.className = "box";
+                    smallContainer.appendChild(box)
+                    box.id = `p-${i}-${j}`;
+                    var id = box.id;
+                    // box.innerText = id;
+                    var leftArrow = document.createElement("div");
+                    leftArrow.innerText = "<";
+                    leftArrow.className = "leftArrow";
+                    leftArrow.id = id + '-left';
+                    var rightArrow = document.createElement("div");
+                    rightArrow.innerText = ">";
+                    rightArrow.className = "rightArrow";
+                    rightArrow.id = id + '-right';
+                    box.appendChild(leftArrow);
+                    box.appendChild(rightArrow);
+                    box.addEventListener("click", arrowClick);
+                 
+                }
+            };
+        }
+        function arrowClick(e) {
+            //var newBox = document.getElementById(e.current.id).cloneNode(true);
+            console.log(this);
+            // console.log(e);
+            // console.log(e.srcElement);
+            // console.log(e.srcElement.parentElement);
+            let pos = e.srcElement.id.split('-');
+            let col = pos[1];
+            let dir = pos[3];
+            if (! dir) {
+                console.log("Click on arrows please");
+                return;
+            }
+            console.log("Current column: %s direction: %s", col, dir);
+            if (dir === 'right') {
+                col++;
+            } else {
+                col--;
+            }
+
+            let destelem = document.getElementById('ul-' + col);
+            destelem.appendChild(e.srcElement.parentElement);
+
+        
+            // if (e.target.className == "rightArrow") {
+
+            // } else if (e.target.className == "leftArrow") {
+
+            // } else {
+            //     return;
+            // }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
