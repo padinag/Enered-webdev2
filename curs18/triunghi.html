@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Triunghi</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var canvas;
+        var ctx;
+         function start() {
+
+            canvas = document.getElementsByTagName("canvas")[0];
+            ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(75, 50);
+            ctx.lineTo(100, 75);
+            ctx.lineTo(100, 25);
+            ctx.closePath();
+            ctx.strokeStyle = "red";
+            ctx.fillStyle ="blue";
+            ctx.stroke();
+            ctx.fill();
+        }
+            
+
+    </script>
+</head>
+
+<body>
+    <canvas width="500" height="500">
+
+    </canvas>
+</body>
+
+</html>

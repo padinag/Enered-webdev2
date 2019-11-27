@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Culori
+    </title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        canvas {
+
+        }
+    </style>
+    <script>
+        window.addEventListener("load", start);
+        var canvas;
+        var ctx;
+         function start() {
+            canvas = document.getElementsByTagName("canvas")[0];
+            ctx = canvas.getContext("2d");
+            var img = document.getElementsByTagName("img")[0];
+            img.crossOrigin = "Anonymous";
+            ctx.drawImage(img, 0, 0)
+            console.log(ctx.getImageData(0, 0, 259, 194));
+            
+        }
+            
+
+    </script>
+</head>
+
+<body>
+    <canvas width="259" height="194" style="border: 1px solid black">
+           </canvas>
+           <img src="dahlia.jpg">
+</body>
+
+</html>

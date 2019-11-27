@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Drag and drop more squeres</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+
+        .div {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: absolute;
+            background: crimson;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var dx;
+        var dy;
+        var divs = [];
+        var canDrag = false;
+        var div;
+        var n = 20;
+        var selectedElement;
+        var r = 25;
+        function start() {
+            for (var i = 0; i < n; i++) {
+                div = document.createElement("div");
+                div.style.top = Math.floor(Math.random() * (window.innerHeight - 50)) + "px";
+                div.style.left = Math.floor(Math.random() * (window.innerWidth - 50)) + "px";
+                div.className = "div";
+                divs.push(div);
+                document.body.appendChild(div);
+                div.addEventListener("mousedown", mouseDown);
+            }
+            document.body.addEventListener("mousemove", mouseMove);
+            document.body.addEventListener("mouseup", mouseUp);
+        }
+
+        function mouseDown(event) {
+            WindowWidth = window.innerWidth;
+            selectedElement = this;
+            canDrag = true;
+            var bBox = this.getBoundingClientRect();
+            dx = event.clientX - bBox.x;
+            dy = event.clientY - bBox.y;
+        }
+
+
+        function mouseMove(event) {
+            var rect;
+            var distance;
+            if (canDrag) {
+                var x = event.clientX - dx;
+                selectedElement.style.left = `${x}px`;
+                var y = event.clientY - dy;
+                selectedElement.style.top = `${y}px`;
+            }
+            for (var i = 0; i < divs.length; i++) {
+                    rect = divs[i].getBoundingClientRect();
+                    distance = Math.sqrt((event.clientX - (rect.x + rect.width/2)) ** 2 + (event.clientY - (rect.y + rect.height/2)) ** 2);
+                    if (distance < r) {
+                        divs[i].style.background = "yellow";
+                    } else {
+                        divs[i].style.background = "";
+                    }
+                }
+        }
+
+        function mouseUp(event) {
+            canDrag = false;
+            selectedElement = null;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
