@@ -78,19 +78,96 @@
   //   }
   //   return ha;
   // });
-  document.addEventListener("DOMContentLoaded", start);
-  function start(){
-    var button = document.getElementById('hider')
-    button.addEventListener("click", hideYourSelf);
-    function hideYourSelf(e) {
-      this.hidden = true;
-    }
-  }
+  // document.addEventListener("DOMContentLoaded", start);
+  // function start(){
+  //   var button = document.getElementById('hider')
+  //   button.addEventListener("click", hideYourSelf);
+  //   function hideYourSelf(e) {
+  //     this.hidden = true;
+  //   }
+  // }
+// var user = {};
+// console.log(user);
+// user.name = "John";
+// user.surname = "Smith";
 
+// user.name = "Pete";
+// delete user.name;
+// delete user.surname;
+
+// function isEmpty(user){
+//   for (let prop in user){
+//     return false; 
+//   } 
+//   return true;
+// }
+// alert(isEmpty(user));
+
+
+// let salaries = {
+//   // John: 100,
+//   // Ann: 160,
+//   // Pete: 130
+// }
+
+
+// let sum = 0;
+// for (var key in salaries){
+//   sum += salaries[key];
+// }
+
+// alert(sum);
+
+
+// let menu = {
+//   width: 400,
+//   height: 200,
+//   title: "My menu"
+// }
+
+// function multiplyNumberic(menu){
+//   for (var key in menu){
+//       if (typeof(menu[key]) === "number"){
+//       menu[key] *= 2;
+//     }
+//   }
+//   console.log(menu);
+// }
+// multiplyNumberic(menu);
+
+
+// for (let i = 2 ; i <= 10; i++){
+//   if (i % 2 == 0)  alert (i) ; 
+// }
+
+// let i = 1;
+// while(i <= 10){
+//   i++;
+//   if (i % 2 == 0){
+//     alert(i);
+//   }
+// }
+
+// let numberEntered 
+// console.log(numberEntered);
+// do {numberEntered = prompt("introdu un numar mai mare ca 100", "numar");}
+// while((numberEntered <= 100 && numberEntered));
+
+
+
+let n = 10;
+
+nextPrime:
+for (i = 2; i <= n; i++){
+  for (j = 2 ; j < i; j++){
+    if(i % j == 0) continue nextPrime;
+  }
+  alert(i);
+}
 </script>
 
 <body>
-  <input type="button" id="hider" value="on click">
+ 
 </body>
 
 </html>

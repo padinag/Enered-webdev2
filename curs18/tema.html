@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+<title>Tema</title>
+<style>
+    canvas {
+        border: 1px solid black;
+        background: lightblue;
+    }
+
+    .container {
+        display: inline-block;
+        width: 300px;
+        height: 300px;
+        align-items: center;
+    }
+
+    .formContainer {
+        margin: 0;
+        display: inline-block;
+        width: 300px;
+        height: 100px;
+    }
+
+    .sizeContainer {
+        display: inline-block;
+        width: 300px;
+        height: 100px;
+
+    }
+
+    .squarePencil {}
+
+    .roundPencil {}
+
+    .bigPencil {}
+
+    .mediumPencil {}
+
+    .smallPencil {}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+    var canvas;
+    var ctx;
+    var canDraw = false;
+    var drawStyle = 1;
+    var drawSize = 1;
+
+    function start() {
+        var canvas = document.getElementsByTagName("canvas")[0];
+        ctx = canvas.getContext("2d");
+        ctx.fillStyle = "green";
+        //   console.log(ctx);
+        var container = document.createElement("div");
+        container.className = "container";
+        document.body.appendChild(container);
+
+        var formContainer = document.createElement("div");
+        formContainer.className = "formContainer";
+        container.appendChild(formContainer);
+
+        var squarePencil = document.createElement("button");
+        formContainer.appendChild(squarePencil);
+        squarePencil.className = "squarePencil";
+        squarePencil.innerText = "square pencil";
+        squarePencil.onclick = function () { drawStyle = 1; }
+
+        var roundPencil = document.createElement("button");
+        roundPencil.className = "squarePencil";
+        formContainer.appendChild(roundPencil);
+        roundPencil.innerText = "round pencil";
+        roundPencil.onclick = function () { drawStyle = 2; }
+
+        var sizeContainer = document.createElement("div");
+        sizeContainer.className = "sizeContainer";
+        container.appendChild(sizeContainer);
+
+        var bigPencil = document.createElement("button");
+        bigPencil.className = "bigPencil";
+        sizeContainer.appendChild(bigPencil);
+        bigPencil.innerText = "big pencil";
+        bigPencil.onclick = function () { drawSize = 3; }
+
+        var mediumPencil = document.createElement("button");
+        mediumPencil.className = "mediumPencil";
+        sizeContainer.appendChild(mediumPencil);
+        mediumPencil.innerText = "medium pencil";
+        mediumPencil.onclick = function () { drawSize = 2; }
+
+        var smallPencil = document.createElement("button");
+        smallPencil.className = "smallPencil";
+        sizeContainer.appendChild(smallPencil);
+        smallPencil.innerText = "small pencil";
+        smallPencil.onclick = function () { drawSize = 1; }
+
+        canvas.addEventListener("mousedown", canvasMouseDown);
+        canvas.addEventListener("mouseup", canvasMouseUp);
+        canvas.addEventListener("mousemove", canvasMouseMove);
+    }
+
+    function canvasMouseDown(e) {
+        canDraw = true;
+        ctx.lineWidth = 1;
+
+    }
+
+    function canvasMouseMove(e) {
+        if (canDraw) {
+            if (drawStyle == 2 || (drawStyle ==2 && drawSize == 2)) {
+                ctx.beginPath();
+                ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
+                ctx.stroke();
+                
+            } else {
+                ctx.strokeRect(e.clientX, e.clientY, 5, 5);
+                
+            }
+
+        }
+    }
+
+        function canvasMouseUp(e) {
+            canDraw = false;
+        }
+
+</script>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+</body>
+
+</html>
