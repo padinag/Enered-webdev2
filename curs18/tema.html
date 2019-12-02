@@ -46,7 +46,7 @@
     var canvas;
     var ctx;
     var canDraw = false;
-    var drawStyle = 1;
+    var drawStyle;
     var drawSize = 1;
 
     function start() {
@@ -109,15 +109,43 @@
 
     function canvasMouseMove(e) {
         if (canDraw) {
-            if (drawStyle == 2 || (drawStyle ==2 && drawSize == 2)) {
+            switch(drawStyle){
+                case 1:
+                if (drawSize == 1){
+                    ctx.fillRect(e.clientX, e.clientY, 5, 5);
+                } else if (drawSize == 2){
+                    ctx.fillRect(e.clientX, e.clientY, 25, 25);
+                }else{
+                    ctx.fillRect(e.clientX, e.clientY, 50, 50);
+                } break;
+
+                case 2:
+                if (drawSize == 1){
                 ctx.beginPath();
                 ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
-                ctx.stroke();
+                ctx.fill();
+                } else if (drawSize == 2){
+                ctx.beginPath();
+                ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
+                ctx.fill();
+                }else if (drawSize == 3){
+                ctx.beginPath();
+                ctx.arc(e.clientX, e.clientY, 15, 0, 2 * Math.PI);
+                ctx.fill();
+                } break;
                 
-            } else {
-                ctx.strokeRect(e.clientX, e.clientY, 5, 5);
-                
+                default:
+                ctx.fillRect(e.clientX, e.clientY, 1, 1);
             }
+
+            // if (drawStyle == 2 || (drawStyle ==2 && drawSize == 2)) {
+            //     ctx.beginPath();
+            //     ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
+            //     ctx.fill();
+                
+            // } else {
+            //     ctx.fillRect(e.clientX, e.clientY, 5, 5);
+            // }
 
         }
     }
