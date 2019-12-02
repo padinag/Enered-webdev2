@@ -29,16 +29,6 @@
         height: 100px;
 
     }
-
-    .squarePencil {}
-
-    .roundPencil {}
-
-    .bigPencil {}
-
-    .mediumPencil {}
-
-    .smallPencil {}
 </style>
 
 <script>
@@ -109,40 +99,40 @@
 
     function canvasMouseMove(e) {
         if (canDraw) {
-            switch(drawStyle){
+            switch (drawStyle) {
                 case 1:
-                if (drawSize == 1){
-                    ctx.fillRect(e.clientX, e.clientY, 5, 5);
-                } else if (drawSize == 2){
-                    ctx.fillRect(e.clientX, e.clientY, 25, 25);
-                }else{
-                    ctx.fillRect(e.clientX, e.clientY, 50, 50);
-                } break;
+                    if (drawSize == 1) {
+                        ctx.fillRect(e.clientX, e.clientY, 5, 5);
+                    } else if (drawSize == 2) {
+                        ctx.fillRect(e.clientX, e.clientY, 25, 25);
+                    } else {
+                        ctx.fillRect(e.clientX, e.clientY, 50, 50);
+                    } break;
 
                 case 2:
-                if (drawSize == 1){
-                ctx.beginPath();
-                ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
-                ctx.fill();
-                } else if (drawSize == 2){
-                ctx.beginPath();
-                ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
-                ctx.fill();
-                }else if (drawSize == 3){
-                ctx.beginPath();
-                ctx.arc(e.clientX, e.clientY, 15, 0, 2 * Math.PI);
-                ctx.fill();
-                } break;
-                
+                    if (drawSize == 1) {
+                        ctx.beginPath();
+                        ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
+                        ctx.fill();
+                    } else if (drawSize == 2) {
+                        ctx.beginPath();
+                        ctx.arc(e.clientX, e.clientY, 10, 0, 2 * Math.PI);
+                        ctx.fill();
+                    } else if (drawSize == 3) {
+                        ctx.beginPath();
+                        ctx.arc(e.clientX, e.clientY, 15, 0, 2 * Math.PI);
+                        ctx.fill();
+                    } break;
+
                 default:
-                ctx.fillRect(e.clientX, e.clientY, 1, 1);
+                    ctx.fillRect(e.clientX, e.clientY, 1, 1);
             }
 
             // if (drawStyle == 2 || (drawStyle ==2 && drawSize == 2)) {
             //     ctx.beginPath();
             //     ctx.arc(e.clientX, e.clientY, 5, 0, 2 * Math.PI);
             //     ctx.fill();
-                
+
             // } else {
             //     ctx.fillRect(e.clientX, e.clientY, 5, 5);
             // }
@@ -150,9 +140,9 @@
         }
     }
 
-        function canvasMouseUp(e) {
-            canDraw = false;
-        }
+    function canvasMouseUp(e) {
+        canDraw = false;
+    }
 
 </script>
 </head>

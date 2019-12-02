@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>SVG dinamic</title>
+    <style>
+    div{
+        position: absolute;
+        display: inline-block;
+    }
+        </style>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", start)
+    var rect;
+    var rectX = 10;
+    var direction = 1;
+    var canvas;
+    var ctx;
+    var pozX = 10;
+    var pas = 1;
+    var div;
+    function start() {
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("width", 500);
+        svg.setAttribute("height", 50);
+        document.body.appendChild(svg);
+
+        rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");;
+        rect.setAttribute("x", 10);
+        rect.setAttribute("y", 10);
+        rect.setAttribute("width", 10);
+        rect.setAttribute("height", 10);
+        rect.setAttribute("fill", "red");
+        svg.appendChild(rect);
+
+        var canvas = document.createElement("canvas");
+        canvas.style.display = "block";
+        canvas.width = 500;
+        ctx = canvas.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(rectX, 10, 10, 10);
+
+        document.body.appendChild(canvas);
+
+        div = document.createElement("div");
+        div.style.background = "red";
+        div.style.width = "10px";
+        div.style.height = "10px";
+        div.style.left = 10 + "px";
+         document.body.appendChild(div);
+        
+        requestAnimationFrame(animate);
+    }
+
+    function animate() {
+        //animatie svg
+        rectX += 10 * direction;
+        if (rectX > 400 || rectX < 0) {
+            direction *= -1
+        }
+        rect.setAttribute("x", rectX);
+
+        //animatie canvas
+
+        // if (direction == 1){
+        //     ctx.clearRect(rectX-10, 10, 10, 10);
+        // } else {
+        //     ctx.clearRect(rectX+10, 10, 10, 10);
+        // }
+        ctx.fillStyle ="#ffffff1f"
+        ctx.fillRect(0, 0, 500, 150)
+        ctx.fillStyle = "red"
+        ctx.fillRect(rectX, 10, 10, 10);
+        requestAnimationFrame(animate);
+
+        //animatie html
+        pozX+= pas;
+        if (pozX > 400 || pozX < 0) {
+            pas *= -1; 
+        }
+        
+        div.style.left = pozX + "px";
+       }
+</script>
+
+<body>
+
+</body>
+
+</html>

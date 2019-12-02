@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>SVG dinamic</title>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", start)
+    function start(){
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("width", 500);
+        svg.setAttribute("height", 500);
+        document.body.appendChild(svg);
+
+        var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");;
+        rect.setAttribute("x", 10);
+        rect.setAttribute("y", 10);
+        rect.setAttribute("width", 10);
+        rect.setAttribute("height", 10);
+        rect.setAttribute("fill", "red");
+        svg.appendChild(rect);
+    }
+</script>
+<body>
+    
+</body>
+</html>
