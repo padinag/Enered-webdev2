@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        .initial {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 5px;
+            border: 1px solid black;
+        }
+
+        .colored {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 5px;
+            border: 1px solid black;
+            background: cornflowerblue;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var div;
+        var divs = [];
+        var n = 10;
+        var l = 0;
+        var data = [];
+        var interval;
+        var nrTraversal = 0;
+        function start() {
+            for (var i = 0; i < n; i++) {
+                div = document.createElement("div");
+                div.className = "initial"
+                document.body.appendChild(div);
+                divs.push(div);
+                data.push(0);
+            }
+            interval = setInterval(changeBackground, 30)
+        }
+
+        function changeBackground() {
+             if (nrTraversal % 2 == 0){
+                divs[l].className = "colored";
+            } else {
+                divs[l].className = "initial";
+            }
+            l++;
+            // data[l]=1;
+
+            if (l >= n) {
+                l = 0;
+                nrTraversal++;
+                // clearInterval(interval);
+            }
+            console.log(l)
+        }
+
+
+
+        console.log(divs);
+        console.log(data);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
