@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        .square {
+            width: 50px;
+            height: 50px;
+            background: red;
+            border: 1px solid black;
+            margin-left: 0;
+            transition: margin-left 1s;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            var n = 5;
+            for (var i = 0; i < n; i++) {
+                var div = $("<div></div>");
+                div.addClass("square");
+                $("body").append(div);
+                $(".square").on("click", onClick);
+            }
+        }
+        )
+
+        
+
+        function onClick() {
+
+            switch ($(this).css("marginLeft")) {
+                case "0px":
+                    $(this).css("marginLeft", "500px");
+                    break;
+                case "500px":
+                    $(this).css("marginLeft", "0px");
+                    break;
+                // default:
+                // $(this).css( "marginLeft", "0");
+                // break;
+
+            }
+
+        }
+
+     
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
