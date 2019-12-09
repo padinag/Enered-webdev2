@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Document</title>
+    <title>Instalatie-jQuery</title>
+    <script src="jquery-3.4.1.min.js"></script>
     <style>
       .container {
         border-radius: 50%;
@@ -42,7 +43,6 @@
     <script>
       document.addEventListener("DOMContentLoaded", start);
       var divs1 = [];
-      var divs2 = [];
       var interval;
       var nrTraversal = 0;
       var l = 0;
@@ -56,29 +56,30 @@
           var div1 = document.createElement("div");
           div1.className = "div1";
           container.appendChild(div1);
-
-          var div2 = document.createElement("div");
-          div2.className = "div2";
-          container.appendChild(div2);
-          divs1.push(div1);
-          divs2.push(div2);
-        }
-        interval = setInterval(changeBackground, 30);
-      }
-
-      function changeBackground() {
-        if (nrTraversal % 2 == 0) {
-          divs2[l].style.opacity = 1;
-        } else {
-          divs2[l].style.opacity = 0;
-        }
-        l++;
-
-        if (l >= n) {
-          l = 0;
-          nrTraversal++;
         }
       }
+      $(document).ready(function() {
+        function animatie() {
+          $(".div1")
+            .animate({ opacity: "0.2" })
+            .animate({ opacity: "1" });
+        }
+        animatie();
+      });
+
+      // function changeBackground() {
+      //   if (nrTraversal % 2 == 0) {
+      //     divs2[l].style.opacity = 1;
+      //   } else {
+      //     divs2[l].style.opacity = 0;
+      //   }
+      //   l++;
+
+      //   if (l >= n) {
+      //     l = 0;
+      //     nrTraversal++;
+      //   }
+      // }
     </script>
   </head>
 
