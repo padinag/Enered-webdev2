@@ -31,6 +31,13 @@
             width: px;
             height: px;
         }
+
+        .score {
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border: 1px solid black;
+        }
     </style>
 
 
@@ -43,13 +50,17 @@
         var currentLine = 0;
         var currentColumn = 2;
         var containerDiv;
+        var scoreDiv;
         var squareSize = 51;
         var interval;
-        var intervalTick = 100;
+        var intervalTick = 300;
+        var score = 0;
+        var keyDownisPressed = false;
         function start() {
             generateDataMatrix();
             generateMatrixInDOM();
             document.body.addEventListener("keydown", bodyKeyDown);
+            document.body.addEventListener("keyup", bodyKeyUp);
             dataMatrix[currentLine][currentColumn] = 1;
             interval = setInterval(goDown, intervalTick);
             paint();
@@ -63,6 +74,25 @@
                     break;
                 case "ArrowRight":
                     goRight();
+                    break;
+                case "ArrowDown":
+                    if (keyDownisPressed == false) {
+                        clearInterval(interval);
+                        interval = setInterval(goDown, intervalTick / 4);
+                        keyDownisPressed = true;
+                        break;
+                    }
+            }
+        }
+
+        function bodyKeyUp(e) {
+            switch (e.code) {
+                case "ArrowDown":
+                    if (keyDownisPressed == true) {
+                        clearInterval(interval);
+                        interval = setInterval(goDown, intervalTick);
+                        keyDownisPressed = false;
+                    }
                     break;
             }
         }
@@ -96,7 +126,9 @@
 
                 }
             }
-        }
+             }
+        
+
         function generateTopSquare() {
             currentLine = 0;
             currentColumn = 2;
@@ -113,6 +145,7 @@
                     domMatrix[i][j].className = "black";
                 }
             }
+            score = 0;
         }
 
         function goDown() {
@@ -132,24 +165,29 @@
             paint();
         }
 
-        function verifyAndRemoveLastLine(){
+        function verifyAndRemoveLastLine() {
             var lineIsFull = true;
             for (var j = 0; j < m; j++) {
-                if (dataMatrix[n-1][j] == 0){
+                if (dataMatrix[n - 1][j] == 0) {
                     lineIsFull = false;
                     break;
                 }
             }
-            if(lineIsFull){
+            if (lineIsFull) {
+                score ++;
+                console.log(score);
                 removeLastLine();
             }
         }
-        function removeLastLine(){
+        function removeLastLine() {
             for (var j = 0; j < m; j++) {
-                for (var i = n-1; i >0; i--){
-                    dataMatrix[i][j]= dataMatrix[i-1][j];
+                for (var i = n - 1; i > 0; i--) {
+                    dataMatrix[i][j] = dataMatrix[i - 1][j];
                 }
             }
+            
+                scoreDiv.innerHtml = score;
+            
         }
 
 
@@ -165,6 +203,10 @@
         function generateMatrixInDOM() {
             containerDiv = document.createElement("div");
             containerDiv.className = "containerDiv";
+            scoreDiv = document.createElement("div");
+            scoreDiv.className = "score";
+            scoreDiv.innerHTML = score;
+            document.body.appendChild(scoreDiv);
             var nX = 0;
             var nY = 0;
             var square;
