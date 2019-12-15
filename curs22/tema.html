@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        .body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            transform: translate(100px, 100px);
+            margin: 0;
+            padding: 0;
+            background: lightblue;
+            position: relative;
+            display: inline-block;
+        }
+
+        .square {
+            display: inline-block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            margin: 0;
+            padding: 0;
+            background: lightcoral;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var container;
+        var square;
+        var x;
+        var y;
+        var xMax = 490;
+        var yMax = 490;
+        var canMove = true;
+        var dX = 10;
+        var dY = 10;
+        function start() {
+            container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container);
+            square = document.createElement("div");
+            square.className = "square";
+            container.appendChild(square);
+            document.body.addEventListener("keydown", bodyKeyDown);
+        }
+
+        function bodyKeyDown(e) {
+            console.log(e.code);
+            switch (e.code) {
+                case "ArrowDown":
+                    goDown();
+                    break;
+                case "ArrowRight":
+                    goRight();
+                    break;
+                case "ArrowLeft":
+                    goLeft();
+                    break;
+                case "ArrowUp":
+                    goUp();
+                    break;
+            }
+        }
+
+        function goDown(event) {
+            if (dY < yMax) {
+                dY += 10;
+                square.style.top = dY + "px";
+            } else {
+                canMove = false;
+            }
+        }
+
+        function goUp() {
+            if (dY >= 10) {
+                dY -= 10;
+                square.style.top = dY + "px";
+               } else {
+                canMove = false;
+            }
+        }
+
+        function goRight() {
+            if (dX < xMax) {
+                dX += 10;
+                square.style.left = dX + "px";
+            } else {
+                canMove = false;
+            }
+        }
+
+        function goLeft() {
+            if (dX >= 10) {
+                dX -= 10;
+                square.style.left = dX + "px";
+            } else {
+                canMove = false;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
