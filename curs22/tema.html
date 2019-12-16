@@ -14,7 +14,7 @@
         transform: translate(100px, 100px);
         margin: 0;
         padding: 0;
-        background: white;
+        background: red;
         position: relative;
         display: inline-block;
         overflow: hidden;
@@ -38,7 +38,6 @@
       var pas = 10;
       var xMax = 490;
       var yMax = 490;
-      var canMove = true;
       var dX = 10;
       var dY = 10;
       function start() {
@@ -71,38 +70,31 @@
 
       function goDown(event) {
         if (dY < yMax) {
-          dY += 10;
+          dY += pas;
           square.style.top = dY + "px";
-        } else {
-          canMove = false;
-        }
+        } 
+        console.log(dY);
       }
 
       function goUp() {
         if (dY >= pas) {
-          dY -= 10;
+          dY -= pas;
           square.style.top = dY + "px";
-        } else {
-          canMove = false;
-        }
+        } 
       }
 
       function goRight() {
         if (dX < xMax) {
-          dX += 10;
+          dX += pas;
           square.style.left = dX + "px";
-        } else {
-          canMove = false;
-        }
+        } 
       }
 
       function goLeft() {
         if (dX >= pas) {
-          dX -= 10;
+          dX -= pas;
           square.style.left = dX + "px";
-        } else {
-          canMove = false;
-        }
+        } 
       }
     </script>
   </head>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator salarii</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+
+        div {
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var salariuCurentInput;
+        var procentInput;
+        var salariuPeste5Input;
+        var salariuPeste10Input;
+        var salariuPeste15Input;
+
+        var procentBtn;
+        var salar5Btn;
+        var salar10Btn;
+        var salar15Btn;
+
+        var procentMessageSpan;
+
+        function start() {
+            salariuCurentInput = document.getElementById("salariuCurent");
+            procentInput = document.getElementById("procent");
+            salariuPeste5Input = document.getElementById("salariu5");
+            salariuPeste10Input = document.getElementById("salariu10");
+            salariuPeste15Input = document.getElementById("salariu15");
+
+            procentBtn = document.getElementById("btn_procent");
+            salar5Btn = document.getElementById("btn_salariu5");
+            salar10Btn = document.getElementById("btn_salariu10");
+            salar15Btn = document.getElementById("btn_salariu15");
+
+            procentMessageSpan = document.getElementById("procentMessage");
+
+            procentBtn.addEventListener("click", procentBtnClick);
+            salar5Btn.addEventListener("click", btn_salariu5Click);
+            salar10Btn.addEventListener("click", btn_salariu10Click);
+            salar15Btn.addEventListener("click", btn_salariu15Click);
+
+            salariuCurentInput.value = 1000;
+            procentInput.addEventListener("input", procentInputChange);
+            procentInput.addEventListener("paste", procentInputPaste);
+        }
+
+        function procentInputPaste(e) {
+            console.log(e);
+            var procent = parseFloat(e.clipboardData.getData("text"));
+            if (isNaN(procent)) { //verifica daca nr sunt isNan
+                procent = 0;
+            }
+            procentInput.value = procent;
+            e.preventDefault();
+                   }
+
+
+        function procentInputChange(e) {
+            if (isNaN(parseInt(e.data)) && e.data != ".") {
+                console.log("is nan");
+                procentInput.value = procentInput.value.slice(0, procentInput.value.length - 1);
+            }
+            // console.log(e);
+        }
+
+
+        function procentBtnClick(e) {
+            procentMessageSpan.innerHTML = "";
+            e.preventDefault();
+            var salariuCurent = parseFloat(salariuCurentInput.value);
+            var procent = parseFloat(procentInput.value);
+            if (isNaN(procent)) { //verifica daca nr sunt isNan
+                procent = 0;
+                procentInput.value = procent;
+            }
+            if (procent < 0) {
+                procentMessageSpan.innerHTML = "procentul nu poate fi mai mic ca 0";
+            }
+            console.log(salariuCurent, typeof salariuCurent);
+            console.log(procent, typeof procent);
+        }
+
+
+        function btn_salariu5Click() {
+
+        }
+
+        function btn_salariu10Click() {
+
+        }
+
+        function btn_salariu15Click() {
+
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="salariuCurent">Salariu Curent</label>
+            <input id="salariuCurent" type="text">
+        </div>
+        <div>
+            <label for="procent">Procent</label>
+            <input pttern="\d*\.\d*" id="procent" type="text">
+            %
+            <button id="btn_procent">Go</button>
+            <span id="procentMessage"></span>
+        </div>
+        <div> <label for="salariu5">Salariu peste 5 ani</label>
+            <input id="salariu5" type="text">
+            <button id="btn_salariu5">Go</button>
+        </div>
+        <div>
+
+            <label for="salariu10">Salariu peste 10 ani</label>
+            <input id="salariu10" type="text">
+            <button id="btn_salariu10">Go</button>
+        </div>
+        <div>
+            <label for="salariu15">Salariu peste 15 ani</label>
+            <input id="salariu15" type="text">
+            <button id="btn_salariu15">Go</button>
+        </div>
+
+
+
+
+
+
+
+    </form>
+</body>
+
+</html>

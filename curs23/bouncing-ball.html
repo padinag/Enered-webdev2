@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .ball {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: red;
+            display: inline-block;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", start);
+        var div;
+        var dy = 100;
+        var vy = -6;
+        var g = .3;
+        function start() {
+            div = document.createElement("div");
+            document.body.appendChild(div);
+            div.className = "ball";
+            requestAnimationFrame(animate);
+            document.body.addEventListener("keydown", logKey);
+        }
+
+        function animate() {
+            dy += vy;
+            vy += g;
+            // console.log(vy);
+            // if (vy > 30) {
+            //     vy = -50;
+            // }
+            if (dy > 400) {
+                dy = 400;
+            }
+            div.style.top = dy + "px";
+            requestAnimationFrame(animate);
+        }
+
+
+        function logKey(e) {
+            if (e.code === "Space") {
+                vy = -5;
+            }
+        }
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
