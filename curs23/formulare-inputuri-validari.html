@@ -30,6 +30,7 @@
         var procentMessageSpan;
 
         function start() {
+            console.log(salariuDinAnulPrecedent(1100, 10));
             salariuCurentInput = document.getElementById("salariuCurent");
             procentInput = document.getElementById("procent");
             salariuPeste5Input = document.getElementById("salariu5");
@@ -61,11 +62,11 @@
             }
             procentInput.value = procent;
             e.preventDefault();
-                   }
+        }
 
 
         function procentInputChange(e) {
-            if (isNaN(parseInt(e.data)) && e.data != ".") {
+            if (isNaN(parseInt(e.data)) && e.data != "." && e.data != "-") {
                 console.log("is nan");
                 procentInput.value = procentInput.value.slice(0, procentInput.value.length - 1);
             }
@@ -84,15 +85,43 @@
             }
             if (procent < 0) {
                 procentMessageSpan.innerHTML = "procentul nu poate fi mai mic ca 0";
+                return;
+            }
+
+            var valDeAdaugat;
+            for (var i = 1; i <= 15; i++) {
+                valDeAdaugat = Math.round(procent / 100 * salariuCurent);
+                salariuCurent += valDeAdaugat;
+                switch (i) {
+                    case 5:
+                        salariuPeste5Input.value = salariuCurent;
+                        break;
+                    case 10:
+                        salariuPeste10Input.value = salariuCurent;
+                        break;
+                    case 15:
+                        salariuPeste15Input.value = salariuCurent;
+                        break;
+                }
             }
             console.log(salariuCurent, typeof salariuCurent);
             console.log(procent, typeof procent);
         }
 
-
-        function btn_salariu5Click() {
-
+        function salariuDinAnulPrecedent(salariuCurent, procentMarire) {
+            return Math.round(salariuCurent / (1 + procentMarire / 100));
         }
+
+        function btn_salariu5Click(e) {
+            e.preventDefault();
+            var salariuPeste5Ani = parseFloat(salariuPeste5Input.value);
+            var procent = parseFloat(procentInput.value);
+            var salariuCurent = salariuPeste5Ani;
+            for (var i = 0; i < 5; i++){
+                salariuCurent = salariuDinAnulPrecedent(salariuCurent, procent);
+            }
+            salariuCurentInput.value = salariuCurent;
+         }
 
         function btn_salariu10Click() {
 
