@@ -35,8 +35,7 @@
       document.addEventListener("DOMContentLoaded", start);
       var container;
       var square;
-      var x;
-      var y;
+      var pas = 10;
       var xMax = 490;
       var yMax = 490;
       var canMove = true;
@@ -80,7 +79,7 @@
       }
 
       function goUp() {
-        if (dY >= 10) {
+        if (dY >= pas) {
           dY -= 10;
           square.style.top = dY + "px";
         } else {
@@ -98,7 +97,7 @@
       }
 
       function goLeft() {
-        if (dX >= 10) {
+        if (dX >= pas) {
           dX -= 10;
           square.style.left = dX + "px";
         } else {
