@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var input = "";
+        var inputLength =;
+        var counter = document.getElementById("charLeft");
+        function start() {
+            var container = document.createElement("div");
+            container.className = "container";
+            document.body.addEventListener(container);
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="inputField">Input Field</label>
+        <input type="text" , id="inputField">
+        <button id="charLeft">Characters Left</button>
+
+    </form>
+</body>
+
+</html>
