@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
+  <head>
     <title>Document</title>
     <style>
-        .container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
+      .container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+      }
     </style>
 
     <script>
-        document.addEventListener("DOMContentLoaded", start);
-        var input = "";
-        var inputLength =;
-        var counter = document.getElementById("charLeft");
-        function start() {
-            var container = document.createElement("div");
-            container.className = "container";
-            document.body.addEventListener(container);
+      document.addEventListener("DOMContentLoaded", start);
+      var inputMaxLength = 0;
+      var counter = 255;
+      var counterButton;
+      var canType = true;
+      function start() {
+        var container = document.createElement("div");
+        container.className = "container";
+        counterButton = document.getElementById("charLeft");
+        console.log(counterButton);
+        counterButton.innerHTML = counter;
+        inputField = document.getElementById("inputField");
+        inputField.addEventListener("input", inputChar);
+      }
 
+      function inputChar(e) {
+        if (counter >= 1) {
+          console.log(e);
+          counter -= 1;
+          console.log(counter);
+          counterButton.innerHTML = counter;
+          inputMaxLength++;
+        } else if (inputMaxLength > 254) {
+          inputField.value = inputField.value.slice(0, inputMaxLength);
         }
-
-
+      }
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <form>
-        <label for="inputField">Input Field</label>
-        <input type="text" , id="inputField">
-        <button id="charLeft">Characters Left</button>
-
+      <label for="inputField">Input Field</label>
+      <input type="text" , id="inputField" />
+      <button id="charLeftText">
+        Characters Left :<button id="charLeft"></button>
+      </button>
     </form>
-</body>
-
+  </body>
 </html>
