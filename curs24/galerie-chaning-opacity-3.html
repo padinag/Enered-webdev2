@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slideshow-opacity 2</title>
+
+    <style>
+        .container {
+            position: relative;
+            margin: 0;
+        }
+
+        .imageContainer {
+            position: absolute;
+        }
+
+        .imageHidden {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 3s;
+        }
+
+        .imageVisible {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            z-index: 2;
+            transition: opacity 3s;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        var imageLinks = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpeg",
+            "images/6.jpg",
+            "images/7.jpg",
+            "images/8.jpg"
+        ];
+
+        var galleryWidth = 800;
+        var galleryHeight = 500;
+        var container;
+        var imageIds = [];
+        var currentIndex = 0;
+        var image;
+
+        function start() {
+            createGalleryStructure();
+            var slideShowInterval = setInterval(nextImage, 2000)
+        }
+        function createGalleryStructure() {
+            container = document.createElement("div");
+            container.className = "container";
+            container.style.width = `${galleryWidth}px`;
+            container.style.height = `${galleryHeight}px`;
+            document.body.appendChild(container);
+            loadImage();
+        }
+
+        function loadImage() {
+            var imageContainer;
+            for (var i = 0; i < imageLinks.length; i++) {
+                imageContainer = document.createElement("div");
+                imageContainer.className = "imageContainer";
+                imageContainer.style.width = `${galleryWidth}px`;
+                imageContainer.style.height = `${galleryHeight}px`;
+
+                image = new Image();
+                image.className = "imageHidden";
+                image.id = i;
+                imageIds.push(image.id);
+                image.src = imageLinks[i];
+                image.style.maxWidth = `${galleryWidth}px`;
+                image.style.maxHeight = `${galleryHeight}px`;
+
+                imageContainer.appendChild(image);
+                container.appendChild(imageContainer);
+            }
+        }
+    
+        function nextImage() {
+            currentIndex = (currentIndex ) % (imageIds.length);
+            var currentImageElement = document.getElementById(imageIds[currentIndex]);
+            console.log("Index: %s, elem: %o", currentIndex, currentImageElement);
+            console.log(currentImageElement.id);
+
+            for (let i = 0; i < imageIds.length; i++){
+                if (currentIndex == imageIds[i]){
+                    currentImageElement.className = "imageVisible";
+                }
+                else{
+                    var otherImage = document.getElementById(imageIds[i]);
+                    otherImage.className = "imageHidden";
+                }
+            }
+            currentIndex += 1;
+
+            // if (currentIndex == 0){
+            //     currentImageElement.className = "imageVisible";
+            // }
+            // currentImageElement.className = "imageHidden";
+            // currentImageElement.className = "imageVisible";
+            }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -46,6 +46,15 @@
             background: black;
         }
 
+        .bulletWhite {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+            background: white;
+        }
+
         .leftRightButtons {
             display: inline-block;
             position: absolute;
@@ -91,12 +100,13 @@
         var imagesContainerDiv;
         var leftRightButtonsDiv;
         var bulletsDiv;
+        var bulletsDivIds=[];
         var currentIndex = 0;
         var galleryWidth = 800;
         var galleryHeight = 500;
-
         var slideShowInterval;
-
+        var bullet;
+        
 
 
 
@@ -104,20 +114,22 @@
         function start() {
             createGalleryStructure();
             loadImages();
+            changeBulletBackground();
             slideShowInterval = setInterval(nextImage, 2000);
         }
 
-        function resetTimer(){
+        function resetTimer() {
             clearInterval(slideShowInterval);
             slideShowInterval = setInterval(nextImage, 2000);
         }
 
-        function nextImage(){
+        function nextImage() {
             currentIndex++;
-                if (currentIndex > imageLinks.length - 1) {
-                    currentIndex = 0;
-                }
-                imagesContainerDiv.style.left = `${galleryWidth * currentIndex * (-1)}px`;
+            if (currentIndex > imageLinks.length - 1) {
+                currentIndex = 0;
+            }
+            imagesContainerDiv.style.left = `${galleryWidth * currentIndex * (-1)}px`;
+            changeBulletBackground();
         }
 
         function createGalleryStructure() {
@@ -134,7 +146,9 @@
                 bullet = document.createElement("div");
                 bullet.className = "bullet";
                 bullet.setAttribute("data-index", i);
+                bullet.id = "id" + i;
                 bulletsDiv.appendChild(bullet);
+                bulletsDivIds.push(bullet.id);
             }
             bulletsDiv.addEventListener("click", bulletsClick);
 
@@ -146,11 +160,9 @@
             leftRightButtonsDiv.style.width = `${galleryWidth}px`;
             var leftButton = document.createElement("div");
             leftButton.className = "leftButton";
-            leftButton.innerHTML = "<";
             leftRightButtonsDiv.appendChild(leftButton);
             var rightButton = document.createElement("div");
             rightButton.className = "rightButton";
-            rightButton.innerHTML = ">";
             leftRightButtonsDiv.appendChild(rightButton);
             leftRightButtonsDiv.addEventListener("click", leftRightClick);
             document.body.appendChild(galleryDiv);
@@ -174,6 +186,7 @@
                 resetTimer();
             }
             imagesContainerDiv.style.left = `${galleryWidth * currentIndex * (-1)}px`;
+            changeBulletBackground();
 
         }
 
@@ -198,14 +211,27 @@
         }
 
         function bulletsClick(e) {
-            if (e.target.className =="bullet"){
+            if (e.target.className == "bullet") {
                 currentIndex = parseInt(e.target.dataset.index);
                 imagesContainerDiv.style.left = `${galleryWidth * currentIndex * (-1)}px`;
-                // console.log(typeof e.target.dataset.index, e.target.dataset.index);
+                changeBulletBackground()
                 resetTimer();
-
             }
         }
+
+        function changeBulletBackground() {
+
+            for(var i = 0; i < imageLinks.length; i++) {
+                let element = document.getElementById(bulletsDivIds[i]);
+                if ((bulletsDivIds[i] === bulletsDivIds[currentIndex])){
+                    element.className = "bulletWhite";
+                } else {
+                    element.className ="bullet";
+                }
+            }
+        }
+
+
 
     </script>
 </head>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Slideshow-opacity</title>
+    <style>
+        .gallery {
+            position: relative;
+            display:inline-block;
+            /* overflow: hidden; */
+        }
+
+        .container {
+            position: absolute;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .imageContainer {
+            display: inline-block;
+            position: relative;
+            opacity: 1;
+            z-index: 1;
+            transition: opacity 1s;
+        }
+        .imageContainerToShow{
+            display: inline-block;
+            position: relative;
+            opacity: 0;
+            z-index: 2;
+            transition: opacity 1s;
+        }
+        
+        .image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }        
+
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var imagesLinks = [
+            "images/1.jpg",
+            "images/2.jpg",
+            "images/3.jpg",
+            "images/4.jpg",
+            "images/5.jpeg",
+            "images/6.jpg",
+            "images/7.jpg",
+            "images/8.jpg"
+        ]
+        var slideShowInterval;
+        var galleryHight = 500;
+        var galleryWidth = 800;
+        var container;
+        var currentIndex = 0;
+
+        function start() {
+            createGalleryStructure();
+            loadImages();
+            slideShowInterval = setInterval(nextImage, 2000);
+        }
+
+        function createGalleryStructure() {
+            var gallery = document.createElement("div");
+            gallery.className = "gallery";
+            gallery.style.height = galleryHight;
+            gallery.style.width = galleryWidth;
+            container = document.createElement("div");
+            container.className = "container";
+            container.style.height = `${galleryHight}px`;
+            container.style.width = `${galleryWidth}px`;
+            container.style.background = "#" + Math.floor(Math.random() * 0xffffff).toString(16);
+            gallery.appendChild(container);
+            document.body.appendChild(gallery);
+        }
+
+        function loadImages() {
+            var image;
+            var imageContainer;
+            for (var i = 0; i < imagesLinks.length; i++) {
+                imageContainer = document.createElement("div");
+                imageContainer.style.height = `${galleryHight}px`;
+                imageContainer.style.width = `${galleryWidth}px`;
+                imageContainer.className = "imageContainer";
+                image = new Image();
+                image.className = "image";
+                image.id = "id"+i;
+                // image.style.height = `${galleryHight}px`;
+                // image.style.width = `${galleryWidth}px`;
+                image.src = imagesLinks[i];
+                imageContainer.appendChild(image);
+                container.appendChild(imageContainer);
+
+            }
+            console.log(image.id);
+        }
+
+        function nextImage() {
+            currentIndex++;
+            
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
