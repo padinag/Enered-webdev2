@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="jquery-3.4.1.min.js"></script>
+    <style>
+
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        var data;
+        function start(){
+            console.log("DOM loaded")
+        }
+       
+
+
+        $.ajax({
+            url: "data.json",
+        }).done(function(data){
+            displayData(data);
+        });
+
+
+
+        function displayData(data){
+            for (var i = 0; i < data.squares.length; i++){
+                var square = document.createElement("div");
+                square.style.width = `${data.squares[i].width}px`;
+                square.style.height = `${data.squares[i].height}px`;
+                square.style.left = `${data.squares[i].x}px`;
+                square.style.top= `${data.squares[i].y}px`;
+                square.style.background = data.squares[i].color;
+                // square.style.borderColor = data.squares[i].borderColor;
+                // square.style.borderStyle = data.squares[i].borderStyle;
+                // square.style.borderWidth = `${data.squares[i].borderSize}px`;
+
+              square.style.border = `${data.squares[i].borderSize}px solid ${data.squares[i].borderColor}`;
+                square.style.display= "inline-block";
+                square.style.position = "absolute";
+                document.body.appendChild(square);
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

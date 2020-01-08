@@ -1,0 +1,76 @@
+{
+    "squares": [
+        {
+            "width": 20,
+            "height": 20,
+            "x": 10,
+            "y": 10,
+            "color": "red",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 50,
+            "height": 50,
+            "x": 50,
+            "y": 50,
+            "color": "blue",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 150,
+            "height": 150,
+            "x": 150,
+            "y": 150,
+            "color": "yellow",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 50,
+            "height": 50,
+            "x": 150,
+            "y": 50,
+            "color": "purple",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 50,
+            "height": 50,
+            "x": 250,
+            "y": 50,
+            "color": "green",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 50,
+            "height": 50,
+            "x": 350,
+            "y": 50,
+            "color": "lightblue",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 50,
+            "height": 50,
+            "x": 450,
+            "y": 50,
+            "color": "pink",
+            "borderColor": "black",
+            "borderSize": 1
+        },
+        {
+            "width": 50,
+            "height": 50,
+            "x": 550,
+            "y": 50,
+            "color": "grey",
+            "borderColor": "black",
+            "borderSize": 1
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dog-facts</title>
+    <script>
+        var slideShowInterval;
+        document.addEventListener("DOMContentLoaded", start);
+        function start() {
+            slideShowInterval = setInterval(nextImage, 2000);
+        }
+
+        function nextImage() {
+            var oReq = new XMLHttpRequest();
+            oReq.addEventListener("load", reqListener);
+            oReq.open("GET", "https://random.dog/woof.json");
+            oReq.send();
+        }
+        function reqListener(event) {
+            data = JSON.parse(this.response);
+            console.log(data);
+            var extension = data.url.substring(data.url.lastIndexOf(".") + 1);
+            if (extension.toLowerCase() == "mp4") {
+                var video = document.createElement("video");
+                video.setAttribute("width", 320);
+                video.setAttribute("Height", 240);
+                video.setAttribute("controls", true);
+                var source = document.createElement("source");
+                video.appendChild(source);
+                source.setAttribute("src", data.url);
+                source.setAttribute("type", "video/mp4");
+                document.body.appendChild(video)
+            } else {
+                var img = new Image();
+                img.src = data.url;
+                document.body.appendChild(img);
+            }
+            console.log(extension);
+        }
+        // var oReq = new XMLHttpRequest();
+        // oReq.addEventListener("load", reqListener);
+        // oReq.open("GET", "https://random.dog/woof.json");
+        // oReq.send();
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
