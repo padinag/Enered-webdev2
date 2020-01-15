@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ball Animation</title>
+    <script src = "ballAnimation-cu-buton.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+        var ballAnim;
+        var animated = false;
+        function start(){
+            ballAnim = new BallAnimation({
+                startX : 20,
+                startY: 60,
+                endX : 600,
+                endY: 20,
+                step: 10,
+                size: 15
+            });
+            // ballAnim.startAnimation();
+            var button = document.createElement("button");
+            button.innerHTML = "Animate";
+            document.body.appendChild(button);
+            button.addEventListener("click", beginAnimation);
+
+            var resetButton = document.createElement("button");
+            resetButton.innerHTML = "Reset";
+            document.body.appendChild(resetButton);
+            resetButton.addEventListener("click", resetAnimation);
+
+        }
+
+        function beginAnimation(){
+           if (animated == false){
+             ballAnim.startAnimation();
+             animated = true;
+           } else {
+                ballAnim.stopAnimation();
+                animated = false;
+           }
+        }
+
+        function resetAnimation(){
+            ballAnim.reset();
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
