@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Figuri geometrice- constructor</title>
+    <script src="geometric-shape.js"></script>
+    <script src="circle.js"></script>
+    <script src="patrulater.js"></script>
+    <script src="dreptunghi.js"></script>
+    <script src="patrat.js"></script>
+    <script src="triunghi.js"></script>
+    <script src="trapez.js"></script>
+ 
+    <Script>
+        var circle = new Circle(50, 50, 100);
+        circle.area = function(){
+            console.log("o functie mai sus");
+        }
+
+        var circle2 = new Circle(60, 60, 150);
+        console.log(circle.perimeter());
+        console.log(circle.area());
+
+        var d = new Dreptunghi(0, 0, 50, 50);
+        console.log(d.area(), d.perimeter(), d.name);
+
+        var p = new Patrat(40, 40, 30);
+        console.log(p.area(), p.perimeter(), p.name);
+        
+        var t = new Triunghi(40, 40, 30);
+        console.log(t.area(), t.perimeter(), t.name);
+
+        var trapez = new Trapez(40, 40, 60, 10, 20, 20, 10);
+        console.log(trapez.area(), trapez.perimeter(), trapez.name);
+
+    </Script>
+</head>
+
+<body>
+
+</body>
+
+</html>
