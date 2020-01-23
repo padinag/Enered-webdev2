@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
     <script src = "beeing.js"></script>
     <script src = "human.js"></script>
@@ -11,13 +9,25 @@
 var h =  new Human({
     age: 50,
     address: "....",
-    merried: false
+    merried: false,
+    emailAddress: "padinag@yahoo.com",
+    phoneNumber: "32146665",
+    gen: "feminin",
+    geographicalRegion: "Europe",
+    alive: true,
+    name: "Adina"
+
     //includ aici prop si pentru beeing si pentru Human
 })
+h.isVegan()
+h.breathe()
+h.isOld(40)
+
+
 </script>
 
 </head>
 <body>
     
 </body>
-</html>
+</html>      
