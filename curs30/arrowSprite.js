@@ -14,7 +14,7 @@ class ArrowSprite extends Sprite {
   }
 
   pressKey(e) {
-    console.log.bind("pressKey");
+    console.log.bind("pressedKey");
     this.pressKeyCallback(e);
   }
 }
