@@ -123,8 +123,7 @@
             "frame6",
             "frame7",
             "frame8"
-          ],
-          pressKeyCallback: spritePressKey.bind(this)
+          ]
         });
 
         document.body.appendChild(sp.element);
@@ -144,9 +143,28 @@
         sp.y = Math.random() * 1000;
       }
 
-      function spritePressKey() {
-        console.log("keypressed");
-      }
+      // function spritePressKey(e) {
+      //   console.log("keypressed");
+      //   let x = e.code;
+      //   console.log(x);
+      //   if (x == "ArrowLeft" || x == "ArrowDown"){
+      //     this._index --;
+      //     if (this._index = 0){
+      //       this._index = this._classes.length
+      //     }
+      //     this.class = this._classes[this._index];
+      //   } else if (x == "ArrowRight" || x == "ArrowUp"){
+      //       this._index ++;
+      //       if (this._index >= this._classes.length){
+      //       this._index = 0;
+      //   }
+      //   this.class = this._classes[this._index];
+      //     } else {
+      //       alert("press an arrow key");
+      //     }
+      //   }
+      
+    
     </script>
   </head>
 
