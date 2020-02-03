@@ -79,22 +79,23 @@
       //   class: "frame1",
       //   clickCallback: spriteClick.bind(this)
       // });
-      // animatedSprite = new AnimatedSprite({
-      //   x: 0,
-      //   y: 0,
-      //   width: 25,
-      //   height: 35,
-      //   classes: [
-      //     "frame1",
-      //     "frame2",
-      //     "frame3",
-      //     "frame4",
-      //     "frame5",
-      //     "frame6",
-      //     "frame7",
-      //     "frame8"
-      //   ]
-      // });
+
+      animatedSprite = new newAnimatedSprite(){
+        x: 0,
+        y: 0,
+        width: 25,
+        height: 35,
+        classes: [
+          "frame1",
+          "frame2",
+          "frame3",
+          "frame4",
+          "frame5",
+          "frame6",
+          "frame7",
+          "frame8"
+        ]
+      });
 
       // clickAnimatedSprite = new ClickAnimatedSprite({
       //   x: 40,
@@ -161,13 +162,28 @@
       this.element.className = this._class;
     }
 
-    function newAnimatedSprite(){
-      Sprite.call(this, options{class: options.classes[0]});
+    function newAnimatedSprite() {
+      Sprite.call(this, options);
+      options.class = options.classes[0];
+      this._classes = options.classes;
+      this._index = 0;
+      this.startAnimation();
     }
-    newAnimatedSprite.prototype = Object.create(Sprite.prototype);
+    newAnimatedSprite.prototype = Object.create(newAnimatedSprite.prototype);
 
-    var newAnimatedSprite = newAnimatedSprite();
-
+    
+    newAnimatedSprite.prototype.startAnimation = function () {
+      setInterval(this.nextFrame.bind(this), 100)
+    }
+    
+    function nextFrame() {
+      this._index++;
+      if (this._index >= this._classes.length) {
+        this._index = 0;
+      }
+      this.class = this._classes[this._index];
+    }
+      }
     function spriteClick() {
       sp.x = Math.random() * 1000;
       sp.y = Math.random() * 1000;
