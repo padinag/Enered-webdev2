@@ -80,9 +80,9 @@
       //   clickCallback: spriteClick.bind(this)
       // });
 
-      animatedSprite = new newAnimatedSprite(){
-        x: 0,
-        y: 0,
+      animatedSprite = new newAnimatedSprite({
+        x: 100,
+        y: 100,
         width: 25,
         height: 35,
         classes: [
@@ -132,7 +132,7 @@
       // });
 
       document.body.appendChild(sp.element);
-      // document.body.appendChild(animatedSprite.element);
+      document.body.appendChild(animatedSprite.element);
       // document.body.appendChild(clickableSprite.element);
       // document.body.appendChild(clickAnimatedSprite.element);
       // document.body.appendChild(arrowSprite.element);
@@ -162,28 +162,28 @@
       this.element.className = this._class;
     }
 
-    function newAnimatedSprite() {
-      Sprite.call(this, options);
+    function newAnimatedSprite(options) {
       options.class = options.classes[0];
+      Sprite.call(this, options);
       this._classes = options.classes;
       this._index = 0;
       this.startAnimation();
     }
-    newAnimatedSprite.prototype = Object.create(newAnimatedSprite.prototype);
+    newAnimatedSprite.prototype = Object.create(Sprite.prototype);
 
     
     newAnimatedSprite.prototype.startAnimation = function () {
       setInterval(this.nextFrame.bind(this), 100)
     }
     
-    function nextFrame() {
+    newAnimatedSprite.prototype.nextFrame = function nextFrame() {
       this._index++;
       if (this._index >= this._classes.length) {
         this._index = 0;
       }
       this.class = this._classes[this._index];
     }
-      }
+      
     function spriteClick() {
       sp.x = Math.random() * 1000;
       sp.y = Math.random() * 1000;

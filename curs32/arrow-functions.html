@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrow Functions</title>
+
+    <script>
+
+        var a = (a, b) => {
+            return a + b;
+        }
+
+        console.log(a(4, 5));
+        console.log("--------------------------");
+
+        var b = n => n;
+        console.log(b(10));
+
+        // <=>
+        // function b(n){
+        //     return n;
+        // }
+
+
+        var c = v => {
+            return v * v;
+        }
+
+        console.log(c(10));
+        var d = {
+            x: 1000
+        }
+        var x = 50;
+        var obj = {
+            x: 90,
+            f: function() {
+                var b = () =>{
+                    console.log(this.x);
+                }
+                b();
+               // b.call(d);//arrow funct. nu se pot bind-ui - nu are nici un efect
+            }
+        }
+        console.log("____________________");
+
+        obj.f(); // => obj
+        obj.f.call(this); //window
+        obj.f.call(d); //=> 1000;
+
+        var m = (a, b, c) => a + b + c;
+        console.log(m(1, 2, 3));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

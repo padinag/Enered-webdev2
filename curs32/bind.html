@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BIND</title>
+
+    <script>
+       //use strict
+        var x = 15;
+        var a ={
+            x:5,
+            f: function(){
+                console.log(this.x);
+            }
+        }
+
+        var b = {
+            x: 10
+        }
+
+        var f = a.f.bind(b); //
+        var f2 = a.f;
+
+        var f3 = f.bind({x:90});
+
+        a.f(); // ==> 5
+        f(); //==> 10 <==> a.f.call(b)
+        f2(); // ==>15 //use strict ==> undefined
+
+        f3(); //==> 10 - nu se tine cont de a 2a bindare
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
