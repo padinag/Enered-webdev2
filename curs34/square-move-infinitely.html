@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Square</title>
+
+    <style>
+        .square {
+            width: 50px;
+            height: 50px;
+            top: 10%;
+            left: 10%;
+            background: darkblue;
+            position: absolute;
+            display: inline-block;
+            animation: move 10s infinite;
+        }
+
+        @keyframes move {
+            0%, 12.5% {
+                left: 10%;
+                top: 10%;
+            }
+
+            12.5%, 37.5%{
+                left: 50%;
+                top: 10%;
+            }
+
+            37.5%, 62.5% {
+                top: 50%;
+                left: 50%;
+            }
+            62.5%, 87.5% {
+                left: 10%;
+                top: 50%;
+            }
+
+            87.5%, 100%{
+                top: 10%;
+                left: 10%;
+            }
+
+        }
+
+ 
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+</body>
+
+</html>

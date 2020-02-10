@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninsoare</title>
+    <style>
+        body {
+            background: black;
+        }
+
+        .sq1 {
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: white;
+            animation: cadere 10s infinite;
+        }
+
+        .sq2 {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        .sq3 {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: white;
+        }
+
+        @keyframes cadere {
+            0% {
+                top: -10%;
+                left: 1%
+            }
+
+            10% {
+                top: 0%;
+                left: 5%
+            }
+
+            20% {
+                top: 20%;
+                left: 3%
+            }
+
+            30% {
+                top: 30%;
+                left: 10%
+            }
+
+            40% {
+                top: 40%;
+                left: 10%
+            }
+
+            50% {
+                top: 50%;
+                left: 7%
+            }
+
+            60% {
+                top: 60%;
+                left: 7%
+            }
+
+            70% {
+                top: 70%;
+                left: 7%
+            }
+
+            80% {
+                top: 80%;
+                left: 10%
+            }
+
+            90% {
+                top: 90%;
+                left: 7%
+            }
+
+            100% {
+                top: 100%;
+                left: 7%
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sq1"></div>
+    <div class="sq2"></div>
+    <div class="sq3"></div>
+    <div class="sq1"></div>
+    <div class="sq2"></div>
+    <div class="sq3"></div>
+    <div class="sq1"></div>
+    <div class="sq2"></div>
+    <div class="sq3"></div>
+</body>
+
+</html>
