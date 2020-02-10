@@ -20,82 +20,65 @@
             height: 15px;
             border-radius: 50%;
             background: white;
-            animation: cadere 10s infinite;
+            animation: cadere 10s infinite, rightLeft 15s infinite;
         }
 
         .sq2 {
+            position: absolute;
             display: inline-block;
+            top: 10%;
+            left: 30%;
             width: 10px;
             height: 10px;
             border-radius: 50%;
             background: white;
+            animation: cadere 10s infinite, rightLeft2 5s infinite;
         }
 
         .sq3 {
+            position: absolute;
             display: inline-block;
             width: 5px;
             height: 5px;
             border-radius: 50%;
             background: white;
+            animation: cadere 10s infinite, rightLeft 5s infinite;
         }
 
         @keyframes cadere {
-            0% {
+            from {
                 top: -10%;
-                left: 1%
             }
 
-            10% {
-                top: 0%;
-                left: 5%
+            to {
+                top: 100%;
+
+            }
+        }
+
+        @keyframes rightLeft2 {
+            from {
+                left: 30%;
             }
 
-            20% {
-                top: 20%;
-                left: 3%
+            to{left: 40%}
+        }
+
+
+        @keyframes rightLeft1 {
+
+            0%,
+            100% {
+                left: 10px;
             }
 
-            30% {
-                top: 30%;
-                left: 10%
-            }
-
-            40% {
-                top: 40%;
-                left: 10%
+            25% {
+                left: 100px;
             }
 
             50% {
-                top: 50%;
-                left: 7%
+                left: 50px;
             }
-
-            60% {
-                top: 60%;
-                left: 7%
-            }
-
-            70% {
-                top: 70%;
-                left: 7%
-            }
-
-            80% {
-                top: 80%;
-                left: 10%
-            }
-
-            90% {
-                top: 90%;
-                left: 7%
-            }
-
-            100% {
-                top: 100%;
-                left: 7%
-            }
-
-
         }
     </style>
 </head>
@@ -104,12 +87,12 @@
     <div class="sq1"></div>
     <div class="sq2"></div>
     <div class="sq3"></div>
-    <div class="sq1"></div>
+    <!-- <div class="sq1"></div>
     <div class="sq2"></div>
     <div class="sq3"></div>
     <div class="sq1"></div>
     <div class="sq2"></div>
-    <div class="sq3"></div>
+    <div class="sq3"></div> -->
 </body>
 
 </html>
