@@ -1,98 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ninsoare</title>
     <style>
-        body {
-            background: black;
+      body {
+        background: black;
+      }
+
+      .sq1 {
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: white;
+        animation: cadere 10s infinite linear, rightLeft 15s infinite linear;
+      }
+
+      .sq2 {
+        position: absolute;
+        display: inline-block;
+        top: 10%;
+        left: 30%;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: white;
+        animation: cadere 10s infinite, rightLeft2 10s infinite linear;
+      }
+
+      .sq3 {
+        position: absolute;
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: white;
+        animation: cadere 10s infinite linear, rightLeft 5s infinite linear;
+      }
+
+      @keyframes cadere {
+        from {
+          top: -10%;
         }
 
-        .sq1 {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: white;
-            animation: cadere 10s infinite, rightLeft 15s infinite;
+        to {
+          top: 100%;
+        }
+      }
+
+      @keyframes rightLeft2 {
+        0%,
+        100% {
+          transform: translateX(0px);
         }
 
-        .sq2 {
-            position: absolute;
-            display: inline-block;
-            top: 10%;
-            left: 30%;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: white;
-            animation: cadere 10s infinite, rightLeft2 5s infinite;
+        50% {
+          transform: translateX(80px);
+        }
+      }
+
+      @keyframes rightLeft1 {
+        0%,
+        100% {
+          left: 10px;
         }
 
-        .sq3 {
-            position: absolute;
-            display: inline-block;
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: white;
-            animation: cadere 10s infinite, rightLeft 5s infinite;
+        25% {
+          left: 100px;
         }
 
-        @keyframes cadere {
-            from {
-                top: -10%;
-            }
-
-            to {
-                top: 100%;
-
-            }
+        50% {
+          left: 50px;
         }
-
-        @keyframes rightLeft2 {
-            from {
-                left: 30%;
-            }
-
-            to{left: 40%}
-        }
-
-
-        @keyframes rightLeft1 {
-
-            0%,
-            100% {
-                left: 10px;
-            }
-
-            25% {
-                left: 100px;
-            }
-
-            50% {
-                left: 50px;
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="sq1"></div>
     <div class="sq2"></div>
     <div class="sq3"></div>
-    <!-- <div class="sq1"></div>
+    <div class="sq1"></div>
     <div class="sq2"></div>
     <div class="sq3"></div>
     <div class="sq1"></div>
     <div class="sq2"></div>
-    <div class="sq3"></div> -->
-</body>
-
+    <div class="sq3"></div>
+  </body>
 </html>
