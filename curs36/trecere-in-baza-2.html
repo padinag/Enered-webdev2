@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var number = 22;
+        var cat;
+        var rest;
+        var newNumbers = [];
+
+
+        do {
+            cat = parseInt(number / 2);
+            rest = number % 2;
+            number = parseInt(number / 2);
+            newNumbers.push(rest);
+        } while (cat > 0)
+        console.log(newNumbers.reverse().join(""))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

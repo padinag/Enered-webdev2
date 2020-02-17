@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var number = 255;
+        var cat;
+        var rest;
+        var newNumbers = [];
+        var baza = 16;
+        var dict = {
+            10: "A",
+            11: "B",
+            12: "C",
+            13: "D",
+            14: "E",
+            15: "F"
+        }
+
+
+        do {
+            cat = parseInt(number / baza);
+            rest = number % baza;
+            number = parseInt(number / baza);
+            newNumbers.push(rest);
+        } while (cat > 0)
+        newNumbers = newNumbers.map((item) => {
+            if (item > 9) {
+                return dict[item];
+            }
+            return item;
+        })
+        console.log(newNumbers.reverse().join(""))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
