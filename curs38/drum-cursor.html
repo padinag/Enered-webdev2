@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            padding: 0;
+        }
+
+        .circle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var circle;
+        var isDragging = false;
+        var coordArray = [];
+        var frame;
+        var frame2;
+        var index = 0;
+        var direction = 1;
+        var mouseX;
+        var mouseY;
+
+        function start() {
+            createCircle();
+        }
+
+        function createCircle() {
+            circle = document.createElement("div");
+            circle.className = "circle"
+            document.body.appendChild(circle);
+            circle.addEventListener("mousedown", circleMouseDown);
+            document.body.addEventListener("mouseup", circleMouseUp);
+            document.body.addEventListener("mousemove", circleMouseMove);
+        }
+
+        function circleMouseDown(e) {
+            isDragging = true;
+            coordArray = [];
+            direction = 1;
+            frame2 = requestAnimationFrame(pushCoord);
+            index = 0;
+        }
+
+        function pushCoord() {
+            if (isDragging) {
+                circle.style.left = `${mouseX}px`;
+                circle.style.top = `${mouseY}px`;
+                console.log("mouseMove")
+                coordArray.push({
+                    x: mouseX,
+                    y: mouseY
+
+                });
+            }
+            console.log("requestAnimationFrame");
+            frame2 = requestAnimationFrame(pushCoord);
+        }
+
+        function circleMouseMove(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }
+
+
+
+        function circleMouseUp(e) {
+            if (isDragging == true) {
+                isDragging = false;
+                cancelAnimationFrame(frame2);
+                frame = requestAnimationFrame(remakePath);
+            }
+        }
+
+
+
+        function remakePath() {
+            circle.style.left = `${coordArray[index].x}px`;
+            circle.style.top = `${coordArray[index].y}px`;
+            index += direction;
+            if (index == coordArray.length - 1) {
+                direction = -1;
+            }
+            if (index == 0) {
+                return;
+            }
+            requestAnimationFrame(remakePath);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
