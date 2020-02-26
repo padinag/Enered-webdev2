@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Script>
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("GET", "data.json");
+        oReq.send();
+
+        function reqListener(event) {
+            data = JSON.parse(this.response);
+            console.log(data);
+        }
+    </Script>
+</head>
+<body>
+    
+</body>
+</html>

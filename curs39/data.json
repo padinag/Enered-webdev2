@@ -1,0 +1,49 @@
+[{
+    "header": {
+        "title": "Text1"
+    },
+    "body": {
+        "title": "kings way",
+        "description": "fantasy",
+        "imageURL": "https://en.wikipedia.org/wiki/The_Way_of_Kings#/media/File:TheWayOfKings.png",
+        "author": "brandon sanderson",
+        "rating": "5"
+    }
+},
+{
+    "header": {
+        "title": "Text2"
+    },
+    "body": {
+        "title": "kings way",
+        "description": "fantasy",
+        "imageURL": "https://en.wikipedia.org/wiki/The_Way_of_Kings#/media/File:TheWayOfKings.png",
+        "author": "brandon sanderson",
+        "rating": "5"
+    }
+},
+{
+    "header": {
+        "title": "Text3"
+    },
+    "body": {
+        "title": "kings way",
+        "description": "fantasy",
+        "imageURL": "https://en.wikipedia.org/wiki/The_Way_of_Kings#/media/File:TheWayOfKings.png",
+        "author": "brandon sanderson",
+        "rating": "5"
+    }
+},
+{
+    "header": {
+        "title": "Text4"
+    },
+    "body": {
+        "title": "kings way",
+        "description": "fantasy",
+        "imageURL": "https://en.wikipedia.org/wiki/The_Way_of_Kings#/media/File:TheWayOfKings.png",
+        "author": "brandon sanderson",
+        "rating": "5"
+    }
+}]
+
