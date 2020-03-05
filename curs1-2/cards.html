@@ -4,10 +4,25 @@
     <title>Colored Cards</title>
   </head>
   <style>
+    .generalContainer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(146, 233, 236);
+    }
+    .horizontalContainer {
+      display: flex;
+      flex-direction: row;
+      align-content: space-around;
+    }
     .container {
+      flex-grow: 2;
+      margin-top: 1em;
+      margin-left: 1em;
       width: 300px;
       height: 160px;
       border: grey 1px solid;
+      background-color: white;
     }
     .titleBox {
       display: inline-block;
@@ -28,94 +43,207 @@
       height: 80px;
     }
     .headBox2 {
-      background: cyan;
+      background: rgb(70, 124, 223);
       height: 80px;
     }
+    .headBox3 {
+      background: rgb(70, 173, 139);
+      height: 80px;
+    }
+
     .informationBox {
       padding: 20px 20px 20px 20px;
     }
+
+    .title {
+      margin-left: 1em;
+      color: white;
+    }
+
+    .details {
+      margin-left: 2em;
+      color: white;
+      font-size: 0.6em;
+    }
   </style>
   <body>
-    <div class="container">
-      <div class="headBox1">
-        <div class="titleBox">
-          <span><b>Red - Title</b></span
-          ><br /><br />
-          <span>Description text here....</span>
+    <div class="generalContainer">
+      <p class="title">COLORED CARDS</p>
+      <div class="horizontalContainer">
+        <div class="container">
+          <div class="headBox1">
+            <div class="titleBox">
+              <span><b>Red - Title</b></span
+              ><br /><br />
+              <span>Description text here....</span>
+            </div>
+            <div class="thumbnails">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="informationBox">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor.
+          </div>
         </div>
-        <div class="thumbnails">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
+        <!--card2-->
+        <div class="container">
+          <div class="headBox2">
+            <div class="titleBox">
+              <span><b>Red - Title</b></span
+              ><br /><br />
+              <span>Description text here....</span>
+            </div>
+            <div class="thumbnails">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="informationBox">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor.
+          </div>
         </div>
       </div>
-      <div class="informationBox">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor.
-      </div>
-    </div>
-    <!--card2-->
-    <div class="container">
-      <div class="headBox2">
-        <div class="titleBox">
-          <span><b>Red - Title</b></span
-          ><br /><br />
-          <span>Description text here....</span>
+      <!--card3-->
+      <div class="horizontalContainer">
+        <div class="container">
+          <div class="headBox3">
+            <div class="titleBox">
+              <span><b>Red - Title</b></span
+              ><br /><br />
+              <span>Description text here....</span>
+            </div>
+            <div class="thumbnails">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="informationBox">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor.
+          </div>
         </div>
-        <div class="thumbnails">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
-        </div>
-      </div>
-      <div class="informationBox">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor.
-      </div>
-    </div>
 
-    <!--card3-->
-    <div class="container">
-      <div class="headBox3">
-        <div class="titleBox">
-          <span><b>Red - Title</b></span
-          ><br /><br />
-          <span>Description text here....</span>
-        </div>
-        <div class="thumbnails">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path
-              d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-            />
-          </svg>
+        <!--card4-->
+        <div class="container">
+          <div class="headBox1">
+            <div class="titleBox">
+              <span><b>Red - Title</b></span
+              ><br /><br />
+              <span>Description text here....</span>
+            </div>
+            <div class="thumbnails">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="informationBox">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor.
+          </div>
         </div>
       </div>
-      <div class="informationBox">
-        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-        ligula eget dolor.
+      <!--card5-->
+      <p>
+        <br />
+        <span class="title">COLORED CARDS WITH LOADING</span><br /><span
+          class="details"
+          >Please click the refresh button....</span
+        >
+      </p>
+      <div class="horizontalContainer">
+        <div class="container">
+          <div class="headBox2">
+            <div class="titleBox">
+              <span><b>Red - Title</b></span
+              ><br /><br />
+              <span>Description text here....</span>
+            </div>
+            <div class="thumbnails">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="informationBox">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor.
+          </div>
+        </div>
+        <!--card6-->
+        <div class="container">
+          <div class="headBox3">
+            <div class="titleBox">
+              <span><b>Red - Title</b></span
+              ><br /><br />
+              <span>Description text here....</span>
+            </div>
+            <div class="thumbnails">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="informationBox">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+            commodo ligula eget dolor.
+          </div>
+        </div>
       </div>
-    </div>-->
+    </div>
   </body>
 </html>
