@@ -8,38 +8,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         .container {
-            height: 900px;
+            height: 500px;
             width: 900px;
             background: rgb(250, 250, 220);
-            /* position: absolute; */
+            position: absolute;
         }
 
-        .bigestBox{
+        .bigestBox {
             position: absolute;
-            width:25%;
-            height: 208px;
+            width: 27%;
+            height: 230px;
+            display: inline-block;
         }
+
         .bigBox {
             position: relative;
             height: 200px;
-            width: 100%;
-            border: 4px solid white ;
-            margin-top: 4%;
-            margin-left: 3%;
+            width: 97%;
+            border: 4px solid white;
+            top: 8%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
+        #box1{
+            margin-left: 3%;
+        }
+        #box2{
+            margin-left: 36%;
+        }
+        #box3{
+            margin-left: 69%;
+        }
+
+        #box4{
+            margin-left: 3%;
+            top: 250px;
+        }
+        #box5{
+            margin-left: 36%;
+            top: 250px;
+        }
+        #box6{
+            margin-left: 69%;
+            top: 250px;
+        }
         .roundBox {
             position: relative;
             border-radius: 15px;
-            height:30px;
-            width:75px;
-            border: 4px solid white ;
+            height: 30px;
+            width: 75px;
+            border: 4px solid white;
             background: rgb(21, 80, 245);
             display: inline-block;
-            top: -225px;
-            left: 54%;
+            top: -200px;
+            left: 50%;
             transform: translate(-50%);
+            font-size: 1.5em;
+            color: blanchedalmond;
+            text-align: center;
         }
 
         .mediumBox {
@@ -63,6 +89,7 @@
             color: white;
             height: 50px;
             width: 100%;
+            top: -4px;
             text-align: center;
             position: relative;
             display: inline-block
@@ -72,13 +99,65 @@
 
 <body>
     <div class="container">
-        <div class ="bigestBox">
-        <div class="bigBox">
-            <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
-            <div class="smallBox"><p>Magic</p></div>
+        <div class="bigestBox" id="box1">
+            <div class="bigBox">
+                <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
+                <div class="smallBox">
+                    <p>Magic</p>
+                </div>
+            </div>
+            <div class="roundBox">123</div>
         </div>
-        <div class="roundBox"></div>
-    </div>
+
+        <div class="bigestBox" id="box2">
+            <div class="bigBox">
+                <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
+                <div class="smallBox">
+                    <p>Magic</p>
+                </div>
+            </div>
+            <div class="roundBox">123</div>
+        </div>
+
+        <div class="bigestBox" id="box3">
+            <div class="bigBox">
+                <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
+                <div class="smallBox">
+                    <p>Magic</p>
+                </div>
+            </div>
+            <div class="roundBox">123</div>
+        </div>
+
+        <div class="bigestBox" id="box4">
+            <div class="bigBox">
+                <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
+                <div class="smallBox">
+                    <p>Magic</p>
+                </div>
+            </div>
+            <div class="roundBox">123</div>
+        </div>
+
+        <div class="bigestBox" id="box5">
+            <div class="bigBox">
+                <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
+                <div class="smallBox">
+                    <p>Magic</p>
+                </div>
+            </div>
+            <div class="roundBox">123</div>
+        </div>
+
+        <div class="bigestBox" id="box6">
+            <div class="bigBox">
+                <div class="mediumBox"><i class="fa fa-star" style="font-size:48px;color:white"></i></div>
+                <div class="smallBox">
+                    <p>Magic</p>
+                </div>
+            </div>
+            <div class="roundBox">123</div>
+        </div>
     </div>
 </body>
 
