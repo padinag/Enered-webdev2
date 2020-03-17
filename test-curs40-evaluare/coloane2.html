@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coloane2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 80vw;
+            height: 100vh;
+            margin: 0px auto;
+            }
+
+        .textTop {
+            text-align: center;
+            width: 70%;
+            padding-left: 15%;
+            padding-top: 3%;
+        }
+
+        .title {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: larger;
+            }
+
+        .secondContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .smallContainer {
+            flex-grow: 1;
+            height: 50%;
+            margin-top: 5%;
+            margin-left: 1.5%;
+            margin-right: 1.5%;
+            border-radius: 5px;
+            overflow: hidden;
+            background: rgb(247, 241, 241);
+        }
+
+        .smallContainer>.boxTitle {
+            font-family: sans-serif;
+            font-weight: bolder;
+        }
+
+        .image{
+            display: inline-block;
+            width: 100%; 
+            height: 50vh; 
+            overflow: hidden; 
+        }
+        img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        button {
+            background: rgb(235, 78, 6);
+            height: 2em;
+            font-size: 1em;
+            font-weight: bold;
+            color: honeydew;
+            border-radius: 5px;
+            margin: 0px auto;
+        }
+        p, .presentationText{
+            text-align: center;
+            color: grey;
+            
+        }
+
+        .boxTitle{
+            margin: 0px auto;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="textTop">
+            <span class="title">What is Your Start-up Idea</span><br><br>
+            <span class="presentationText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et
+                dolore magna aliqua. Sed cras ornare arcu dui vivamus arcu felis bibendum ut. Tellus elementum sagittis
+                vitae et. Fringilla urna porttitor rhoncus dolor. </span>
+        </div>
+
+        <div class="secondContainer">
+
+            <div class="smallContainer">
+                <div class="image"><img src="frezii.jpg"></div>
+                <p class="boxTitle">
+                    What is your Start-up Idea? Make it Best
+                </p>
+                <p>LOREM IPSUM DOLOR SIT AMET<p>
+                        <button>GET IT NOW</button>
+            </div>
+
+            <div class="smallContainer">
+                <div class="image"><img src="frezii.jpg"></div>
+                <p class="boxTitle">
+                    What is your Start-up Idea? Make it Best
+                </p>
+                <p>LOREM IPSUM DOLOR SIT AMET<p>
+                        <button>GET IT NOW</button>
+            </div>
+
+            <div class="smallContainer">
+                <div class="image"><img src="frezii.jpg"></div>
+                <p class="boxTitle">
+                    What is your Start-up Idea? Make it Best
+                </p>
+                <p>LOREM IPSUM DOLOR SIT AMET<p>
+                        <button>GET IT NOW</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
