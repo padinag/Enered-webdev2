@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            padding-left: 10%;
+        }
+
+        .menu {
+            display: flex;
+            width: 80%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            background: blue;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        .submenu {
+            vertical-align: middle;
+            color: lightblue;
+            height: 100%;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-sizing: border-box;
+            /* border-bottom: 0.1em solid blue; */
+            position: relative;
+           
+        }
+
+        .submenu:hover {
+            color: white;
+        }
+
+        .submenu:hover:after {
+            content: "";
+            width: 100%;
+            background-color: rgb(155, 225, 243);
+            height: 4px;
+            top: 100%;
+            left:100%;
+            transform: translate(-100%, -100%);
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <div class="submenu">ABOUT</div>
+        <div class="submenu">GETTING STARTED</div>
+        <div class="submenu">TEMPLATES</div>
+        <div class="submenu">COMPONENTS</div>
+        <div class="submenu">STYLES</div>
+        <div class="submenu">CUSTOMIZE</div>
+        <div class="submenu">SHOWCASE</div>
+        <div class="submenu">FAQ</div>
+    </div>
+</body>
+
+</html>
