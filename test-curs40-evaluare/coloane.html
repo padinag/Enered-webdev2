@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .smallContainer {
+            background-color: white;
+            position: relative;
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+        }
+
+        .image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            margin: 0 auto;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+
+        .description {
+            width: 100%;
+            display: inline-block;
+            position: absolute;
+            top: 40px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            z-index:10;
+        }
+
+        .line-separator {
+            width: 60%;
+            background-color: brown;
+            height: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="smallContainer">
+        <div class="image"><img src="images/vijla.jpg" height="50px" width="50px"></div>
+        <div class="description">
+            <span class="innerTitle">Vizsla Maghiara</span>
+            <div class="line-separator"></div>
+            <p></p>
+        </div>
+
+    </div>
+</body>
+
+</html>
