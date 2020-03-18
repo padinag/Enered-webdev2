@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Document</title>
+    <style>
+        body{
+            background: #2ecc71;
+        }
+.box{
+    border-radius: 50px;
+    border: 3px solid #fff;
+    color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s;
+}
+.text{
+    color: black;
+}
+.arrow:before{
+    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "&#xf061";
+    box-sizing: border-box;
+    left: 130%;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    font-size: 125%;
+    line-height: 3.5;
+    color:black;
+    transition: all 0.3s;
+}
+
+.arrowLeft:before{
+    content: "";
+    box-sizing: border-box;
+    left: -130%;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    font-size: 125%;
+    line-height: 3.5;
+    color: #fff;
+    transition: all 0.3s;
+}
+    </style>
+</head>
+<body>
+    <div class="box arrowRight"><span class="arrow"></span><span class="text">CONTINUE</span></div>
+    <div class="box arrowLeft">Continue <i class='fas fa-arrow-left'></i></div>
+</body>
+</html>
+
