@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu2</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            padding-left: 10%;
+        }
+        .container{
+            width: 80%;
+            background-color: rgb(224, 243, 202) ;
+            height: 60px;
+        }
+        .menu {
+            display: flex;
+            width: 100%;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            background-color: green;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+            height: 40px;
+        }
+
+        .submenu {
+            background: green;
+            vertical-align: middle;
+            color: rgb(213, 250, 171);
+            height: 100%;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            box-sizing: border-box;
+            position: relative;
+
+        }
+
+        .submenu:hover {
+            color:rgb(224, 243, 202);
+        }
+
+        .submenu:hover:after {
+            content:"";
+            border-top: 8px transparent solid;
+            border-bottom: 8px rgb(224, 243, 202) solid;
+            border-right: 8px transparent solid;
+            border-left: 8px transparent solid;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class= "container">
+    <div class="menu">
+        <div class="submenu">ABOUT</div>
+        <div class="submenu">GETTING STARTED</div>
+        <div class="submenu">TEMPLATES</div>
+        <div class="submenu">COMPONENTS</div>
+        <div class="submenu">STYLES</div>
+        <div class="submenu">CUSTOMIZE</div>
+        <div class="submenu">SHOWCASE</div>
+        <div class="submenu">FAQ</div>
+    </div>
+</div>
+
+</body>
+
+</html>
