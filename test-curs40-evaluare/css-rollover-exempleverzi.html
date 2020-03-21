@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-color: #2ecc71;
+        }
+
+        .topContainer {
+            margin-top: 1%;
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .bottomContainer {
+            top: 110%;
+            transform: translateY(-100%);
+            display: flex;
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .continue {
+            height: 40%;
+            width: 30%;
+            border: 2px solid white;
+            border-radius: 25px;
+            margin-right: 3%;
+            margin-bottom: 1%;
+            color: white;
+            position: relative;
+            transition: all 0.5s ease-in;
+            overflow: hidden;
+
+        }
+
+        .return {
+            height: 40%;
+            width: 30%;
+            border: 2px solid white;
+            border-radius: 25px;
+            margin-left: 3%;
+            margin-bottom: 1%;
+            color: white;
+            position: relative;
+            transition: all 0.5s ease-in;
+            overflow: hidden;
+        }
+
+        span {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            line-height: 100%;
+            position: absolute;
+        }
+
+        .continue:after {
+            content: "\2192";
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15px;
+            width: 20%;
+            position: absolute;
+            left: 103%;
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+
+        .continue:hover::after {
+            left: 70%;
+            opacity: 1;
+        }
+
+        .continue:hover {
+            background-color: #176b3a;
+        }
+
+
+        .return:after {
+            content: "\2190";
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15px;
+            width: 20%;
+            position: absolute;
+            left: -10%;
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+
+        .return:hover::after {
+            left: 25%;
+            opacity: 1;
+        }
+
+        .return:hover {
+            background-color: #176b3a;
+        }
+
+        .bottomContainer>.continue:after {
+            content: "\2192";
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15px;
+            width: 20%;
+            position: absolute;
+            left: 70%;
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+
+        .bottomContainer>.continue:hover::after {
+            left: 90%;
+            opacity: 1;
+        }
+
+        .bottomContainer>.return:after {
+            content: "\2190";
+            top: 50%;
+            transform: translateY(-50%);
+            height: 15px;
+            width: 20%;
+            position: absolute;
+            left: 25%;
+            opacity: 0;
+            transition: all 0.5s ease-in;
+        }
+
+        .bottomContainer>.return:hover::after {
+            left: 1%;
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="topContainer">
+            <div class="continue"><span>CONTINUE</span></div>
+            <div class="return"><span>RETURN</span></div>
+        </div>
+        <div class="bottomContainer">
+            <div class="continue"><span>CONTINUE</span></div>
+            <div class="return"><span>RETURN</span></div>
+        </div>
+    </div>
+</body>
+
+</html>
