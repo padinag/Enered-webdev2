@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<script>
+    document.addEventListener("DOMContentLoaded", start);
+    let list = [
+        {
+            tabName: "section1",
+            body: "text in body section 1"
+        },
+        {
+            tabName: "section2",
+            body: "text in body section 2"
+        },
+        {
+            tabName: "section3",
+            body: "text in body section 3"
+        },
+        {
+            tabName: "section4",
+            body: "text in body section 4"
+        },
+        {
+            tabName: "section5",
+            body: "text in body section 5"
+        }
+    ];
+
+    function start() {
+        let allDivs = document.createElement("div");
+        allDivs.className = "allDivs";
+        document.body.appendChild(allDivs);
+        let btnDiv;
+        let tabNameDiv;
+        let bodyDiv;
+
+        for (i = 0; i < list.length; i++) {
+            console.log(list[i].tabName);
+
+            tabNameDiv = document.createElement("div");
+            tabNameDiv.id = "title";
+            bodyDiv = document.createElement("div");
+            btnDiv = document.createElement("button");
+
+            btnDiv.className = "btnDiv";
+            btnDiv.innerHTML = "+";
+
+            bodyDiv.className = "bodyDiv";
+            tabNameDiv.className = "tabN";
+
+            bodyDiv.id = "bodyDiv" + i;
+            tabNameDiv.id = "tabN" + i;
+
+            tabNameDiv.innerHTML = list[i].tabName;
+            bodyDiv.innerHTML = list[i].body;
+
+            allDivs.appendChild(tabNameDiv);
+            allDivs.appendChild(bodyDiv);
+            tabNameDiv.appendChild(btnDiv);
+
+            btnDiv.addEventListener("click", btnClick);
+
+            function btnClick() {
+                var parent = this.parentElement;
+                var parentId = parent.id;
+                var index = parseInt(parentId.slice(4));
+                console.log(index);
+
+                var bodyDiv = document.getElementById("bodyDiv" + index);
+                bodyDiv.classList.toggle("expand");
+
+                if (bodyDiv.style.display === "block") {
+                    bodyDiv.style.display = "none";
+                } else {
+                    bodyDiv.style.display = "block";
+                }
+            }
+        }
+    }
+</script>
+<style>
+    .allDivs {
+        display: inline-block;
+        width: 300px;
+        height: 250px;
+    }
+
+    .tabN {
+        display: inline-block;
+        width: 300px;
+        height: 25px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    .btnDiv {
+        float: right;
+    }
+
+    .bodyDiv {
+        width: 300px;
+        height: 50px;
+        padding: 5px;
+        transition: .3s;
+        display: none;
+    }
+
+    .expand {
+        background-color: brown;
+    }
+</style>
+
+<body>
+
+</body>
+
+</html>

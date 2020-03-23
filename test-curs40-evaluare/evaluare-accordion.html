@@ -7,17 +7,25 @@
     <title>Accordion</title>
     <style>
         .tabName {
+            position: relative;
+            display: inline-block;
             background-color: #eee;
             color: #444;
             cursor: pointer;
             padding: 18px;
-            width: 100%;
+            width: 80%;
             text-align: left;
             border: none;
             outline: none;
             transition: 0.4s;
         }
 
+        .plus{
+            display: inline-block;
+            position: absolute;
+            left:95%;
+            transform: translateX(-100%);
+        }
         .active,
         .tabName:hover {
             background-color: #ccc;
@@ -47,17 +55,27 @@
             for (var i = 0; i < accordion.length; i++) {
                 var tabElem = document.createElement("div");
                 tabElem.className = "tabName";
+                tabElem.id = "tabName"+i;
                 tabElem.innerText = accordion[i].tabName;
                 document.body.appendChild(tabElem);
 
+                var plusElem = document.createElement("div");
+                plusElem.className = "plus";
+                plusElem.innerText = "+";
+                tabElem.appendChild(plusElem);
+
+
                 var panelElem = document.createElement("div");
                 panelElem.className = "panel";
+                panelElem.id = "panel"+i;
                 panelElem.innerText = accordion[i].panel;
                 document.body.appendChild(panelElem);
 
                 tabElem.addEventListener("click", function () {
                     this.classList.toggle("active");
-                    var panelElem = this.nextElementSibling;
+                    var elemIndex = this.id;
+                    var index= parseInt(elemIndex.slice(7));
+                    var panelElem = document.getElementById("panel" + index);
                     if (panelElem.style.display === "block") {
                         panelElem.style.display = "none";
                     } else {
