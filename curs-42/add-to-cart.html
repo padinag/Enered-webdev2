@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 100vw;
+            height: 800px;
+            position: relative;
+        }
+
+        .leftSideContainer {
+            position: absolute;
+            display: inline-block;
+            width: 65vw;
+            height: 800px;
+        }
+
+        .leftSide {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+
+
+        .product {
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 20px;
+            width: 200px;
+            height: 100px;
+            border: 1px black;
+            border-style: solid;
+        }
+
+        .image {}
+
+        .description {}
+
+        .buttonAdd {}
+
+        .rightSide {
+            position: absolute;
+            left: 66vw;
+            width: 250px;
+            height: 800px;
+            display: inline-block;
+            border: 2px black;
+            border-style: solid;
+            border-color: red;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var leftSideList = [];
+        var rightSideList = [];
+        var noProducts = 6;
+        var contentElem;
+        var leftSideContainer;
+        var leftSideColumn;
+        var rightSideColumn;
+        var product;
+        var cloneElemIdsList = [];
+        
+        function start() {
+            contentElem = document.createElement("div");
+            leftSideContainer = document.createElement("div");
+            leftSideColumn = document.createElement("div");
+            rightSideColumn = document.createElement("div");
+
+
+            leftSideContainer.appendChild(leftSideColumn);
+            leftSideContainer.className = "leftSideContainer";
+            leftSideColumn.className = "leftSide";
+            rightSideColumn.className = "rightSide";
+
+            leftSideColumn.id = "left";
+            rightSideColumn.id = "right";
+
+            document.body.appendChild(contentElem);
+            contentElem.appendChild(leftSideContainer)
+            contentElem.appendChild(rightSideColumn);
+
+            for (var i = 0; i < noProducts; i++) {
+                product = document.createElement("div");
+                product.className = "product";
+                product.id = "productId-" + i;
+                product.countValue = 0;
+                console.log(product.id);
+                leftSideColumn.appendChild(product);
+
+                var imageElem = document.createElement("div");
+                imageElem.className = "image";
+                product.appendChild(imageElem);
+
+
+                var descriptionElem = document.createElement("div");
+                descriptionElem.className = "description";
+                descriptionElem.id = "description" + i;
+                product.appendChild(descriptionElem);
+
+                var addButtonElem = document.createElement("button");
+                addButtonElem.className = "buttonAdd";
+                addButtonElem.innerText = "Add";
+                addButtonElem.id = "add-productId-" + i;
+                descriptionElem.appendChild(addButtonElem);
+                addButtonElem.addEventListener("click", addToCart);
+
+                var removeButtonElem = document.createElement("button");
+                removeButtonElem.className = "buttonRemove";
+                removeButtonElem.innerText = "Remove";
+                removeButtonElem.id = "remove-productId-" + i;
+                descriptionElem.appendChild(removeButtonElem);
+                removeButtonElem.addEventListener("click", removeFromCart);
+
+            }
+        }
+
+        function addToCart() {
+            console.log(this);
+            var productIndex = parseInt(this.id.split('-')[2]);
+            var productCartId = document.getElementById("cart-productId-" + productIndex);
+            var count = 1;
+
+
+            if (productCartId == null) {
+                var currentProduct = document.getElementById("productId-" + productIndex);
+                var cloneElem = currentProduct.cloneNode(true);
+                cloneElem.id = "cart-productId-" + productIndex;
+                rightSideColumn.appendChild(cloneElem);
+
+                var counterElem = document.createElement("button");
+                counterElem.className = "counter";
+                counterElem.id = "counter-" + productIndex;
+                cloneElem.appendChild(counterElem);
+                counterElem.countValue = 1;
+                counterElem.innerText = 1;
+                // console.log(product.count);
+            } else {
+                var currentCountElem = document.getElementById("counter-" + productIndex)
+                currentCountElem.countValue = currentCountElem.countValue + 1;
+                currentCountElem.innerText = currentCountElem.countValue;
+            }
+
+        }
+
+
+
+
+
+        // var currentProductIndex = document.getElementById("productId-" + buttonIndex);
+        // console.log(currentProductIndex);
+
+
+        // var cloneElem = currentProductIndex.cloneNode(true);
+        // cloneElem.id = "cart-productId-" + buttonIndex;
+
+        // var counterElem = document.getElementById('counter-'+buttonIndex);
+        // var counter;
+
+        // if (!cloneElemIdsList.includes(cloneElem.id)) { 
+        //     rightSideColumn.appendChild(cloneElem); 
+
+        //     }
+        // else { 
+        //     counter += 1; 
+        //     }
+
+
+        // }
+
+        function removeFromCart() {
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
