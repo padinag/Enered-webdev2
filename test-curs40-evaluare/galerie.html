@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            overflow: hidden;
+        }
+
+        .imagesContainer {
+
+            min-width: 300px;
+            height: 300px;
+            margin-left: 5px;
+            margin-right: 5px;
+            border: 1px black;
+            border-style: solid;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+        var galleryWidth = 1250;
+        var galleryHeight = 1000;
+        var numberOfImages = 12;
+        var data;
+        function start() {
+            createGalleryStructure();
+        }
+
+
+
+        function createGalleryStructure() {
+            // var imageAddresses=[];
+            galleryDiv = document.createElement("div");
+            galleryDiv.className = "gallery"
+            galleryDiv.style.width = `${galleryWidth}px`;
+            galleryDiv.style.height = `${galleryHeight}px`;
+
+            for (var i = 0; i < numberOfImages; i++) {
+                var oReq = new XMLHttpRequest();
+                oReq.addEventListener("load", reqListener);
+                oReq.open("GET", "https://random.dog/woof.json");
+                oReq.send();
+
+                function reqListener() {
+                    data = JSON.parse(this.response);
+                    imagesContainerDiv = document.createElement("div");
+                    imagesContainerDiv.className = "imagesContainer";
+                    imagesContainerDiv.id = "imagesId-" + i;
+
+                    function expand(url) {
+                        console.log(url);
+                    }
+
+                    imagesContainerDiv.onclick = expand.bind(null, data.url);
+
+                    var image = new Image();
+                    image.className = "image";
+                    image.style.maxWidth = '100px';
+                    image.style.maxHeight = '100px';
+                    image.src = data.url;
+                    // imageAddresses.push(image.src);
+                    imagesContainerDiv.appendChild(image);
+                    galleryDiv.appendChild(imagesContainerDiv);
+                }
+
+            }
+            document.body.appendChild(galleryDiv);
+
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
