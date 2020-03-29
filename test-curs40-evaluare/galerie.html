@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         .gallery {
+            margin-top: -1000px;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -14,14 +20,66 @@
             overflow: hidden;
         }
 
-        .imagesContainer {
+        .bigImageContainer {
+            margin-top: 0px;
+            border: 1px black;
+            border-style: solid;
+            background-color: rgb(187, 209, 248, 1);
+            visibility: hidden;
+        }
 
+        .textGalleryImage {
+            position: absolute;
+            padding-left: 2px;
+            background-color: rgb(0, 0, 0, 0.3);
+            border-top: 0.5px black;
+            border-left: 0;
+            border-bottom: 0;
+            border-right: 0;
+            border-style: solid;
+            bottom: 0;
+            height: 0;
+            overflow: hidden;
+            transition: height 2s;
+        }
+
+        .title {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        .description {
+            padding-top: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        .imagesContainer {
+            position: relative;
+            align-content: center;
             min-width: 300px;
             height: 300px;
             margin-left: 5px;
             margin-right: 5px;
             border: 1px black;
             border-style: solid;
+        }
+
+        .imagesContainer:hover {
+            background-color: rgba(236, 220, 75, 0.1);
+        }
+
+        .imagesContainer:hover>.textGalleryImage {
+            height: 60px;
+            z-index: 2;
+        }
+
+        .image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 
@@ -43,8 +101,17 @@
             galleryDiv.className = "gallery"
             galleryDiv.style.width = `${galleryWidth}px`;
             galleryDiv.style.height = `${galleryHeight}px`;
+            bigImageContainer = document.createElement("div");
+            bigImageContainer.className = "bigImageContainer"
+            bigImageContainer.style.width = `${galleryWidth}px`;
+            bigImageContainer.style.height = `${galleryHeight}px`;
 
-            for (var i = 0; i < numberOfImages; i++) {
+
+            document.body.appendChild(bigImageContainer);
+
+
+
+            for (let i = 0; i < numberOfImages; i++) {
                 var oReq = new XMLHttpRequest();
                 oReq.addEventListener("load", reqListener);
                 oReq.open("GET", "https://random.dog/woof.json");
@@ -56,16 +123,54 @@
                     imagesContainerDiv.className = "imagesContainer";
                     imagesContainerDiv.id = "imagesId-" + i;
 
-                    function expand(url) {
-                        console.log(url);
+                    textGallertImage = document.createElement("div");
+                    textGallertImage.className = "textGalleryImage";
+                    textGallertImage.style.width = 300;
+                    var titleContent = document.createElement("div");
+                    titleContent.innerText = "Heading";
+                    titleContent.className = "title";
+                    textGallertImage.appendChild(titleContent);
+                    var descriptionContent = document.createElement("div");
+                    descriptionContent.innerText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry";
+                    descriptionContent.className = "description";
+                    textGallertImage.appendChild(descriptionContent);
+                    imagesContainerDiv.appendChild(textGallertImage);
+
+
+                    function expand(url, idx) {
+                        console.log(idx);
+                        // index = parseInt(this.id.split('-'));
+                        // console.log(url);
+                        // console.log(index);
                     }
 
-                    imagesContainerDiv.onclick = expand.bind(null, data.url);
+                    imagesContainerDiv.onclick = expand.bind(null, data.url, i);
 
                     var image = new Image();
                     image.className = "image";
-                    image.style.maxWidth = '100px';
-                    image.style.maxHeight = '100px';
+                    if (i % 4 == 0) {
+                        image.style.maxWidth = '150px';
+                        image.style.maxHeight = '150px';
+                        image.style.minWidth = '150px';
+                        image.style.minHeight = '150px';
+                        console.log(i);
+                    } else if (i % 4 == 1) {
+                        image.style.maxWidth = '250px';
+                        image.style.maxHeight = '250px';
+                        image.style.minWidth = '250px';
+                        image.style.minHeight = '250px';
+                    } else if (i % 4 == 2) {
+                        image.style.maxWidth = '200px';
+                        image.style.maxHeight = '150px';
+                        image.style.minWidth = '200px';
+                        image.style.minHeight = '150px';
+                    } else {
+                        image.style.maxWidth = '150px';
+                        image.style.maxHeight = '200px';
+                        image.style.minWidth = '150px';
+                        image.style.minHeight = '200px';
+                    }
+
                     image.src = data.url;
                     // imageAddresses.push(image.src);
                     imagesContainerDiv.appendChild(image);
