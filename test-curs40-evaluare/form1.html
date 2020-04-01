@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form 1</title>
+  <style>
+    .container {
+      width: 900px;
+      height: 750px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      background-color: white;
+    }
+
+    .leftSide {
+      display: inline-block;
+      width: 600px;
+      height: 800px;
+      position: absolute;
+      background-color: white;
+      box-sizing: border-box;
+    }
+
+
+    .header-menu {
+      display: flex;
+      height: 75px;
+      text-align: center;
+      background-color: white;
+      justify-content: space-evenly;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    .tab {
+      flex: 1;
+      padding-top: 30px;
+      margin-right: 5px;
+      margin-left: 5px;
+      background-color: white;
+      color: rgb(231, 223, 223);
+      font-size: 1em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-sizing: border-box;
+      border-bottom: 2px rgb(231, 223, 223);
+      border-bottom-style: solid;
+    }
+
+    .tab:hover {
+      color: black;
+      border-bottom-color: black;
+    }
+
+    .rightSide {
+      display: inline-block;
+      right: 0;
+      width: 290px;
+      height: 750px;
+      background-color: rgb(106, 50, 238);
+      position: absolute;
+      box-sizing: border-box;
+    }
+
+    .header-shoppingCart {
+      height: 75px;
+      text-align: center;
+      background-color: rgb(106, 50, 238, 0.8);
+      color: rgb(231, 223, 223);
+      font-size: 1em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      box-sizing: border-box;
+      padding-top: 30px;
+      border-bottom: 1px;
+      border-bottom-color: rgb(32, 31, 31, 0.2);
+      border-bottom-style: solid;
+
+    }
+
+    .contactForm {
+      position: relative;
+    }
+
+    .threeInLine {
+      display: flex;
+      height: 100px;
+      margin-top: 50px;
+      justify-content: space-around;
+      color: rgb(231, 223, 223);
+      font-size: 1em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .labelForm,
+    .labelForm2 {
+      display: block;
+      margin-top: 50px;
+      margin-left: 10px;
+    }
+
+    .labelForm3 {
+      display: block;
+      margin-top: 50px;
+    }
+
+    .partOfThreeInLine {
+      line-height: 30px;
+      margin-left: 10px;
+      width: 150px;
+      top: 50px;
+      font-size: 1em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+
+    .twoInLine {
+      display: flex;
+      height: 100px;
+      justify-content: space-around;
+      flex-direction: row;
+      color: rgb(231, 223, 223);
+      font-size: 1em;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .companyDiv {
+      flex-grow: 1;
+      padding-left: 20px;
+
+    }
+
+    .addressDiv {
+      flex-grow: 3;
+      padding-left: 40px;
+    }
+
+    .company {
+      line-height: 30px;
+      font-size: 1em;
+      width: 150px;
+      margin-left: 10px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .address {
+      line-height: 30px;
+      font-size: 1em;
+      width: 350px;
+      /* margin-left: 5px; */
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .checkbox {
+      position: relative;
+      padding-top: 50px;
+      margin-left: 30px;
+
+    }
+
+    .checkboxLabel {
+      display: inline-block;
+      position: absolute;
+      margin-left: 30px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.7em;
+      padding-top: 2px;
+    }
+
+    #checkbox1,
+    #checkbox2 {
+      display: inline-block;
+      position: absolute;
+
+    }
+
+    .actionButtonsDiv {
+      margin-top: 100px;
+      margin-left: 30px;
+    }
+
+    .acctionButton {
+      display: inline-block;
+      width: 150px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      border: 0.5px rgb(231, 223, 223);
+      border-style: solid;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 0.7em;
+      color: rgb(231, 223, 223);
+    }
+
+    .acctionButton:hover {
+      background-color: rgb(37, 161, 37);
+    }
+
+    #continue {
+      margin-left: 250px;
+      background-color: rgb(37, 161, 37);
+    }
+
+    .productName,
+    .total,
+    .shippingCost {
+      border-bottom: 1px;
+      border-bottom-color: rgb(32, 31, 31, 0.2);
+      border-bottom-style: solid;
+      height: 50px;
+      line-height: 50px;
+      padding-left: 10px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-size: 1em;
+    }
+
+    .productName {
+      color:rgb(132, 215, 243);
+    }
+
+    .total {
+      color: rgb(231, 223, 223);
+    }
+
+    .shippingCost {
+      color: rgb(114, 107, 107)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="leftSide">
+      <div class="header-menu">
+        <div class="tab">Shipping</div>
+        <div class="tab">Payment</div>
+        <div class="tab">Confirmation</div>
+      </div>
+      <div class="contactForm">
+        <form>
+          <div class="threeInLine">
+            <div>
+              <label for="input" class="labelForm">First name</label>
+              <input class="partOfThreeInLine" id="firstName" type="text" />
+            </div>
+            <div>
+              <label for="input" class="labelForm">Last name</label>
+              <input class="partOfThreeInLine" id="lastName" type="text" />
+            </div>
+            <div>
+              <label for="input" class="labelForm">Email</label>
+              <input class="partOfThreeInLine" id="lastName" type="email" />
+            </div>
+          </div>
+          <div class="twoInLine">
+            <div class="companyDiv">
+              <label for="input" class="labelForm2">Company</label>
+              <input class="company" id="firstName" type="text" />
+            </div>
+            <div class="addressDiv">
+              <label for="input" class="labelForm3">Address</label>
+              <input class="address" id="lastName" type="text" />
+            </div>
+          </div>
+          <div class="threeInLine">
+            <div>
+              <label for="input" class="labelForm">Country</label>
+              <input class="partOfThreeInLine" id="firstName" type="text" placeholder="Romania" />
+            </div>
+            <div>
+              <label for="input" class="labelForm">City</label>
+              <input class="partOfThreeInLine" id="lastName" type="text" />
+            </div>
+            <div>
+              <label for="input" class="labelForm">Zip Code</label>
+              <input class="partOfThreeInLine" id="lastName" type="text" />
+            </div>
+          </div>
+
+          <div class="checkbox"><input id="checkbox1" type="checkbox" checked>
+            <label for="checkbox1" class="checkboxLabel">My billing and shipping information is the same </label>
+          </div>
+          <div class="checkbox"><input id="checkbox2" type="checkbox">
+            <label for="checkbox1" class="checkboxLabel">Create a password for easier account access</label>
+          </div>
+          <div class="actionButtonsDiv">
+            <div class="acctionButton" id="return">RETURN TO STORE </div>
+            <div class="acctionButton" id="continue">CONTINUE </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="rightSide">
+      <div class="header-shoppingCart">Shopping Cart</div>
+      <div class="productName">Adina</div>
+      <div class="productName">Adina</div>
+      <div class="productName">Adina</div>
+      <div class="productName">Adina</div>
+      <div class="productName">Adina</div>
+      <div class="shippingCost">Shipping cost</div>
+      <div class="total">Total</div>
+    </div>
+  </div>
+</body>
+
+</html>

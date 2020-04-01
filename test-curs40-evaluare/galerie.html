@@ -123,6 +123,14 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", start);
+        document.onkeydown = escape;
+
+        function escape(e) {
+                console.log("escape");
+                if (e.key === "Escape") {
+                    onClickImageContainer.style.visibility = "hidden";
+                }
+            }
         var galleryWidth = 1250;
         var galleryHeight = 1000;
         var numberOfImages = 12;
@@ -143,13 +151,14 @@
             onClickImageContainer.style.width = `${galleryWidth}px`;
             onClickImageContainer.style.height = `${galleryHeight}px`;
 
+
             var closingX = document.createElement("div");
             closingX.className = "closingX";
             closingX.innerHTML = `<i class="fa fa-window-close" aria-hidden="true"></i>`;
             closingX.onclick = closing;
             onClickImageContainer.appendChild(closingX);
 
-            function closing(){
+            function closing() {
                 onClickImageContainer.style.visibility = "hidden";
             }
 
