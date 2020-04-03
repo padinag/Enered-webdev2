@@ -7,6 +7,7 @@
     <title>Form3</title>
     <style>
         .container {
+            margin-left: 300px;
             width: 300px;
             height: 500px;
             margin: 0;
@@ -91,24 +92,27 @@
             border-radius: 5px;
         }
 
-        .firstColumn {
+        .firstRow {
             display: flex;
+            width: 206px;
             flex-direction: row;
             justify-content: space-between;
             margin-top: 10px;
 
         }
 
-        .secondColumn{
+        .secondRow {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            width: 206px;
         }
 
         .twoInLine {
             display: inline-block;
             width: 90px;
             margin-top: 5px;
+            /* margin-left:5px; */
         }
 
         .oneLine {
@@ -123,8 +127,10 @@
             margin-left: 30px;
             height: 30px;
             background-color: rgb(61, 96, 250);
-            color: rgb(161, 157, 157);
-            border:none;
+            color: rgb(192, 152, 65);
+            border: none;
+            font-size: 0.8em;
+            ;
         }
 
         ::placeholder {
@@ -150,11 +156,11 @@
                         <input class="oneLine" type="text" id="name" placeholder="I need salesforce help with">
                     </div>
 
-                    <div class="firstColumn">
+                    <div class="firstRow">
                         <div><input class="twoInLine" id="firstName" type="text" placeholder="First Name"></div>
                         <div><input class="twoInLine" id="lastName" type="text" placeholder="Last Name"></div>
                     </div>
-                    <div class="secondColumn">
+                    <div class="secondRow">
                         <div><input class="twoInLine" id="email" type="email" placeholder="Email"></div>
                         <div><input class="twoInLine" id="phone" placeholder="Phone"></div>
                     </div>

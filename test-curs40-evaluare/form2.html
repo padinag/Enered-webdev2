@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .allDivs {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        .background {
+            width: 900px;
+            height: 700px;
+            background-color: blueviolet;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+            width: 850px;
+            height: 550px;
+            top: 100px;
+            left: 50%;
+            background-color: white;
+            transform: translate(-50%);
+            position: relative;
+        }
+
+        .header {
+            height: 80px;
+            width: 850px;
+            background-color: white;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+
+        .formContainer {
+            background-color: rgb(245, 238, 238);
+            width: 380px;
+            height: 400px;
+            margin-top: 10px;
+            margin-left: 30px;
+            display: inline-block;
+            position: absolute;
+            text-align: center;
+        }
+
+        .deliveryContainer {
+            background-color: rgb(245, 238, 238);
+            width: 380px;
+            height: 250px;
+            top: 10px;
+            display: inline-block;
+            left: 440px;
+            position: relative;
+            text-align: center;
+        }
+
+        .checkbox {
+            position: absolute;
+            left: 450px;
+            width: 380px;
+            height: 30px;
+
+        }
+
+        .checkboxLabel {
+            display: inline-block;
+            position: absolute;
+            margin-left: 5px;
+            color: rgb(196, 190, 190);
+            font-size: 0.7em;
+            padding-top: 2px;
+        }
+
+        #checkbox1 {
+            top: 360px;
+            display: inline-block;
+        }
+
+        #checkbox2 {
+            top: 385px;
+            display: inline-block;
+        }
+
+        .regular-checkbox {
+            -webkit-appearance: none;
+            height: 15px;
+            width: 15px;
+            border: 1px solid rgb(240, 232, 232);
+        }
+
+        .regular-checkbox:checked {
+            position: relative;
+        }
+
+        .regular-checkbox:checked:after {
+            content: '■';
+            font-size: 10px;
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 2px;
+            color: blueviolet;
+        }
+
+        .orderConfirmationDiv {
+            position: absolute;
+            left: 450px;
+            width: 380px;
+            height: 60px;
+            line-height: 60px;
+            top: 430px;
+            text-align: center;
+            background-color: blueviolet;
+            color: rgb(196, 190, 190);
+        }
+
+        .shipping {
+            width: 120px;
+            height: 80px;
+            line-height: 80px;
+            background-color: white;
+            color: blueviolet;
+            font-size: 1.5em;
+            font-weight: 900;
+            position: absolute;
+            margin-left: 50px;
+        }
+
+        .stepOptions {
+            position: absolute;
+            width: 400px;
+            display: flex;
+            justify-content: space-around;
+            left: 260px;
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .steps {
+            display: inline-block;
+            color: rgb(196, 190, 190);
+            font-size: 1em;
+        }
+
+        .steps:hover {
+            color: blueviolet;
+        }
+
+        .cartSign {
+            width: 40px;
+            height: 80px;
+            line-height: 80px;
+            background-color: white;
+            color: blueviolet;
+            font-size: 2em;
+            font-weight: 900;
+            position: absolute;
+            right: 30px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-content: stretch;
+
+        }
+
+        .twoInLine {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .oneInLine {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .partOftwoInLine {
+            width: 190px;
+        }
+
+        .inputOfTwoInLine {
+            width: 140px;
+            height: 25px;
+        }
+
+        .inputOfOneInLine {
+            width: 330px;
+            height: 25px;
+
+        }
+
+        label {
+            padding-top: 5px;
+            display: block;
+            text-align: left;
+            margin-left: 30px;
+            padding-bottom: 3px;
+            color: rgb(196, 190, 190);
+            font-size: 0.8em;
+        }
+
+
+        .phoneNumber {
+            width: 330px;
+            height: 31px;
+            margin-left: 25px;
+            font-size: 0;
+        }
+
+        #prefix {
+            width: 40px;
+            height: 25px;
+            padding-right: 0;
+            margin-right: 0;
+            background-color: rgb(240, 232, 232);
+        }
+
+        #number {
+            width: 280px;
+            height: 25px;
+            padding-left: 0;
+            margin-right: 0;
+        }
+
+        .shippingItems {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 380px;
+            height: 100px;
+        }
+
+        .freeShipping {
+            background-color: white;
+            border: 1px solid rgb(196, 190, 190);
+        }
+
+        .costlyShipping {
+            background-color: blueviolet;
+        }
+
+        .costFree {
+            color: blueviolet;
+            font-weight: bold;
+            font-size: 2em;
+            width: 140px;
+            height: 60px;
+            line-height: 80px;
+        }
+
+        .leadTimeFree,
+        .leadTimeCostly {
+            height: 30px;
+            color: rgb(196, 190, 190);
+            font-weight: bold;
+            line-height: 30px;
+        }
+
+        sup {
+            font-size: 0.6em;
+            font-weight: bold;
+        }
+
+        .costCostly {
+            color: white;
+            font-weight: bold;
+            font-size: 2em;
+            width: 140px;
+            height: 60px;
+            line-height: 80px;
+        }
+
+        span {
+            font-size: 0.7em;
+            color: rgb(196, 190, 190)
+        }
+
+        .additionalDetailsDiv{
+            text-align: left;
+            margin:30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="allDivs">
+        <div class="background">
+            <div class="container">
+                <div class="header">
+                    <div class="shipping">SHIPPING</div>
+                    <div class="stepOptions">
+                        <div class="steps">Shopping Bag
+                            <i class="fa fa-caret-right" style="color:rgb(196, 190, 190);padding-left:8px"></i>
+                        </div>
+                        <div class="steps">Checkout
+                            <i class="fa fa-caret-right" style="color:rgb(196, 190, 190);padding-left:8px"></i>
+                        </div>
+                        <div class="steps">Confirmation
+                            <i class="fa fa-caret-right" style="color:rgb(196, 190, 190);padding-left:8px"></i>
+                        </div>
+                    </div>
+                    <div class="cartSign"><i class="fa fa-shopping-cart" style="color:blueviolet"></i></div>
+                </div>
+                <div class="formContainer">
+                    <h3> Personal information</h3>
+                    <div class="form">
+                        <div class="twoInLine">
+                            <div class="partOftwoInLine">
+                                <label for="firstName">First Name</label>
+                                <input type="text" class="inputOfTwoInLine" placeholder="Adina"></i>
+                            </div>
+                            <div class="partOftwoInLine">
+                                <label for="lastName"> Last Name</label>
+                                <input type="text" class="inputOfTwoInLine" placeholder="Pavel"></i>
+                            </div>
+                        </div>
+                        <div class="oneInLine">
+                            <label for="email">Email Address </label>
+                            <input type="email" class="inputOfOneInLine" placeholder="padinag@yahoo.com"> </i>
+                        </div>
+                        <div class="oneInLine">
+                            <label for="address">Street </label>
+                            <input type="text" class="inputOfOneInLine" placeholder="padinag@yahoo.com"> </i>
+                        </div>
+
+                        <div class="twoInLine">
+                            <div class="partOftwoInLine">
+                                <label for="city">City</label>
+                                <input type="text" class="inputOfTwoInLine" placeholder="Iasi"></i>
+                            </div>
+                            <div class="partOftwoInLine">
+                                <label for="country">Country</label>
+                                <input type="text" class="inputOfTwoInLine" placeholder="Romania"></i>
+                            </div>
+                        </div>
+
+
+                        <div class="oneInLine">
+                            <label for="phone">Phone number</label>
+                            <div class="phoneNumber">
+                                <input type="text" id="prefix" placeholder="  +33"></i>
+                                <input type="text" id="number" placeholder="  143525533"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deliveryContainer">
+                    <h3>Delivery</h3>
+                    <div class="shippingItems">
+                        <div class="freeShipping">
+                            <div class="costFree">0<sup>$</sup></div>
+                            <div class="leadTimeFree">3-4 weeks</div>
+                        </div>
+                        <div class="costlyShipping">
+                            <div class="costCostly">5<sup>$</sup></div>
+                            <div class="leadTimeCostly">2-5 days</div>
+                        </div>
+                    </div>
+                    <div class="additionalDetailsDiv">
+                        <span> Estimated delivery date: <b>August 4th</b></span><br>
+                        <span> Every package has a tracking number</span>
+                    </div>
+                </div>
+                <div class="checkbox" id="checkbox1"><input type="checkbox" class="regular-checkbox">
+                    <label for="checkbox1" class="checkboxLabel">Subscribe to our newsletter </label>
+                </div>
+                <div class="checkbox" id="checkbox2"><input type="checkbox" class="regular-checkbox">
+                    <label for="checkbox1" class="checkboxLabel">Create an account</label>
+                </div>
+                <div class="orderConfirmationDiv">Confirm my order</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
