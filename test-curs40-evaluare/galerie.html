@@ -126,11 +126,11 @@
         document.onkeydown = escape;
 
         function escape(e) {
-                console.log("escape");
-                if (e.key === "Escape") {
-                    onClickImageContainer.style.visibility = "hidden";
-                }
+            console.log("escape");
+            if (e.key === "Escape") {
+                onClickImageContainer.style.visibility = "hidden";
             }
+        }
         var galleryWidth = 1250;
         var galleryHeight = 1000;
         var numberOfImages = 12;
@@ -216,15 +216,14 @@
                     imagesContainerDiv.appendChild(textGallertImage);
 
 
-                    function expand(url, idx) {
-                        console.log(idx);
+                    function expand(url) {
                         var imageOnClick = document.getElementById("fullScreenImage");
                         imageOnClick.src = url;
                         onClickImageContainer.style.visibility = "visible";
                         console.log(url);
                     }
 
-                    imagesContainerDiv.onclick = expand.bind(null, data.url, i);
+                    imagesContainerDiv.onclick = expand.bind(null, data.url);
 
                     var extension = data.url.substring(data.url.lastIndexOf(".") + 1);
                     if (extension.toLowerCase() == "mp4" || extension.toLowerCase() == "webm") {
