@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            padding: 300px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", incep);
+
+        var clock;
+        var seconds = 0;
+        var minutes = 0;
+        var hours = 0;
+        var start;
+        var stop;
+        var reset;
+        var secondsFormat;
+        var minutesFormat;
+        var hoursFormat;
+        var t;
+        function incep() {
+            clock = document.getElementsByTagName("p")[0];
+            start = document.getElementById("start");
+            stop = document.getElementById("stop");
+            reset = document.getElementById("reset");
+            start.addEventListener("click", timer);
+            stop.addEventListener("click", stopTimer);
+            reset.addEventListener("click", resetTimer);
+        }
+
+        function count() {
+            seconds++;
+            if (seconds >= 60) {
+                minutes++;
+                seconds = 0;
+                if (minutes >= 60) {
+                    hours++;
+                    minutes = 0;
+                }
+            }
+
+            if (seconds <= 9) {
+                secondsFormat = "0" + seconds;
+            } else {
+                secondsFormat = seconds;
+            }
+            console.log(secondsFormat);
+            if (minutes <= 9) {
+                minutesFormat = "0" + minutes;
+            } else {
+                minutesFormat = minutes;
+            }
+            if (hours <= 9) {
+                hoursFormat = "0" + hours;
+            } else {
+                hoursFormat = hours;
+            }
+            clock.textContent = hoursFormat + ":" + minutesFormat + ":" + secondsFormat
+        }
+
+        function timer() {
+            t = setInterval(count, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(t);
+        }
+
+        function resetTimer() {
+            clock.textContent = "00:00:00";
+            seconds = 0;
+            minutes = 0;
+            hours = 0;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <p>00:00:00</p>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
+</body>
+
+</html>
